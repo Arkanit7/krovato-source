@@ -1,0 +1,63 @@
+@use "../../abstracts" as *;
+
+.news {
+  // .news__container
+
+  &__container {
+    @include not-last-children {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .news__header
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(30px);
+  }
+
+  // .news__heading
+
+  &__heading {
+  }
+
+  // .news__control
+
+  &__control {
+    display: flex;
+    gap: rem(20px);
+
+    @include media-width-to(em($medium)) {
+      display: none;
+    }
+  }
+
+  // .news__button
+
+  &__button {
+    flex: none;
+  }
+
+  // .news__swiper
+
+  &__swiper {
+    @include media-width-to(em($xx-small)) {
+      margin-inline: -$padding-sm;
+    }
+  }
+
+  // .news__wrapper
+
+  &__wrapper {
+    // align-items: stretch !important;
+  }
+
+  &__slide {
+    block-size: unset;
+  }
+}

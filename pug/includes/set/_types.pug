@@ -1,0 +1,52 @@
+.main__types.types
+  .types__container
+    .types__heading.heading
+      h1.heading__title.title Ліжка
+      p.heading__text 1 147 товарів
+    .types__body(data-show)
+      ul.types__list
+        li.types__item
+          a.types__link.card-type(href="#")
+            p.card-type__title Односпальні ліжка
+            +picture({class: "card-type__picture", src: "img/set/types/img.png", alt: ""})
+        li.types__item
+          a.types__link.card-type(href="#")
+            p.card-type__title Двоспальні ліжка
+            +picture({class: "card-type__picture", src: "img/set/types/img-1.png", alt: ""})
+        li.types__item
+          a.types__link.card-type(href="#")
+            p.card-type__title Диван-ліжко
+            +picture({class: "card-type__picture", src: "img/set/types/img-2.png", alt: ""})
+        li.types__item
+          a.types__link.card-type(href="#")
+            p.card-type__title Дерев'яні ліжка
+            +picture({class: "card-type__picture", src: "img/set/types/img-3.png", alt: ""})
+        li.types__item
+          a.types__link.card-type(href="#")
+            p.card-type__title Металеві ліжка
+            +picture({class: "card-type__picture", src: "img/set/types/img-4.png", alt: ""})
+        li.types__item
+          a.types__link.card-type(href="#")
+            p.card-type__title М'які ліжка
+            +picture({class: "card-type__picture", src: "img/set/types/img-5.png", alt: ""})
+        li.types__item
+          a.types__link.card-type(href="#")
+            p.card-type__title Ліжка подіуми
+            +picture({class: "card-type__picture", src: "img/set/types/img-6.png", alt: ""})
+        li.types__item
+          a.types__link.card-type(href="#")
+            p.card-type__title Дитячі ліжка
+            +picture({class: "card-type__picture", src: "img/set/types/img-7.png", alt: ""})
+        li.types__item
+          a.types__link.card-type(href="#")
+            p.card-type__title Ліжка з підйомним механізмом
+            +picture({class: "card-type__picture", src: "img/set/types/img-8.png", alt: ""})
+        li.types__item
+          a.types__link.card-type(href="#")
+            p.card-type__title Акційні ліжка
+            +picture({class: "card-type__picture", src: "img/set/types/img-9.png", alt: ""})
+      button.types__button(type="button", data-show="button", data-show-button)
+        span Показати підкатегорії
+        span Приховати підкатегорії
+        svg.icon
+          use(xlink:href="img/icons/symbol-defs.svg#icon-arrow-double")

@@ -1,0 +1,107 @@
+@use "../abstracts" as *;
+
+.fade-block {
+  position: relative;
+
+  @include grid-container;
+
+  // .fade-block__layout
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    grid-column: full;
+    background-image: linear-gradient($clr-white, transparent);
+
+    @include media-width-from(em($medium)) {
+      grid-column: content;
+      border-radius: rem(8px);
+      background-image: linear-gradient(to right, $clr-white, transparent);
+    }
+  }
+
+  &__layout {
+    display: flex;
+    gap: rem(6px 20px);
+    align-items: center;
+
+    @include media-width-to(em($medium)) {
+      flex-wrap: wrap;
+      padding-block-start: rem(40px);
+    }
+
+    @include media-width-from(em($medium)) {
+      padding-inline-start: rem(50px);
+    }
+  }
+
+  // .fade-block__text-group
+
+  &__text-group {
+    flex: rem(450px);
+    color: $clr-mine-shaft;
+
+    @include media-width-to(em($medium)) {
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    @include media-width-from(em($medium)) {
+      padding-block: rem(70px);
+    }
+  }
+
+  // .fade-block__title
+
+  &__title {
+    @include not-last {
+      margin-block-end: rem(30px);
+    }
+  }
+
+  // .fade-block__heavy-group
+
+  &__heavy-group {
+    font-weight: $fw-semi-bold;
+    font-size: rem(20px);
+    line-height: 1.4;
+
+    @include media-width-from(em($medium)) {
+      font-size: rem(26px);
+      line-height: divide(34px, 26px);
+    }
+
+    @include not-last {
+      margin-block-end: rem(20px);
+    }
+  }
+
+  // .fade-block__light-group
+
+  &__light-group {
+    font-size: 1rem;
+    line-height: 1.875;
+
+    @include media-width-from(em($medium)) {
+      font-weight: $fw-semi-bold;
+      font-size: rem(20px);
+      line-height: 1.4;
+    }
+
+    @include not-last {
+      margin-block-end: rem(20px);
+    }
+  }
+
+  // .fade-block__picture
+
+  &__picture {
+    flex: rem(748px);
+
+    img {
+      inline-size: 100%;
+    }
+  }
+}

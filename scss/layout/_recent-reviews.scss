@@ -1,0 +1,166 @@
+@use "../abstracts" as *;
+
+.scrollbar-slider {
+  display: grid;
+  grid-template-areas: "stack";
+  align-items: center;
+  cursor: pointer;
+
+  @include response {
+    &::before {
+      background-color: hsl(0deg 0% 65%);
+    }
+  }
+
+  &::before {
+    content: "";
+    grid-area: stack;
+    block-size: rem(6px);
+    border-radius: rem(3px);
+    background-color: hsl(0deg 0% 80%);
+    transition: background-color 0.3s;
+  }
+
+  // .scrollbar-slider__thumb
+  &__thumb {
+    display: grid;
+    grid-area: stack;
+    place-items: center;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    font-size: 24px;
+    background-color: $clr-white;
+    box-shadow: rem(-3px 4px 15px) hsl(0deg 0% 0% / 6%);
+    cursor: grab;
+    touch-action: pan-x;
+  }
+}
+
+.slider-reviews {
+  @include not-last-children {
+    margin-block-end: rem(17px);
+  }
+
+  // .slider-reviews__swiper
+
+  &__swiper {
+    margin: rem(-$padding);
+    padding: rem($padding);
+  }
+
+  // .slider-reviews__wrapper
+
+  &__wrapper {
+  }
+
+  // .slider-reviews__slide
+
+  &__slide {
+    inline-size: rem(350px);
+    block-size: auto;
+
+    @include media-width-from(em($medium)) {
+      inline-size: rem(450px);
+    }
+  }
+
+  // .slider-reviews__scrollbar
+
+  &__scrollbar {
+  }
+}
+
+.recent-reviews {
+  display: grid;
+  grid-template-columns:
+    [frame-start] $padding-sm [canvas-start] 1fr [content-start] minmax(
+      0,
+      $container
+    )
+    [content-end] 1fr [canvas-end] $padding-sm [frame-end];
+  padding-block: rem(20px);
+  background-color: $clr-mercury;
+
+  @include media-width-from(em($x-small)) {
+    grid-template-columns:
+      [frame-start] $padding [canvas-start] 1fr [content-start] minmax(
+        0,
+        $container
+      )
+      [content-end] 1fr [canvas-end] $padding [frame-end];
+    padding-block: rem(40px);
+  }
+
+  @include media-width-from(em($medium)) {
+    padding-block: rem(70px);
+  }
+
+  & > * {
+    grid-column: content;
+  }
+
+  // .recent-reviews__content
+
+  &__content {
+    display: grid;
+    gap: rem(20px);
+    inline-size: 100%;
+
+    @include media-width-from(em($x-small)) {
+      gap: rem(40px);
+    }
+
+    @include media-width-from(em($large)) {
+      grid-template-columns: rem(410px) 1fr;
+      grid-column: content-start / canvas-end;
+      gap: rsv-clamp(rem(30px), rem(70px), em($large));
+    }
+  }
+
+  // .recent-reviews__section
+
+  &__section {
+    @include not-last-children {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .recent-reviews__title
+
+  &__title {
+  }
+
+  // .recent-reviews__shop
+
+  &__shop {
+  }
+
+  // .recent-reviews__actions
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(20px);
+  }
+
+  // .recent-reviews__button
+
+  &__button {
+    min-inline-size: fit-content;
+
+    @include media-width-to(em($x-small)) {
+      flex: 1;
+    }
+  }
+
+  // .recent-reviews__slider
+
+  &__slider {
+    // fix slider -_-
+    min-inline-size: 0;
+  }
+}

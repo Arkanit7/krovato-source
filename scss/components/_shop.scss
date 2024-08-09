@@ -1,0 +1,47 @@
+@use "../abstracts" as *;
+
+.shop {
+  display: flex;
+  gap: rem(30px);
+
+  // .shop__sticker
+
+  &__sticker {
+    display: grid;
+    flex: none;
+    place-items: center;
+    inline-size: rem(80px);
+    block-size: rem(80px);
+    padding: rem(12px);
+    border-radius: 50%;
+    background-color: $clr-white;
+
+    img {
+      object-fit: contain;
+      inline-size: 100%;
+      block-size: 100%;
+    }
+  }
+
+  // .shop__read
+
+  &__read {
+    @include not-last-children {
+      margin-block-end: rem(10px);
+    }
+  }
+
+  // .shop__title
+
+  &__title {
+    font-weight: $fw-semi-bold;
+    font-size: rem(20px);
+    line-height: 1.4;
+    color: $clr-mine-shaft;
+  }
+
+  // .shop__rating
+
+  &__rating {
+  }
+}

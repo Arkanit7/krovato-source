@@ -1,0 +1,16 @@
+.main-header__cart.cart-header
+  // Header
+  .cart-header__header
+    p.cart-header__title Ваш кошик #[span 4]
+    button.cart-header__close(type="button")
+      svg.icon
+        use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+  // Body
+  .cart-header__body
+    +itemCart({src: "img/products/sparta.jpg", alt:"Ліжко Sparta з дерев'яним скелетом.", class: "item-cart__picture", sizes: 'Розмір: 61 x 184 x 2130 мм', title: 'Ліжко Спарта / Sparta з підйомним механізмом', availability: 'available', oldPrice: '25 400 грн.', price: '15 400 грн.',})
+    +itemCart({src: "img/products/sparta.jpg", alt:"Ліжко Sparta з дерев'яним скелетом.", class: "item-cart__picture", sizes: 'Розмір: 61 x 184 x 2130 мм', title: 'Матрац ARGENTUM AMALTEA / Аргентум Амалті', availability: 'available', oldPrice: '25 400 грн.', price: '15 400 грн.',})
+    +itemCart({src: "img/products/sparta.jpg", alt:"Ліжко Sparta з дерев'яним скелетом.", class: "item-cart__picture", sizes: 'Розмір: 61 x 184 x 2130 мм', title: 'Матрац ARGENTUM AMALTEA / Аргентум Амалті', availability: 'available', oldPrice: '25 400 грн.', price: '15 400 грн.',})
+  // Footer
+  .cart-header__footer
+    a.cart-header__checkout.button(href="/checkout.html") ОФОРМИТИ ЗАМОВЛЕННЯ
+    button.cart-header__resume.button.button--skeleton(type="button") Продовжити покупки

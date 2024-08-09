@@ -1,0 +1,121 @@
+/* Reset styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: unset;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  block-size: 100%;
+}
+
+a {
+  text-decoration: unset;
+  color: unset;
+
+  &[href^="tel:"] {
+    white-space: nowrap;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+address {
+  font: unset;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto; // Ensure aspect ratio if width & height are set on markup
+}
+
+img {
+  font-style: italic; // Distinguish alt text
+}
+
+// Form
+
+input,
+button,
+textarea,
+select {
+  font: unset;
+  background-color: unset;
+  color: unset;
+}
+
+button,
+select,
+option,
+label[for] {
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  appearance: unset;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+// Remove an X button from search input
+input[type="search"] {
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration {
+    display: none;
+  }
+}
+
+// Remove number arrows from number input
+input[type="number"] {
+  appearance: textfield; // Firefox
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* End of the reset styles */

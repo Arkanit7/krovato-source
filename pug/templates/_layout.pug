@@ -1,0 +1,55 @@
+include ../abstracts/_variables
+include ../abstracts/_mixins
+
+block document
+  doctype html
+  html(lang="uk")
+    head
+      block head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="theme-color", content="#ffbc57")
+        meta(
+          name="description",
+          content="Магазин меблів в Києві ⏩ Меблі для дому та офісу за доступними цінами ⭐️ Безкоштовна доставка по Києву ⭐️ Широкий асортимент товарів: ліжка, дивани, шафи, матраци"
+        )
+        title #{ title || "Krovato – технології сну" }
+        // Favicons
+        link(
+          rel="apple-touch-icon",
+          sizes="180x180",
+          href="img/apple-touch-icon.png"
+        )
+        link(
+          rel="icon",
+          type="image/png",
+          sizes="32x32",
+          href="img/favicon-32x32.png"
+        )
+        link(
+          rel="icon",
+          type="image/png",
+          sizes="16x16",
+          href="img/favicon-16x16.png"
+        )
+        link(rel="shortcut icon", href="img/favicon.ico")
+        // Styles
+        link(href="css/style.min.css", rel="stylesheet")
+        // Scripts
+        block scripts
+          script(src="js/app.min.js", defer)
+    body
+      // Content wrapper
+      .wrapper
+        // Skip to main
+        a.skip-link(href="#main", tabindex="0") До основного контенту
+        // Header
+        include ../includes/_header
+        // Main
+        main#main.wrapper__main.main(class=mainClass)
+          block main
+
+        // Advantages
+        include ../includes/_advantages
+        // Footer
+        include ../includes/_footer

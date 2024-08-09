@@ -1,0 +1,48 @@
+@use "../abstracts" as *;
+
+.breadcrumbs {
+  // .breadcrumbs__container
+
+  &__container {
+    // padding-block: rem(10px 5px);
+  }
+
+  // .breadcrumbs__list
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  // .breadcrumbs__item
+
+  &__item {
+    font-size: 1rem;
+
+    @include not-last {
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: "";
+        inline-size: rem(24px);
+        block-size: rem(24px);
+        background: url("../img/icons/breadcrumb.svg") center / rem(5px)
+          no-repeat;
+      }
+    }
+
+    // line-height: divide(30, 16);
+
+    &[aria-current="page"] {
+      color: $clr-texas-rose;
+    }
+  }
+
+  // .breadcrumbs__link
+
+  &__link {
+    @extend %response;
+  }
+}

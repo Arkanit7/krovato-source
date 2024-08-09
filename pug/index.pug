@@ -1,0 +1,22 @@
+extends templates/_layout
+
+block prepend document
+  - const homePage = true;
+  - const mainClass = "main--padding";
+  - const advantagesClass = "advantages--bg--white";
+
+block main
+  // Hero
+  include includes/home/_hero
+  // Categories
+  include includes/home/_categories
+  // Popular
+  include includes/home/_four-grid
+  // Promo
+  include includes/home/_promo
+  // Recent reviews
+  include includes/_recent-reviews
+  // News
+  include includes/home/_news
+  // Information
+  include includes/home/_information

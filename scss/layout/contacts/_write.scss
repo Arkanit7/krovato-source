@@ -1,0 +1,180 @@
+@use "sass:list";
+@use "../../abstracts" as *;
+
+$multicol: $medium;
+
+.form-write {
+  // .form-write__list
+
+  &__list {
+  }
+
+  // .form-write__item
+
+  &__item {
+    display: grid;
+
+    @include not-last {
+      margin-block-end: rem(20px);
+    }
+  }
+
+  // .form-write__field
+
+  &__field {
+  }
+
+  // .form-write__area
+
+  &__area {
+    min-block-size: rem(150px);
+    max-block-size: rem(300px);
+  }
+
+  // .form-write__button
+
+  &__button {
+    @include media-width-from(em($multicol)) {
+      justify-self: start;
+      min-inline-size: rem(240px);
+    }
+  }
+}
+
+// Fix styles for iti.js
+#iti-phone {
+  inline-size: 100%;
+}
+
+.write {
+  // .write__container
+
+  &__container {
+    // background-color: $clr-white;
+
+    @include media-width-from(em($multicol)) {
+      // Positioning
+      position: relative;
+      isolation: isolate;
+
+      // Flex
+      display: flex;
+      gap: rem(20px);
+      justify-content: space-between;
+      align-items: center;
+
+      // Misc
+      overflow: hidden;
+
+      // Styling
+      padding-block: rem(50px);
+      border-radius: rem(8px);
+      background-color: $clr-white;
+      box-shadow: rem(-3px 4px 15px) hsl(0deg 0% 0% / 6%);
+    }
+
+    @include not-last-children {
+      margin-block-end: rem(30px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .write__text-group
+
+  &__text-group {
+    font-weight: $fw-semi-bold;
+    text-align: center;
+    color: $clr-mine-shaft;
+
+    // -webkit-text-stroke: 0.1px $clr-white; // give text a white outline
+
+    @include media-width-from(em($multicol)) {
+      inline-size: rem(470px);
+      text-shadow:
+        -1px -1px $clr-alabaster,
+        1px -1px $clr-alabaster,
+        1px 1px $clr-alabaster,
+        -1px 1px $clr-alabaster;
+    }
+
+    @include not-last-children {
+      margin-block-end: rem(10px);
+    }
+  }
+
+  // .write__title
+
+  &__title {
+    font-size: rem(26px);
+    line-height: divide(40px, 30px);
+
+    @include media-width-from(em($x-small)) {
+      font-size: rem(30px);
+    }
+
+    @include media-width-from(em($medium)) {
+      font-size: rem(40px);
+      line-height: 1.2;
+    }
+  }
+
+  // .write__text
+
+  &__text {
+    font-size: rem(20px);
+    line-height: divide(34px, 26px);
+
+    @include media-width-from(em($x-small)) {
+      font-size: rem(26px);
+    }
+  }
+
+  // .write__important
+
+  &__important {
+    font-size: rem(26px);
+    line-height: divide(40px, 30px);
+    color: $clr-texas-rose;
+
+    @include media-width-from(em($x-small)) {
+      font-size: rem(30px);
+    }
+  }
+
+  // .write__form
+
+  &__form {
+    @include media-width-from(em($multicol)) {
+      inline-size: rem(410px);
+    }
+  }
+
+  // .write__ibg
+
+  &__ibg {
+    @include media-width-to(em($multicol)) {
+      display: none;
+    }
+
+    @include media-width-from(em($multicol)) {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+  }
+
+  // .write__img
+
+  &__img {
+    @include media-width-from(em($multicol)) {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      inline-size: 100%;
+      block-size: 100%;
+    }
+  }
+}

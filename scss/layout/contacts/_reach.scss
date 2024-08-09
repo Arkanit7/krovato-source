@@ -1,0 +1,100 @@
+@use "../../abstracts" as *;
+
+.reach {
+  background-color: $clr-white;
+
+  // .reach__container
+
+  &__container {
+    padding-block: rem(30px);
+
+    @include media-width-from(em($x-small)) {
+      padding-block: rem(60px 40px);
+    }
+
+    @include media-width-from(em($medium)) {
+      padding-block: rem(70px);
+    }
+
+    @include not-last-children {
+      margin-block-end: rem(30px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .reach__title
+
+  &__title {
+    color: $clr-mine-shaft;
+    text-align: center;
+    font-size: rem(26px);
+    font-weight: $fw-semi-bold;
+    line-height: divide(40, 30);
+
+    @include media-width-from(em($x-small)) {
+      font-size: rem(30px);
+    }
+  }
+
+  // .reach__list
+
+  &__list {
+    @include media-width-from(em(700px)) {
+      columns: 2;
+      column-gap: rsv-clamp(rem(20px), rem(30px), em(700px));
+    }
+  }
+
+  // .reach__item
+
+  &__item {
+    break-inside: avoid-column;
+    display: flex;
+    gap: rem(20px);
+    font-size: rem(20px);
+    font-weight: $fw-semi-bold;
+    line-height: 1.4;
+
+    @include not-last {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(30px);
+      }
+
+      @include media-width-from(em(700px)) {
+        margin-block-end: rem(10px);
+      }
+    }
+
+    &::before {
+      flex: none;
+      content: "";
+      inline-size: rem(32px);
+      block-size: rem(32px);
+      background: url("../img/icons/pointer.svg") center / contain;
+    }
+  }
+
+  // .reach__actions
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(20px);
+    justify-content: center;
+  }
+
+  // .reach__link
+
+  &__link {
+    flex: auto;
+
+    @include media-width-from(em($small)) {
+      flex: 0 rem(410px);
+    }
+  }
+}

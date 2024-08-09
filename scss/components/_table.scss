@@ -1,0 +1,215 @@
+@use "../abstracts" as *;
+
+.table {
+  inline-size: 100%;
+  border-collapse: collapse;
+
+  // .table__group
+
+  &__group {
+  }
+
+  // .table__row
+
+  &__row {
+    position: relative;
+    isolation: isolate;
+
+    @include media-width-to(em($small)) {
+      display: grid;
+      gap: rem(10px);
+      padding-block: rem(15px);
+      text-align: center;
+    }
+
+    @include media-width-to(em($x-small)) {
+      gap: rem(5px);
+      padding-block: rem(8px);
+    }
+
+    &::after {
+      content: "";
+      border-block-end: rem(1px) dashed;
+
+      @include media-width-from(em($small)) {
+        position: absolute;
+        inset-inline: rem($padding);
+        inset-block: 50%;
+        z-index: -1;
+        transform: translateY(-50%);
+      }
+    }
+
+    &--head {
+      @include media-width-from(em($small)) {
+        text-align: center;
+        color: $clr-white;
+      }
+
+      &::after {
+        all: unset;
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-color: $clr-emperor;
+
+        @include media-width-from(em($canvas)) {
+          border-radius: 0.5rem;
+        }
+      }
+
+      th span {
+        background-color: unset;
+      }
+    }
+
+    &:nth-child(odd) {
+      background-color: $clr-alabaster;
+    }
+
+    &:nth-child(even) {
+      background-color: $clr-white;
+    }
+  }
+
+  // .table__cell
+
+  &__cell {
+    background-color: inherit;
+
+    @include media-width-from(em($small)) {
+      padding-block: rem(15px);
+    }
+
+    // &:nth-child(n + 2):nth-last-child(n + 2) {
+    &:not(:first-child, :last-child) {
+      @include media-width-from(em($small)) {
+        text-align: center;
+      }
+    }
+
+    &:last-child {
+      order: 1;
+
+      @include media-width-from(em($small)) {
+        text-align: end;
+      }
+    }
+
+    span {
+      display: inline-block;
+      padding-inline: rem(10px);
+      background-color: inherit;
+    }
+  }
+
+  &__row--head &__cell {
+  }
+}
+
+.tables {
+  padding-block: rem(40px);
+  background-color: $clr-white;
+
+  @include media-width-from(em($x-small)) {
+    padding-block: rem(60px);
+  }
+
+  @include media-width-from(em($large)) {
+    padding-block: rem(70px);
+  }
+
+  // .tables__container
+  &__container {
+    @include not-last-children {
+      margin-block-end: rem(40px);
+    }
+  }
+
+  // .tables__title
+
+  &__title {
+    text-align: center;
+
+    @include not-last {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .tables__subtitle
+
+  &__subtitle {
+    font-weight: $fw-semi-bold;
+    font-size: rem(22px);
+    line-height: divide(40px, 30px); /* 133.333% */
+    text-align: center;
+    color: $clr-mine-shaft;
+
+    @include media-width-from(em($x-small)) {
+      font-size: rsv-clamp(rem(26px), rem(30px), em($x-small));
+    }
+
+    @include media-width-from(em($medium)) {
+      line-height: 1.2;
+    }
+
+    @include not-last {
+      margin-block-end: rem(12px);
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(20px);
+      }
+    }
+  }
+
+  // .tables__assembly
+
+  &__section {
+    @include not-last {
+      margin-block-end: rem(30px);
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .tables__table
+
+  &__table {
+    // @include media-width-to(em($canvas)) {
+    //   margin-inline: -$padding;
+    //   padding-inline: $padding;
+    // }
+
+    // @include media-width-to(em($xx-small)) {
+    //   margin-inline: -$padding-sm;
+    //   padding-inline: $padding-sm;
+    // }
+
+    @include not-last {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .tables__text
+
+  &__text {
+    font-size: 1rem;
+    line-height: 1.875;
+    color: $clr-mine-shaft;
+
+    @include not-last-children {
+      margin-block-end: rem(10px);
+    }
+  }
+}

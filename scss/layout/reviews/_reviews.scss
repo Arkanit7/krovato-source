@@ -1,0 +1,123 @@
+@use "../../abstracts" as *;
+
+.filter-reviews {
+  // mask-image: linear-gradient(to left, transparent, $clr-alabaster rem(172px));
+  overflow: auto;
+  scrollbar-width: thin;
+
+  // .filter-reviews__list
+  &__list {
+    position: relative;
+    display: flex;
+    gap: rem(30px);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-inline: 0;
+      inset-block-end: 0;
+      z-index: -1;
+      border-block-end: rem(3px) solid $clr-white;
+    }
+  }
+
+  // .filter-reviews__item
+
+  &__item {
+  }
+
+  // .filter-reviews__button
+
+  &__button {
+    padding-block-end: rem(20px);
+    border-block-end: rem(3px) solid transparent;
+    white-space: nowrap;
+    color: $clr-mine-shaft;
+
+    @include response(color 0.3s) {
+      color: $clr-texas-rose;
+    }
+
+    // .filter-reviews__button--active
+
+    &--active {
+      border-color: currentcolor;
+      color: $clr-texas-rose;
+      cursor: auto;
+    }
+  }
+}
+
+.reviews {
+  // .reviews__header
+
+  &__header {
+    margin-block-end: rem(60px);
+
+    @include media-width-from(em($small)) {
+      margin-block-end: rem(40px);
+    }
+  }
+
+  // .reviews__title
+
+  &__title {
+    @include media-width-to(em($l-columns)) {
+      text-align: center;
+    }
+
+    @include not-last {
+      margin-block-end: rem(20px);
+    }
+  }
+
+  // .reviews__button
+
+  &__button {
+    inline-size: 100%;
+
+    @include media-width-from(em($small)) {
+      display: none;
+    }
+
+    @include not-last {
+      margin-block-end: rem(20px);
+    }
+  }
+
+  // .reviews__filter
+
+  &__filter {
+    margin-block-end: rem(40px);
+  }
+
+  // .reviews__body
+
+  &__body {
+    margin-block-end: rem(30px);
+  }
+
+  // .reviews__review
+
+  &__review {
+    @include media-width-to(em($xx-small)) {
+      margin-inline: -$padding-sm;
+      padding-inline: $padding-sm;
+      border-radius: unset;
+    }
+
+    @include not-last {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(30px);
+      }
+    }
+  }
+
+  // .reviews__navigation
+
+  &__navigation {
+    margin-block-end: rem(30px);
+  }
+}

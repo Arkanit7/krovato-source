@@ -1,0 +1,43 @@
+section.main__write.write
+  .write__container
+    .write__text-group
+      h2.write__title Напишіть нам!
+      .write__text
+        p Якщо у вас є побажання щодо якості обслуговування, пропозиції щодо партнерства, напишіть нам і наше керівництво зв`яжеться з вами!
+      p.write__important Або чекаємо на вас у гості!
+    form.write__form.form-write(
+      method="POST",
+      action="https://jkorpela.fi/cgi-bin/echo.cgi"
+    )
+      ul.form-write__list
+        li.form-write__item
+          input.form-write__field.field(
+            type="text",
+            required,
+            name="name",
+            placeholder="Ваше ім'я та прізвище"
+          )
+        li.form-write__item
+          input.form-write__field.field(
+            required,
+            type="email",
+            name="email",
+            placeholder="Імейл"
+          )
+        li.form-write__item
+          input.form-write__field.field(
+            type="tel",
+            name="tel",
+            required,
+            placeholder="Контактний телефон",
+            data-iti
+          )
+        li.form-write__item
+          textarea.form-write__area.field(
+            required,
+            name="message",
+            placeholder="Ваш коментар або питання"
+          )
+        li.form-write__item
+          button.form-write__button.button Відправити
+    +picture({class: "write__ibg", imgClass: "write__img", src: "img/contacts/write.jpg", alt: "Усміхнена дівчина із задоволенням прийме вашого листа."})

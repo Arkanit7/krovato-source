@@ -1,0 +1,374 @@
+@use "../abstracts" as *;
+
+.switch {
+  display: inline-flex;
+  gap: em(10px, 19px);
+  justify-content: center;
+  align-items: center;
+  padding-inline: em(20px, 19px);
+
+  // ==
+  padding-block: em(11px, 19px);
+  border-radius: em(8px, 19px);
+  font-weight: $fw-semi-bold;
+  font-size: rem(19px);
+  text-align: center; // for links
+  background-color: $clr-texas-rose;
+
+  // typography
+  color: $clr-white;
+  transition: background-color 0.3s;
+
+  @media (any-hover) {
+    &:hover {
+      background-color: $clr-mine-shaft;
+    }
+  }
+
+  &:focus-visible {
+    background-color: $clr-mine-shaft;
+  }
+
+  &__icons {
+    display: inline-grid;
+    grid-template-areas: "stack";
+    place-items: center;
+    inline-size: rem(24px);
+    block-size: rem(24px);
+    font-size: rem(20px);
+
+    > * {
+      grid-area: stack;
+      transition:
+        opacity 0.3s,
+        transform 0.3s;
+    }
+  }
+
+  &:not([aria-expanded="true"]) &__icons > :first-child {
+    opacity: 0;
+    transform: rotate(-180deg);
+  }
+
+  &[aria-expanded="true"] &__icons > :last-child {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+}
+
+.bullet {
+  display: inline-grid;
+  flex: none;
+  inline-size: rem(15px);
+  block-size: rem(15px);
+  padding: rem(3px);
+  border-radius: 50%;
+  background-color: $clr-white;
+  cursor: pointer;
+  pointer-events: all;
+
+  &--border {
+    border: rem(2px) solid $clr-silver-chalice;
+  }
+
+  &--active {
+    border-width: 0;
+  }
+
+  &::after {
+    content: "";
+    border-radius: inherit;
+    background-color: $clr-texas-rose;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  &:not(&--active)::after {
+    transform: scale(0);
+  }
+}
+
+.button-square {
+  display: inline-grid;
+  place-items: center;
+  min-inline-size: rem(50px);
+  block-size: rem(50px);
+  padding: rem(4px);
+  border: rem(1px) solid $clr-silver-chalice;
+  border-radius: 0.5rem;
+  background-color: $clr-white;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+
+  @include response {
+    background-color: $clr-mine-shaft;
+    color: $clr-white;
+  }
+
+  // .button-square--active
+
+  &--active {
+    background-color: $clr-texas-rose;
+  }
+
+  .icon {
+    font-size: rem(11px);
+  }
+}
+
+.button {
+  display: inline-flex;
+  gap: em(10px, 19px);
+  justify-content: center;
+  align-items: center;
+  padding-inline: em(20px, 19px);
+  padding-block: em(11px, 19px);
+  border-radius: em(8px, 19px);
+  font-weight: $fw-semi-bold;
+  font-size: rem(19px);
+  text-align: center; // for links
+  background-color: $clr-texas-rose;
+  color: $clr-white;
+  transition: background-color 0.3s;
+
+  @media (any-hover) {
+    &:hover {
+      background-color: $clr-mine-shaft;
+
+      svg,
+      img {
+        transform: rotate(1turn);
+      }
+    }
+  }
+
+  svg,
+  img {
+    flex: none;
+    transition: transform 0.5s;
+  }
+
+  &:focus-visible {
+    background-color: $clr-mine-shaft;
+
+    svg,
+    img {
+      transform: rotate(1turn);
+    }
+  }
+
+  // .button--skeleton
+
+  &--skeleton {
+    border: 2px solid;
+    background-color: transparent;
+    color: $clr-texas-rose;
+    transition:
+      color 0.3s,
+      border-color 0.3s;
+
+    @include response {
+      background-color: transparent;
+      color: $clr-mine-shaft;
+    }
+  }
+
+  // .button--wide
+
+  &--wide {
+    min-inline-size: rem(300px);
+  }
+
+  // .button--ghost
+
+  &--ghost {
+    background-color: transparent;
+    color: unset;
+
+    @include response {
+      color: $clr-white;
+    }
+  }
+
+  &--color {
+    // .button--color--emperor
+
+    &--emperor {
+      color: $clr-emperor;
+
+      @include response {
+        color: $clr-texas-rose;
+      }
+    }
+  }
+}
+
+.button-round {
+  display: grid;
+  place-items: center;
+  inline-size: rem(50px);
+  block-size: rem(50px);
+  border-radius: 50%;
+  font-size: rem(25px);
+  background-color: $clr-texas-rose;
+  color: $clr-white;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+
+  @include response {
+    background-color: $clr-emperor;
+    color: $clr-white;
+  }
+
+  // .button-round--plain
+
+  &--plain {
+    background-color: $clr-alabaster;
+    color: $clr-silver-chalice;
+  }
+}
+
+.button-slider {
+  display: grid;
+  place-items: center;
+  inline-size: rem(60px);
+  aspect-ratio: 1 /1;
+  border-radius: 50%;
+  font-size: rem(24px);
+  background-color: $clr-white;
+  color: $clr-texas-rose;
+  transform: rotate(-90deg);
+
+  @include response(background-color 0.3s) {
+    background-color: $clr-emperor;
+  }
+
+  // .button-slider--prev
+
+  &--prev {
+    transform: rotate(90deg);
+  }
+
+  // .button-slider--next
+
+  &--next {
+  }
+
+  &:disabled {
+    background-color: transparent;
+    color: unset;
+    cursor: auto;
+  }
+}
+
+.button-header {
+  display: inline-grid;
+  flex: none;
+  grid-template-areas: "stack";
+  place-items: center;
+  inline-size: rem(44px);
+  block-size: rem(44px);
+  border: rem(2px) solid $clr-texas-rose;
+  border-radius: 50%;
+  font-size: rem(20px);
+  transition:
+    color 0.3s,
+    background-color 0.3s,
+    border-color 0.3s;
+
+  @include media-width-from(em($xx-small)) {
+    inline-size: rem(50px);
+    block-size: rem(50px);
+    font-size: rem(26px);
+  }
+
+  @include media-width-from(em($x-small)) {
+  }
+
+  @include response {
+    border-color: $clr-mine-shaft;
+    background-color: $clr-mine-shaft;
+    color: $clr-white;
+  }
+
+  &__open,
+  &__close {
+    grid-area: stack;
+    transition:
+      opacity 0.3s,
+      transform 0.3s;
+  }
+
+  &[aria-expanded="true"] &__open {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+
+  &:not([aria-expanded="true"]) &__close {
+    opacity: 0;
+    transform: rotate(-180deg);
+  }
+}
+
+.social-button {
+  display: inline-grid;
+  place-items: center;
+  inline-size: rem(30px);
+  block-size: rem(30px);
+  border-radius: 50%;
+  color: $clr-white;
+
+  @include response(background-color 0.3s) {
+    background-color: $clr-california;
+  }
+
+  &--big\@menu {
+    @include media-width-to(em($bp-menu)) {
+      inline-size: rem(40px);
+      block-size: rem(40px);
+      font-size: rem(23px);
+    }
+  }
+
+  &--big {
+    inline-size: rem(40px);
+    block-size: rem(40px);
+    font-size: rem(23px);
+  }
+
+  &--bg {
+    // .icon-social--bg--sushi
+    &--sushi {
+      background-color: $clr-sushi;
+    }
+
+    // .icon-social--bg--picton-blue
+    &--picton-blue {
+      background-color: $clr-picton-blue;
+    }
+
+    // .icon-social--bg--royal-purple
+    &--royal-purple {
+      background-color: $clr-royal-purple;
+    }
+
+    // .icon-social--bg--punch
+    &--punch {
+      background-color: $clr-punch;
+    }
+
+    // .icon-social--bg--denim
+    &--denim {
+      background-color: $clr-denim;
+    }
+
+    // .icon-social--bg--purple-heart
+    &--purple-heart {
+      background-color: $clr-purple-heart;
+    }
+  }
+
+  &__icon {
+  }
+}

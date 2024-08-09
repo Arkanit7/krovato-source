@@ -1,0 +1,39 @@
+@use "../abstracts" as *;
+
+.four-grid {
+  // .four-grid__container
+
+  &__container {
+    @include not-last-children {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .four-grid__heading
+
+  &__heading {
+  }
+
+  // .four-grid__layout
+
+  &__layout {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(min(100%, rem(300px)), 1fr)
+    );
+    gap: rem(20px);
+
+    @include media-width-to(em($xx-small)) {
+      margin-inline: -$padding-sm;
+    }
+
+    @include media-width-from(em($x-small)) {
+      gap: rem(30px) rsv-clamp(rem(16px), rem(30px), em($x-small));
+    }
+  }
+}

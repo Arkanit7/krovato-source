@@ -1,0 +1,453 @@
+@use "../abstracts" as *;
+@use "sass:color";
+
+$bp-accordion: em(552px);
+$bp-one: em(630px);
+$bp-two: em(830px);
+$bp-three: em(1100px);
+
+.accordion-footer {
+  // .accordion-footer__panel
+
+  &__panel {
+    @include not-last {
+      margin-block-end: rem(5px);
+    }
+
+    @include media-width-from(em($bp-accordion)) {
+      // Set minimal width before wrap
+      flex: 15ch;
+
+      @include not-last-children {
+        margin-block-end: rem(10px);
+      }
+    }
+  }
+
+  // .accordion-footer__title
+
+  &__title {
+    font-weight: $fw-semi-bold;
+
+    // typography
+    font-size: rem(20px);
+    line-height: 1.4;
+
+    @include media-width-to(em($bp-accordion)) {
+      margin-inline: -$padding;
+    }
+
+    @include media-width-to(em($x-small)) {
+      margin-inline: -$padding-sm;
+    }
+  }
+
+  // .accordion-footer__trigger
+
+  &__trigger {
+    text-align: start;
+
+    @include media-width-to(em($bp-accordion)) {
+      display: flex;
+      gap: 1em;
+      justify-content: center;
+      inline-size: 100%;
+      padding-inline: $padding;
+      padding-block: rem(11px);
+      background-color: hsl(0deg 0% 10%);
+
+      @include response(color 0.3s) {
+        color: $clr-texas-rose;
+      }
+    }
+
+    @include media-width-to(em($x-small)) {
+      padding-inline: $padding-sm;
+    }
+
+    &:disabled {
+      cursor: auto;
+    }
+  }
+
+  // .accordion-footer__icon
+
+  &__icon {
+    @include media-width-to(em($bp-accordion)) {
+      flex: none;
+      align-self: center;
+      transition: transform 0.4s;
+    }
+
+    @include media-width-from(em($bp-accordion)) {
+      display: none;
+    }
+  }
+
+  &__trigger[aria-expanded="true"] &__icon {
+    transform: scale(1, -1);
+  }
+
+  // .accordion-footer__content
+
+  &__content {
+    @include media-width-to(em($bp-accordion)) {
+      display: grid;
+      grid-template-rows: 1fr;
+      transition:
+        grid-template-rows 0.4s ease-in-out,
+        visibility 0.4s ease-in-out;
+
+      &[hidden] {
+        grid-template-rows: 0fr;
+        visibility: hidden;
+      }
+
+      & > * {
+        // Necessary for the accordion to hide
+        overflow: hidden;
+      }
+    }
+  }
+
+  // .accordion-footer__body
+
+  &__body {
+    @include media-width-to(em($bp-accordion)) {
+      padding-block: rem(20px);
+    }
+  }
+
+  // .accordion-footer__list
+
+  &__list {
+  }
+
+  // .accordion-footer__item
+
+  &__item {
+    color: $clr-alabaster;
+
+    @include not-last {
+      margin-block-end: rem(20px);
+    }
+
+    @include media-width-from(em($bp-accordion)) {
+      @include not-last {
+        margin-block-end: rem(10px);
+      }
+    }
+  }
+
+  // .accordion-footer__link
+
+  &__link {
+    @extend %response;
+  }
+}
+
+.address-footer {
+  display: flex;
+  gap: rem(16px);
+
+  @include media-width-to(em($bp-one)) {
+    flex-direction: column;
+  }
+
+  @include media-width-from(em($x-small)) {
+    gap: rem(30px);
+  }
+
+  @include media-width-from(em($bp-three)) {
+    flex-direction: column;
+  }
+
+  // .address-footer__section
+  &__section {
+    @media (em($bp-one) <= width < em($bp-three)) {
+      flex: 1;
+    }
+
+    @include media-width-from(em($bp-accordion)) {
+      display: flex;
+      gap: rem(15px);
+    }
+  }
+
+  // .address-footer__decor
+
+  &__decor {
+    display: grid;
+    flex: none;
+    place-items: center;
+    inline-size: rem(50px);
+    block-size: rem(50px);
+    border: rem(2px) solid color.change($clr-silver-chalice, $alpha: 0.2);
+    border-radius: 50%;
+    font-size: rem(22px);
+
+    @include media-width-to(em($bp-two)) {
+      display: none;
+    }
+  }
+
+  // .address-footer__column
+
+  &__column {
+  }
+
+  // .address-footer__list
+
+  &__list {
+    @include not-last {
+      margin-block-end: rem(10px);
+    }
+  }
+
+  // .address-footer__item
+
+  &__item,
+  &__button {
+    font-weight: $fw-semi-bold;
+    font-size: rem(20px);
+    line-height: 1.4;
+
+    // max-inline-size: 15ch;
+
+    @include not-last {
+      margin-block-end: rem(6px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(10px);
+      }
+    }
+  }
+
+  // .address-footer__link
+
+  &__link {
+    @extend %response;
+  }
+
+  // .address-footer__button
+
+  &__button {
+    color: $clr-texas-rose;
+
+    @include response {
+      // color: $clr-dodger-blue;
+      text-decoration: underline;
+    }
+  }
+}
+
+.partners-social-footer {
+  @include flex-wrap(rem(20px));
+
+  @include media-width-to(em($bp-accordion)) {
+    justify-content: center;
+  }
+
+  // .partners-social-footer__item
+
+  &__item {
+    block-size: rem(30px);
+  }
+}
+
+.social-footer {
+  display: flex;
+  gap: rem(16px);
+
+  @include media-width-to(em($bp-one)) {
+    flex-direction: column;
+  }
+
+  @include media-width-from(em($x-small)) {
+    gap: rem(30px);
+  }
+
+  @include media-width-from(em($bp-two)) {
+    flex-direction: column;
+  }
+
+  // .social-footer__section
+
+  &__section {
+    @media (em($bp-one) <= width < em($bp-two)) {
+      flex: 1;
+    }
+  }
+
+  // .social-footer__title
+
+  &__title {
+    @include not-last {
+      margin-block-end: rem(6px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(10px);
+      }
+    }
+  }
+
+  // .social-footer__list
+
+  &__list {
+    @include flex-wrap(rem(15px));
+
+    @include media-width-to(em($bp-accordion)) {
+      justify-content: center;
+    }
+
+    @include not-last {
+      margin-block-end: rem(6px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(10px);
+      }
+    }
+  }
+
+  // .social-footer__item
+
+  &__item {
+  }
+
+  // .social-footer__partners
+  &__partners {
+  }
+}
+
+.main-footer {
+  @include media-width-to(em($bp-accordion)) {
+    text-align: center;
+  }
+
+  // .main-footer__container
+
+  &__container {
+    display: grid;
+    grid-template-areas: "logo" "accordion" "address" "social";
+    gap: rem(20px);
+    padding-block: rem(32px 24px);
+
+    @include media-width-from(em($x-small)) {
+      gap: rem(40px) rsv-clamp(rem(30px), rem(83px), 1130px);
+      padding-block: rem(40px);
+    }
+
+    @include media-width-to(em($bp-accordion)) {
+      justify-items: center;
+    }
+
+    @include media-width-from(em($bp-accordion)) {
+      // grid-template-columns: minmax(0, rem(250px)) minmax(0, rem(240px));
+      grid-template:
+        "logo address" "social address" "accordion accordion" /
+        1fr
+        1fr;
+
+      // justify-content: center;
+    }
+
+    @include media-width-from(em($bp-one)) {
+      grid-template: "logo" "accordion" "address" "social";
+    }
+
+    @include media-width-from(em($bp-two)) {
+      grid-template:
+        "logo accordion" "social accordion" "address address" / rem(250px)
+        1fr;
+    }
+
+    @include media-width-from(em($bp-three)) {
+      // grid-template-rows: rem(50px);
+      // grid-template-columns: minmax(0, rem(250px)) 1fr minmax(0, rem(240px));
+      // grid-template-areas: "logo accordion address" "social accordion address";
+      grid-template:
+        "logo accordion address" rem(50px) "social accordion address" /
+        rem(250px)
+        1fr rem(250px);
+    }
+  }
+
+  // .main-footer__logo
+
+  &__logo {
+    grid-area: logo;
+
+    img,
+    svg {
+      object-fit: contain;
+      inline-size: rem(250px);
+      block-size: rem(50px);
+    }
+  }
+
+  // .main-footer__accordion
+
+  &__accordion {
+    grid-area: accordion;
+
+    @include media-width-to(em($bp-accordion)) {
+      justify-self: stretch;
+    }
+
+    @include media-width-from(em($bp-accordion)) {
+      display: flex;
+      gap: rem(30px 20px);
+    }
+
+    @include media-width-to(em(1130px)) {
+      flex-wrap: wrap;
+    }
+  }
+
+  // .main-footer__address
+
+  &__address {
+    grid-area: address;
+
+    @include media-width-to(em($bp-accordion)) {
+      max-inline-size: rem(180px);
+    }
+  }
+
+  // .main-footer__social
+
+  &__social {
+    grid-area: social;
+  }
+}
+
+.copyrights-footer {
+  // .copyrights-footer__container
+
+  &__container {
+    // padding-block: rsv-clamp(rem(10px), rem(20px));
+    padding-block: rem(16px);
+
+    @include media-width-from(em($x-small)) {
+      padding-block: rem(20px);
+    }
+  }
+
+  // .copyrights-footer__paragraph
+
+  &__paragraph {
+    font-size: rem(15px);
+    line-height: 1.4667;
+    text-align: center;
+    color: $clr-silver-chalice;
+  }
+}
+
+:where(.copyrights-footer, .main-footer):not(:last-child) {
+  border-block-end: rem(2px) solid hsl(0deg 0% 24%);
+}
+
+.footer {
+  background-color: $clr-mine-shaft;
+  color: $clr-white;
+}

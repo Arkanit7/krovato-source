@@ -1,0 +1,46 @@
+extends templates/_layout
+
+block prepend document
+  - const title = "Відгуки — Krovato";
+
+block main
+  +breadcrumbs([{ name: "Головна", href: "/" }], "Відгуки")
+
+  section.main__l-columns.l-columns
+    .l-columns__container
+      .l-columns__col-big
+        //- Reviews
+        include ./includes/reviews/_reviews.pug
+      .l-columns__col-small
+        //- Aside
+        .l-aside-reviews
+          //- Shop
+          .l-aside-reviews__shop.shop
+            .shop__sticker
+              img(src="img/icons/coach.svg", alt="")
+            .shop__read
+              h3.shop__title Магазин меблів для дому «KROVATO»
+              // Rating
+              .shop__rating.rating
+                .rating__show
+                  .rating__value 4.0
+                  // Stars
+                  .rating__stars.stars
+                    .stars__item
+                      svg.icon
+                        use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+                    .stars__item
+                      svg.icon
+                        use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+                    .stars__item
+                      svg.icon
+                        use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+                    .stars__item.stars__item--active
+                      svg.icon
+                        use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+                    .stars__item
+                      svg.icon
+                        use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+                p.rating__stats Базовано на відгуках: 269
+          //- Form
+          include includes/reviews/_form-reviews.pug

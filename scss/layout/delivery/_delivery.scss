@@ -1,0 +1,201 @@
+@use "../../abstracts" as *;
+
+.frame-delivery {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  gap: rem(10px);
+  place-content: center;
+  inline-size: (250px);
+  aspect-ratio: 1;
+  padding-inline: rem(25px);
+  border-radius: 50%;
+  font-weight: $fw-semi-bold;
+  font-size: 1rem;
+  line-height: divide(18px, 16px);
+  text-align: center;
+  background-color: $clr-texas-rose;
+  color: $clr-white;
+
+  @include media-width-from(em($medium)) {
+    gap: rem(20px);
+    inline-size: rem(420px);
+    font-size: rem(26px);
+    line-height: divide(34px, 26px);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    z-index: -1;
+    inline-size: 98%;
+    aspect-ratio: 1 / 1;
+    border: rem(3px) solid;
+    border-radius: inherit;
+  }
+
+  &__small {
+    font-size: rem(14px);
+    line-height: divide(18px, 14px);
+
+    @include media-width-from(em($medium)) {
+      font-size: rem(20px);
+      line-height: 1.4;
+    }
+  }
+}
+
+.display-delivery {
+  display: grid;
+  grid-template-areas: "stack";
+
+  // .display-delivery__picture
+
+  &__picture {
+    grid-area: stack;
+
+    img {
+      inline-size: 100%;
+    }
+  }
+
+  // .display-delivery__frame
+
+  &__frame {
+    grid-area: stack;
+    align-self: end;
+  }
+}
+
+.stack-delivery {
+  @include not-last-children {
+    margin-block-end: rem(40px);
+  }
+
+  // .stack-delivery__title
+
+  &__title {
+    @include media-width-to(em($large)) {
+      text-align: center;
+    }
+  }
+
+  // .stack-delivery__list
+
+  &__list {
+    @include not-last-children {
+      margin-block-end: rem(30px);
+    }
+  }
+
+  // .stack-delivery__item
+
+  &__item {
+    display: flex;
+    gap: rem(20px);
+    align-items: center;
+    font-weight: $fw-semi-bold;
+    font-size: rem(16px);
+    line-height: 1.4;
+    color: $clr-mine-shaft;
+
+    @include media-width-from(em($x-small)) {
+      font-size: rem(20px);
+    }
+
+    &::before {
+      content: "";
+      flex: none;
+      inline-size: rem(50px);
+      block-size: rem(50px);
+      background: url("../img/delivery/item.svg") center / contain;
+
+      @include media-width-from(em($x-small)) {
+        inline-size: rem(70px);
+        block-size: rem(70px);
+      }
+    }
+  }
+
+  // .stack-delivery__group
+
+  &__group {
+    font-weight: $fw-semi-bold;
+    font-size: rem(16px);
+    line-height: 1.4;
+    color: $clr-mine-shaft;
+
+    @include media-width-from(em($x-small)) {
+      font-size: rem(20px);
+    }
+
+    @include not-last-children {
+      margin-block-end: rem(10px);
+    }
+  }
+}
+
+.delivery {
+  &--fancy {
+    padding-block: rem(40px);
+    background-color: $clr-white;
+
+    @include media-width-from(em($x-small)) {
+      padding-block: rem(60px);
+    }
+
+    @include media-width-from(em($large)) {
+      padding-block: rem(70px);
+    }
+  }
+
+  // .delivery__container
+
+  &__container {
+    @include not-last-children {
+      margin-block-end: rem(30px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(40px);
+      }
+
+      @include media-width-from(em($large)) {
+        margin-block-end: rem(70px);
+      }
+    }
+  }
+
+  // .delivery__body
+
+  &__body {
+    display: flex;
+    gap: rem(40px 30px);
+    align-items: start;
+
+    @include media-width-to(em($large)) {
+      flex-wrap: wrap;
+    }
+  }
+
+  // .delivery__stack
+
+  &__stack {
+    flex: rem(520px);
+  }
+
+  // .delivery__display
+
+  &__display {
+    flex: 1 2 rem(740px);
+  }
+
+  // .delivery__group
+
+  &__group {
+    font-size: rem(16px);
+    line-height: divide(30px, 16px);
+    color: $clr-mine-shaft;
+  }
+}

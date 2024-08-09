@@ -1,0 +1,26 @@
+@use "../abstracts" as *;
+
+.round-frame {
+  inline-size: rem(100px);
+  aspect-ratio: 1;
+  padding-inline: rem(10px);
+  padding-block: rem(23px);
+  border-radius: 50%;
+  background-color: $clr-texas-rose;
+
+  &--size {
+    &--sm {
+      inline-size: rem(70px);
+      padding-inline: rem(7px);
+      padding-block: rem(16px);
+    }
+  }
+
+  // .round-frame__img
+
+  &__img {
+    object-fit: contain;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+}

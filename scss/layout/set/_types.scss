@@ -1,0 +1,167 @@
+@use "../../abstracts" as *;
+
+.card-type {
+  @extend %card;
+
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(rem(48px), 1fr) rem(105px);
+  gap: rem(5px);
+  overflow: hidden;
+  padding-inline: rem(5px);
+  padding-block: rem(20px) rem(5px);
+  color: $clr-mine-shaft;
+
+  @include hover {
+    &::before {
+      inline-size: 100%;
+    }
+  }
+
+  @include response(color 0.3s) {
+    color: $clr-texas-rose;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 50%;
+    inline-size: rem(20px);
+    block-size: rem(5px);
+    border-radius: rem(2.5px);
+    background-color: $clr-texas-rose;
+    transition: inline-size 0.3s;
+    transform: translateX(-50%);
+  }
+
+  // .card-type__title
+
+  &__title {
+    align-self: center;
+    text-align: center;
+  }
+
+  // .card-type__picture
+
+  &__picture {
+    img {
+      object-fit: contain;
+      object-position: bottom;
+      inline-size: 100%;
+      block-size: 100%;
+    }
+  }
+
+  &:focus-visible::before {
+    inline-size: 100%;
+  }
+}
+
+.types {
+  // .types__container
+
+  &__container {
+    @include not-last-children {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .types__heading
+
+  &__heading {
+  }
+
+  // .types__body
+
+  &__body {
+    position: relative;
+    display: grid;
+    gap: rem(20px);
+
+    &::after {
+      position: absolute;
+      inset-inline: 0;
+      inset-block-end: 0;
+      z-index: 1;
+      block-size: rem(150px);
+      background-image: linear-gradient(
+        rgb(248 248 248 / 0%) 0%,
+        rgb(248 248 248 / 80%) 33.85%,
+        hsl(0deg 0% 97%) 72.4%
+      );
+    }
+
+    &:not([data-show="true"]) {
+      &::after {
+        content: "";
+      }
+    }
+  }
+
+  // .types__list
+
+  &__list {
+    @include grid-auto-fill(5, rem(10px));
+  }
+
+  &__body:not([data-show="true"]) &__list {
+    overflow: hidden;
+    block-size: rem(180px);
+  }
+
+  // .types__item
+
+  &__item {
+  }
+
+  // .types__link
+
+  &__link {
+    block-size: 100%;
+  }
+
+  // .types__button
+
+  &__button {
+    z-index: 2;
+    display: inline-flex;
+    gap: rem(18px);
+    align-items: center;
+    justify-self: center;
+    font-weight: $fw-semi-bold;
+    font-size: rem(19px);
+    line-height: divide(24px, 19px);
+    color: $clr-texas-rose;
+
+    @include response(color 0.3s) {
+      color: $clr-mine-shaft;
+    }
+
+    span:last-of-type {
+      display: none;
+    }
+
+    .icon {
+      font-size: rem(11px);
+      transition: transform 0.3s;
+    }
+  }
+
+  &__body[data-show="true"] &__button {
+    span:first-of-type {
+      display: none;
+    }
+
+    span:last-of-type {
+      display: block;
+    }
+
+    .icon {
+      transform: rotate(0.5turn);
+    }
+  }
+}

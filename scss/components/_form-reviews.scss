@@ -1,0 +1,97 @@
+@use "../abstracts" as *;
+
+.rate {
+  @include not-last-children {
+    margin-block-end: rem(10px);
+  }
+
+  // .rate__label
+
+  &__label {
+    text-align: center;
+  }
+
+  // .rate__list
+
+  &__list {
+    display: flex;
+    gap: rem(7px);
+    justify-content: center;
+  }
+
+  // .rate__item
+
+  &__item {
+    flex: none;
+  }
+
+  // .rate__input
+
+  &__input {
+    appearance: none;
+    inline-size: rem(34px);
+    block-size: rem(34px);
+    background: url("../img/icons/star-empty.svg") center / contain no-repeat;
+    cursor: pointer;
+  }
+
+  &__input:checked,
+  &__item:has(~ &__item &__input:checked) &__input {
+    background: url("../img/icons/star.svg") center / contain no-repeat;
+  }
+}
+
+.form-reviews {
+  padding: rem(30px);
+  border-radius: 0.5rem;
+  background: $clr-white;
+
+  @include not-last-children {
+    margin-block-end: rem(30px);
+  }
+
+  // .form-reviews__title
+
+  &__title {
+    text-align: center;
+    color: $clr-mine-shaft;
+  }
+
+  // .form-reviews__list
+
+  &__list {
+  }
+
+  // .form-reviews__item
+
+  &__item {
+    @include not-last {
+      margin-block-end: rem(20px);
+    }
+  }
+
+  // .form-reviews__field
+
+  &__field {
+    inline-size: 100%;
+  }
+
+  // .form-reviews__textarea
+
+  &__textarea {
+    inline-size: 100%;
+    min-block-size: 150px;
+    max-block-size: 300px;
+  }
+
+  // .form-reviews__rate
+
+  &__rate {
+  }
+
+  // .form-reviews__button
+
+  &__button {
+    inline-size: 100%;
+  }
+}

@@ -1,0 +1,139 @@
+//- Include picture tag with webp and avif additions
+mixin picture(object)
+  -
+    const srcNoExt = object.src.slice(0, object.src.lastIndexOf("."));
+  picture(class=object.class, data-prllx-mouse=object.data)
+    source(srcset=`${srcNoExt}.avif`, type="image/avif")
+    source(srcset=`${srcNoExt}.webp`, type="image/webp")
+    img(
+      class=object.imgClass,
+      src=object.src,
+      alt=object.alt,
+      width=object.width,
+      height=object.height
+    )
+
+//- Get an icon from SVG sprite
+mixin svg(name)
+  svg.icon
+    use(xlink:href=`img/icons/symbol-defs.svg#icon-${name}`)
+
+//- Include escaped string literal
+mixin escapeString(string)
+  = string
+
+//- Include javascript code
+mixin code-js(markup)
+  code.language-javascript= markup
+
+mixin itemCategories(description)
+  - description.href = description.href ?? "/set.html";
+  article.item-categories
+    a.item-categories__link(href=description.href)
+      .item-categories__header
+        h3.item-categories__title= description.title
+        .item-categories__number= description.number
+      +picture({class: "item-categories__picture", alt: description.alt, src: description.src})
+      .item-categories__arrow
+        svg.icon
+          use(xlink:href="img/icons/symbol-defs.svg#icon-arrow-side")
+
+mixin itemProduct(description)
+  -
+    description.href = description.href ?? "/product.html"
+    const availability = {
+      "available": {text: "В наявності", icon : "available", color: "acapulco"},
+      "awaiting": {text: "Очікується", icon : "x-round", color: "cinnabar"},
+      "ending": {text: "Закінчується", icon : "info", color: "texas-rose"},
+    }
+  article.item-product
+    h3.item-product__title
+      a.item-product__link(href=description.href)= description.title
+    p.item-product__sizes= description.sizes
+    p.item-product__availability
+      svg(
+        class=`item-product__icon item-product__icon--color--${availability[description.availability].color} icon`
+      )
+        use(
+          xlink:href=`img/icons/symbol-defs.svg#icon-${availability[description.availability].icon}`
+        )
+      |
+      | #{ availability[description.availability].text }
+    a.item-product__frame(href=description.href)
+      +picture({class: "item-product__picture", alt: description.alt, src: description.src})
+    // Footer
+    .item-product__footer.footer-item-product
+      .footer-item-product__prices
+        s.footer-item-product__old-price= description.oldPrice
+        p.footer-item-product__price= description.price
+      .footer-item-product__actions
+        button.footer-item-product__button.button-round.button-round--plain(
+          type="button",
+          title="Додати до улюбленого"
+        )
+          svg.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-heart")
+        button.footer-item-product__button.button-round(
+          type="button",
+          title="Додати в кошик"
+        )
+          svg.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-cart")
+
+mixin itemCart(description)
+  -
+    description.href = description.href ?? "#"
+    const availability = {
+      "available": {text: "В наявності", icon : "available", color: "acapulco"},
+      "awaiting": {text: "Очікується", icon : "x-round", color: "cinnabar"},
+      "ending": {text: "Закінчується", icon : "info", color: "texas-rose"},
+    }
+  article.item-cart
+    .item-cart__description
+      h2.item-cart__title
+        a.item-cart__link(href=description.href)= description.title
+      p.item-cart__sizes= description.sizes
+      p.item-cart__availability
+        svg(
+          class=`item-cart__icon item-cart__icon--color--${availability[description.availability].color} icon`
+        )
+          use(
+            xlink:href=`img/icons/symbol-defs.svg#icon-${availability[description.availability].icon}`
+          )
+        |
+        | #{ availability[description.availability].text }
+    a.item-cart__frame(href=description.href)
+      +picture({class: "item-cart__picture", alt: description.alt, src: description.src})
+    .item-cart__prices
+      p.item-cart__price= description.price
+      s.item-cart__old-price= description.oldPrice
+    .item-cart__calc.calc
+      button.calc__decrease(type="button") -
+      input.calc__quantity(type="number", value="1", min="1")
+      button.calc__increase(type="button") +
+    button.item-cart__close.close-cart(type="button")
+      span.close-cart__inner
+        svg.close-cart__icon.icon
+          use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+
+mixin itemBlog(description)
+  -
+    description.href = description.href ?? "/article.html"
+
+  article(class=`${description.class} item-blog`)
+    .item-blog__main
+      h3.item-blog__title= description.title
+      a.item-blog__link.link(href=description.href) Детальніше
+        svg.link__icon.icon
+          use(xlink:href="img/icons/symbol-defs.svg#icon-arrow-side")
+    a.item-blog__frame(href=description.href)
+      +picture({class: "item-blog__picture", alt: description.alt, src: description.src})
+
+mixin breadcrumbs(crumbs, crust)
+  nav.main__breadcrumbs.breadcrumbs
+    .breadcrumbs__container
+      ol.breadcrumbs__list
+        each crumb in crumbs
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href=crumb.href)= crumb.name
+        li.breadcrumbs__item(aria-current="page")= crust

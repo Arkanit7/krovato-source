@@ -1,0 +1,163 @@
+@use "../../abstracts" as *;
+
+.location {
+  @include media-width-from(em($small)) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__picture,
+  &__map {
+    aspect-ratio: 1 / 1;
+  }
+
+  // .location__picture
+
+  &__picture {
+    img {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .location__map
+
+  &__map {
+    iframe {
+      inline-size: 100%;
+      block-size: 100%;
+    }
+  }
+}
+
+.social-address {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: rem(10px);
+
+  // .social-address__item
+
+  &__item {
+  }
+}
+
+.address {
+  display: flex;
+  gap: rem(15px);
+
+  // .address__decor
+
+  &__decor {
+    flex: none;
+    background-color: $clr-texas-rose;
+    inline-size: rem(50px);
+    block-size: rem(50px);
+    border-radius: 50%;
+    display: inline-grid;
+    place-items: center;
+    color: $clr-white;
+    font-size: rem(22px);
+  }
+
+  // .address__icon
+
+  &__icon {
+  }
+
+  // .address__main
+
+  &__main {
+  }
+
+  // .address__title
+
+  &__title {
+    color: $clr-silver-chalice;
+
+    @include not-last {
+      margin-block-end: rem(5px);
+    }
+  }
+
+  // .address__list
+
+  &__list {
+    @include not-last {
+      margin-block-end: rem(20px);
+    }
+  }
+
+  // .address__item
+
+  &__item {
+    color: $clr-mine-shaft;
+    font-size: rem(20px);
+    font-weight: $fw-semi-bold;
+    line-height: 1.4;
+  }
+
+  // .address__link
+
+  &__link {
+    @extend %response;
+  }
+
+  // .address__social
+
+  &__social {
+    @include not-last {
+      margin-block-end: rem(5px);
+    }
+  }
+}
+
+.contacts {
+  // .contacts__container
+
+  &__container {
+  }
+
+  // .contacts__heading
+
+  &__heading {
+    @include not-last {
+      margin-block-end: rem(30px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .contacts__addresses
+
+  &__addresses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(30px 50px);
+
+    @include not-last {
+      margin-block-end: rem(40px);
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(70px);
+      }
+    }
+  }
+
+  // .contacts__address
+
+  &__address {
+    flex: 0 rem(285px);
+  }
+
+  // .contacts__location
+
+  &__location {
+    @include not-last {
+      margin-block-end: rem(40px);
+    }
+  }
+}

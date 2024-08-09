@@ -1,0 +1,53 @@
+@use "../abstracts" as *;
+
+.calc {
+  display: grid;
+  grid-template-columns: rem(34px) minmax(2ch, 1fr) rem(34px);
+  block-size: rem(50px);
+  border: 1px solid $clr-silver-chalice;
+  border-radius: rem(8px);
+
+  // align-items: center;
+
+  // typography
+  font-size: rem(20px);
+  line-height: 1.4;
+  background: $clr-alabaster;
+
+  @include media-width-from(em($x-small)) {
+    grid-template-columns: rem(45px) minmax(2ch, 1fr) rem(45px);
+  }
+
+  // .calc__decrease
+  &__decrease {
+    padding-inline: rem(20px 4px);
+    border-start-start-radius: inherit;
+    border-end-start-radius: inherit;
+  }
+
+  // .calc__quantity
+
+  &__quantity {
+    // inline-size: 2ch;
+    font-weight: $fw-semi-bold;
+    text-align: center;
+    color: $clr-mine-shaft;
+  }
+
+  // .calc__increase
+
+  &__increase {
+    padding-inline: rem(4px 20px);
+    border-start-end-radius: inherit;
+    border-end-end-radius: inherit;
+  }
+
+  &__decrease,
+  &__increase {
+    font-weight: $fw-semi-bold;
+
+    @include response(background-color 0.3s) {
+      background-color: $clr-texas-rose;
+    }
+  }
+}

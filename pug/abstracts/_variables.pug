@@ -1,0 +1,156 @@
+-
+  function em(string) {
+    return parseFloat(string) / 16 + 'em'
+  }
+
+  // Bootstrap BP
+  const xxSmall = em('375px');
+  const xSmall = em('480px');
+  const small = em('576px');
+  const medium = em('768px');
+  const large = em('992px');
+  const xLarge = em('1200px');
+  const xxLarge = em('1400px');
+
+  // Custom BP
+  const bpAccordion = em('552px')
+  const bpMenu = em('992px')
+  const bpHero = em('576px')
+
+  const categories = [
+    {
+      title: 'Ліжка',
+      number: 54,
+      src: 'img/home/categories/beds.png',
+      alt: 'Королівське зелене ліжко',
+    },
+    {
+      title: 'Матраци',
+      number: 30,
+      src: 'img/home/categories/mattresses.png',
+      alt: 'Білий компактний матрац',
+    },
+    {
+      title: "М'які меблі",
+      number: 196,
+      src: 'img/home/categories/upholstered-furniture.png',
+      alt: 'Сірий круглий диван',
+    },
+    {
+      title: 'Шафи',
+      number: 79,
+      src: 'img/home/categories/wardrobes.png',
+      alt: 'Простора шафа',
+    },
+    {
+      title: 'Комоди',
+      number: 54,
+      src: 'img/home/categories/chests-of-drawers.png',
+      alt: 'Темний комод',
+    },
+    {
+      title: 'Тумби',
+      number: 64,
+      src: 'img/home/categories/bedside-tables.png',
+      alt: 'Коричнева мінімалістична тумба',
+    },
+    {
+      title: 'Столи',
+      number: 35,
+      src: 'img/home/categories/tables.png',
+      alt: "Дерев'яний стіл",
+    },
+    {
+      title: 'Стільці',
+      number: 89,
+      src: 'img/home/categories/chairs.png',
+      alt: 'Мінімалістичний темний стілець',
+    },
+    {
+      title: 'Меблеві стіни',
+      number: 24,
+      src: 'img/home/categories/furniture-walls.png',
+      alt: 'Коричнево-біла меблева стіна',
+    },
+    {
+      title: 'Кухні',
+      number: 30,
+      src: 'img/home/categories/kitchens.png',
+      alt: 'Вбудована кухня',
+    },
+  ]
+
+  const products = [
+    {
+      src: 'img/products/sparta.jpg',
+      alt: "Білосніжне ліжко з дерев'яним скелетом Sparta",
+      sizes: 'Розмір: 61 x 184 x 2130 мм',
+      title: 'Ліжко Спарта / Sparta з підйомним механізмом',
+      availability: 'awaiting',
+      oldPrice: '25 400 грн.',
+      price: '15 400 грн.',
+    },
+    {
+      src: 'img/products/argon.jpg',
+      alt: 'Біле мінімалістичне ліжко Аргон',
+      sizes: 'Розмір: 61 x 184 x 2130 мм',
+      title: 'Ліжко Аргон з підйомним механізмом',
+      availability: 'available',
+      oldPrice: '25 400 грн.',
+      price: '15 400 грн.',
+    },
+    {
+      src: 'img/products/prestige.jpg',
+      alt: 'Синє ліжко Престиж з білим матрацом',
+      sizes: 'Розмір: 61 x 184 x 2130 мм',
+      title: 'Ліжко Престиж з підйомним механізмом',
+      availability: 'awaiting',
+      oldPrice: '25 400 грн.',
+      price: '15 400 грн.',
+    },
+    {
+      src: 'img/products/tokio.jpg',
+      alt: 'Охайний диван з тематичними подушками Токіо-2',
+      sizes: 'Розмір: 61 x 184 x 2130 мм',
+      title: 'Диван Токіо-2',
+      availability: 'awaiting',
+      oldPrice: '25 400 грн.',
+      price: '15 400 грн.',
+    },
+    {
+      src: 'img/products/largo-slim.jpg',
+      alt: 'Білий матрац Ларго Слім',
+      sizes: 'Розмір: 61 x 184 x 2130 мм',
+      title: 'Матрац Largo SLIM / Ларго Слім',
+      availability: 'available',
+      oldPrice: '25 400 грн.',
+      price: '15 400 грн.',
+    },
+    {
+      src: 'img/products/argentum-amaltea.jpg',
+      alt: 'Білий матрац Аргентум Амалті',
+      sizes: 'Розмір: 61 x 184 x 2130 мм',
+      title: 'Матрац ARGENTUM AMALTEA / Аргентум Амалті',
+      availability: 'available',
+      oldPrice: '25 400 грн.',
+      price: '15 400 грн.',
+    },
+    {
+      src: 'img/products/bravo.jpg',
+      alt: 'Сірий диван Браво',
+      sizes: 'Розмір: 61 x 184 x 2130 мм',
+      title: 'Диван Браво',
+      availability: 'ending',
+      oldPrice: '25 400 грн.',
+      price: '15 400 грн.',
+    },
+    {
+      src: 'img/products/mk-5.jpg',
+      alt: 'Сіре ліжко МК-5',
+      sizes: 'Розмір: 61 x 184 x 2130 мм',
+      title: 'Ліжко МК-5',
+      availability: 'ending',
+      oldPrice: '25 400 грн.',
+      price: '15 400 грн.',
+    },
+  ]

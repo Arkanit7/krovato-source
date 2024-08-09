@@ -1,0 +1,390 @@
+@use "../abstracts" as *;
+
+/* Main */
+.main {
+  padding-block-start: rem(25px);
+
+  @include media-width-from(em($medium)) {
+    padding-block-start: rem(10px);
+  }
+
+  // .main__l-columns
+
+  &__l-columns {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__tables
+
+  &__tables {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__promo-delivery
+
+  &__promo-delivery {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__delivery
+
+  &__delivery {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__stack-block
+
+  &__stack-block {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__features
+
+  &__features {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(50px);
+    }
+  }
+
+  // .main__product
+
+  &__product {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(50px);
+    }
+  }
+
+  // .main__faq
+
+  &__faq {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__checkout
+
+  &__checkout {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__blog
+
+  &__blog {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__filter
+
+  &__filter {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__plain-block
+
+  &__plain-block {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__group-block
+
+  &__group-block {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__fade-block
+
+  &__fade-block {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__types
+
+  &__types {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  &--padding {
+    padding-block-start: rem(40px);
+
+    @include media-width-from(em($medium)) {
+      padding-block-start: rem(30px);
+    }
+  }
+
+  // .main__hero
+
+  &__hero:not(:last-child) {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__breadcrumbs
+
+  &__breadcrumbs:not(:last-child) {
+    margin-block-end: rem(20px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(40px);
+    }
+  }
+
+  // .main__categories
+
+  &__categories:not(:last-child) {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__four-grid
+
+  &__four-grid:not(:last-child) {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(80px);
+    }
+  }
+
+  // .main__promo
+
+  &__promo:not(:last-child) {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__recent-reviews
+
+  &__recent-reviews:not(:last-child) {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__news
+
+  &__news:not(:last-child) {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__information
+
+  &__information:not(:last-child) {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__article
+
+  &__article:not(:last-child) {
+    margin-block-end: rem(40px);
+  }
+
+  // .main__nav-article
+
+  &__nav-article:not(:last-child) {
+    margin-block-end: rem(60px);
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__contacts
+
+  &__contacts:not(:last-child) {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__reach
+
+  &__reach:not(:last-child) {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+
+  // .main__write
+
+  &__write:not(:last-child) {
+    margin-block-end: rem(40px);
+
+    @include media-width-from(em($x-small)) {
+      margin-block-end: rem(60px);
+    }
+
+    @include media-width-from(em($medium)) {
+      margin-block-end: rem(70px);
+    }
+  }
+}

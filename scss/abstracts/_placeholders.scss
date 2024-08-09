@@ -1,0 +1,54 @@
+@use "variables" as *;
+@use "functions" as *;
+@use "mixins" as *;
+
+// ie9+
+%visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  block-size: rem(1px);
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  inline-size: rem(1px);
+}
+
+%response {
+  @include response(color 0.3s) {
+    color: $clr-texas-rose;
+  }
+}
+
+%underlay {
+  border-radius: rem(8px);
+  background-color: $clr-white;
+  box-shadow: rem(0px 0px 15px) hsl(0deg 0% 0% / 12%);
+}
+
+%card {
+  border-radius: rem(8px);
+  background-color: $clr-white;
+  box-shadow: rem(-3px 4px 15px) hsl(0deg 0% 0% / 6%);
+}
+
+%scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: $clr-texas-rose hsl(0deg 0% 89%);
+
+  // &::-webkit-scrollbar {
+  //   inline-size: rem(5px);
+  // }
+
+  // &::-webkit-scrollbar-track {
+  //   background-color: $clr-silver-chalice;
+  // }
+
+  // &::-webkit-scrollbar-thumb {
+  //   background-image: repeating-linear-gradient(
+  //     135deg,
+  //     $clr-texas-rose 0 30px,
+  //     $clr-california 30px 60px
+  //   );
+  //   border-radius: rem(2.5px);
+  // }
+}

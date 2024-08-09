@@ -1,0 +1,332 @@
+@use "../abstracts" as *;
+
+$item-hover: 0.3s;
+$expand-accordion: 0.5s;
+$border-radius: 0.5rem;
+
+.submenu-catalog {
+  @include media-width-to(em($bp-catalog)) {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition:
+      grid-template-rows 0.4s ease-in-out,
+      visibility 0.4s ease-in-out;
+  }
+
+  &:not(&--active) {
+    @include media-width-to(em($bp-catalog)) {
+      grid-template-rows: 0fr;
+      visibility: hidden;
+    }
+  }
+
+  // .submenu-catalog__gasket
+
+  &__gasket {
+    // Necessary for the accordion to hide
+    overflow: hidden;
+
+    @include media-width-from(em($bp-catalog)) {
+      block-size: 100%;
+      padding-block: rem(8px);
+      border-radius: 0.5rem;
+      background-color: $clr-white;
+    }
+  }
+
+  // .submenu-catalog__content
+
+  &__content {
+    @extend %scrollbar;
+
+    @include media-width-to(em($bp-catalog)) {
+      padding-block: rem(15px);
+      background-color: $clr-alabaster;
+    }
+
+    @include media-width-to(em($x-small)) {
+      padding-block: rem(8px);
+    }
+
+    @include media-width-from(em($bp-catalog)) {
+      overflow: auto;
+      block-size: 100%;
+      padding-inline-start: 2 * $border-radius;
+    }
+  }
+
+  // .submenu-catalog__list
+
+  &__list {
+  }
+
+  // .submenu-catalog__item
+
+  &__item {
+    font-size: rem(19px);
+    color: $clr-mine-shaft;
+
+    // line-height: 50px; /* 263.158% */
+  }
+
+  // .submenu-catalog__link
+
+  &__link {
+    display: block;
+    padding-inline: rem($padding-sm);
+    padding-block: rem(10px);
+
+    @include media-width-from(em($x-small)) {
+      padding-inline: rem($padding);
+      padding-block: rem(17px);
+    }
+
+    @include media-width-from(em($bp-catalog)) {
+      padding-inline: rem(30px);
+    }
+
+    @include response(background-color 0.3s) {
+      background-color: $clr-texas-rose;
+    }
+  }
+}
+
+.button-menu-catalog {
+  padding-inline: rem(15px $padding-sm);
+
+  @include media-width-from($x-small) {
+    padding-inline-end: $padding;
+  }
+
+  // .button-menu-catalog__wrapper
+
+  &__wrapper {
+    display: grid;
+    place-items: center;
+    inline-size: rem(24px);
+    block-size: rem(24px);
+    margin-inline-start: auto;
+  }
+
+  // .button-menu-catalog__icon
+
+  &__icon {
+    font-size: rem(11px);
+    transition: $expand-accordion transform;
+
+    @include media-width-from(em($bp-catalog)) {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &[aria-expanded="true"] &__icon {
+    transform: rotate(180deg);
+
+    @include media-width-from(em($bp-catalog)) {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.menu-catalog {
+  position: relative; // yes, I know that it has pos. absolute elsewhere
+  display: grid;
+
+  @include media-width-from(em($bp-catalog)) {
+    grid-template-columns: rem(300px + 8px) [stack-start] rem(318px) [stack-end]; // 8px = scrollbar
+    overflow: hidden;
+    border-radius: $border-radius;
+  }
+
+  &__item:hover &__button {
+    @media (any-hover) {
+      color: $clr-mine-shaft;
+    }
+  }
+
+  // .menu-catalog__column
+
+  &__column {
+    overflow: hidden;
+
+    // block-size: var(--catalog-visible-height);
+    max-block-size: var(--catalog-visible-height);
+    padding-block: rem(10px);
+    background-color: $clr-white;
+
+    @include media-width-from(em($bp-catalog)) {
+      // min-block-size: rem(316px);
+      padding-block: rem(8px);
+      border-radius: $border-radius;
+    }
+  }
+
+  // .menu-catalog__list
+
+  &__list {
+    @extend %scrollbar;
+
+    overflow-y: auto;
+    block-size: 100%;
+
+    @include media-width-from(em($bp-catalog)) {
+      overflow-y: scroll;
+    }
+  }
+
+  // .menu-catalog__item
+
+  &__item {
+  }
+
+  // .menu-catalog__control
+
+  &__control {
+    display: flex;
+    transition: background-color $item-hover;
+
+    @include media-width-to(em($bp-catalog)) {
+      box-shadow: 0 rem(-2px) hsl(0deg 0% 89%) inset;
+    }
+
+    @include hover {
+      background-color: $clr-texas-rose;
+    }
+
+    &:focus-within {
+      background-color: $clr-texas-rose;
+    }
+  }
+
+  // .menu-catalog__link
+
+  &__link {
+    display: flex;
+    gap: rem(15px);
+    align-items: center;
+    padding-inline-start: rem($padding-sm);
+    padding-block: rem(10px);
+    font-weight: $fw-semi-bold;
+    font-size: rem(20px);
+    line-height: 1.4;
+
+    // typography
+    color: $clr-mine-shaft;
+
+    @include media-width-from($x-small) {
+      padding-inline-start: $padding;
+    }
+
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+
+  // .menu-catalog__img
+
+  &__img {
+    flex: none;
+    object-fit: contain;
+    inline-size: rem(40px);
+    block-size: rem(40px);
+  }
+
+  // .menu-catalog__button
+
+  &__button {
+    flex: auto;
+    color: $clr-texas-rose;
+    transition: color $item-hover;
+  }
+
+  &__item:focus-within &__button {
+    color: $clr-mine-shaft;
+  }
+
+  // .menu-catalog__submenu-catalog
+
+  &__submenu-catalog {
+    @include media-width-from(em($bp-catalog)) {
+      position: absolute;
+      inset: 0;
+      inset-inline-end: (-2) * $border-radius;
+      z-index: -2;
+
+      // Put it inside of the relative parent grid
+      grid-column: stack;
+
+      // animation
+      visibility: hidden;
+      transition:
+        transform $expand-accordion,
+        visibility $expand-accordion;
+
+      // scrollbar lose focus fix
+      transition-delay: 0.1s;
+      transform: translateX(-100%);
+    }
+
+    &--active {
+      @include media-width-from(em($bp-catalog)) {
+        z-index: -3;
+        visibility: visible;
+        transition-delay: 0s;
+        transform: translateX((-2) * $border-radius);
+      }
+    }
+  }
+
+  &__item:hover &__submenu-catalog {
+    @media (any-hover) {
+      @include media-width-from(em($bp-catalog)) {
+        z-index: -1;
+        visibility: visible;
+        transition-delay: 0s;
+        transform: translateX((-2) * $border-radius);
+      }
+    }
+  }
+}
+
+.catalog {
+  // .catalog__button
+
+  &__button {
+    @include media-width-to(em($bp-search)) {
+      inline-size: 100%;
+    }
+
+    @include media-width-to(em($xx-small)) {
+      padding-block: rem(8px);
+    }
+
+    &[aria-expanded="true"] {
+    }
+  }
+
+  // .catalog__menu
+
+  &__menu {
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: calc(100% + rem(10px));
+    z-index: 100;
+    transition:
+      opacity 0.3s,
+      visibility 0.3s;
+
+    @include media-width-to(em($medium)) {
+      inset-inline-end: 0;
+    }
+  }
+
+  &__button:not([aria-expanded="true"]) ~ &__menu {
+    // hide
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.catalog-lock {
+  overflow: hidden;
+}

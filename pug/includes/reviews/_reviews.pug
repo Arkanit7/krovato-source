@@ -1,0 +1,332 @@
+.reviews
+  //- Header
+  .reviews__header
+    h1.reviews__title.title Відгуки
+    a.reviews__button.button(href="#form-reviews") Залишити відгук
+  //- Filter
+  aside.reviews__filter.filter-reviews
+    ul.filter-reviews__list
+      li.filter-reviews__item.h4
+        button.filter-reviews__button.filter-reviews__button--active(
+          type="button"
+        ) Всі відгуки
+      li.filter-reviews__item.h4
+        button.filter-reviews__button(type="button") Про товари
+      li.filter-reviews__item.h4
+        button.filter-reviews__button(type="button") Про Магазин
+  //- Body
+  .reviews__body
+    article.reviews__review.card-review
+      header.card-review__header
+        // Title
+        h2.card-review__title Іван Стедниця
+        // Time
+        time.card-review__time(datetime="2022-01-25") 25.01.2022
+        // Avatar
+        .card-review__avatar
+          //- img(src="img/icons/account.svg", alt="")
+        // Stars
+        .card-review__stars.stars
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item.stars__item--active
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+      .card-review__text-group
+        p Хочу відзначити злагоджену та чітку роботу всіх співробітників, з ким довелося контактувати при виборі та купівлі дивану Orange-Line Родео SF17-LX6-PLNGR. Величезну допомогу при виборі надала фахівець з продажу Уляна Лукащук, яка провела зі мною не одну годину (вибір був непростим, тому що диван необхідно було придбати для хворого, що похилого віку). А також хочу подякувати за розуміння та людський підхід співробітника відділу логістики Єлькіна Ігоря, який зміг знайти можливість для першочергової доставки містом, у найкоротші терміни. А також велике спасибі фахівцям доставки в кінцеву точку Миколі та В'ячеславу за їхню нелегку працю у складних умовах.
+      a.card-review__footer.footer-card-review(href="/product.html")
+        .footer-card-review__picture.footer-card-review__picture--contain
+          img(src="img/icons/coach.svg", alt="")
+        .footer-card-review__title KROVATO
+    article.reviews__review.card-review
+      header.card-review__header
+        // Title
+        h2.card-review__title Ольга
+        // Time
+        time.card-review__time(datetime="2022-01-25") 25.01.2022
+        // Avatar
+        .card-review__avatar
+          //- img(src="img/icons/account.svg", alt="")
+        // Stars
+        .card-review__stars.stars
+          .stars__item.stars__item--active
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+      .card-review__text-group
+        p Купували синові ігрове крісло у подарунок. Якість супер, дуже зручна та відмінно підтримує спину. Загалом подарунком більш ніж задоволений) Окреме спасибі магазину Меблі за допомогу у виборі крісла!
+      a.card-review__footer.footer-card-review(href="/product.html")
+        +picture({class:"footer-card-review__picture", src:"img/card-review/product.jpg", alt: "Білий масивний диван Orange-Line Родео SF "})
+        .footer-card-review__title Крісло для геймерів AEROCOOL EARL Steel Blue
+    article.reviews__review.card-review
+      header.card-review__header
+        // Title
+        h2.card-review__title Ніна
+        // Time
+        time.card-review__time(datetime="2022-01-25") 25.01.2022
+        // Avatar
+        .card-review__avatar
+          //- img(src="img/icons/account.svg", alt="")
+        // Stars
+        .card-review__stars.stars
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item.stars__item--active
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+      .card-review__text-group
+        p Для мене це суперфункціональний предмет меблів у моїй спальні. Ящиків не багато і не мало, все міститься. А зручна поличка збоку дозволяє відставити туди частину речей, щоб не загороджувати дзеркало. До якості теж претензій не маю, на вигляд добротно. Обслуговування – теж на висоті.
+      a.card-review__footer.footer-card-review(href="/product.html")
+        +picture({class:"footer-card-review__picture", src:"img/card-review/product.jpg", alt: "Білий масивний диван Orange-Line Родео SF "})
+        .footer-card-review__title Трюмо-7
+    article.reviews__review.card-review
+      header.card-review__header
+        // Title
+        h2.card-review__title Максим
+        // Time
+        time.card-review__time(datetime="2022-01-25") 25.01.2022
+        // Avatar
+        .card-review__avatar
+          //- img(src="img/icons/account.svg", alt="")
+        // Stars
+        .card-review__stars.stars
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item.stars__item--active
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+      .card-review__text-group
+        p Стільці симпатичні та стильні, на кухні виглядають чудово! Дуже зручно на них сидіти і якість радує. Доставили швидко. Рекомендую!
+      a.card-review__footer.footer-card-review(href="/product.html")
+        +picture({class:"footer-card-review__picture", src:"img/card-review/product.jpg", alt: "Білий масивний диван Orange-Line Родео SF "})
+        .footer-card-review__title Стілець обідній Kansas чорний/velvet grey
+    article.reviews__review.card-review
+      header.card-review__header
+        // Title
+        h2.card-review__title Галина
+        // Time
+        time.card-review__time(datetime="2022-01-25") 25.01.2022
+        // Avatar
+        .card-review__avatar
+          //- img(src="img/icons/account.svg", alt="")
+        // Stars
+        .card-review__stars.stars
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item.stars__item--active
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+      .card-review__text-group
+        p Кухні підібрали нам за розміром, сподобалася якість меблів, кухня дуже добре зібрана. Складачі зібрали все за день. Сподобалося як відрегулювали фасади, все в рівень, скрізь однаковий проміжок.
+      a.card-review__footer.footer-card-review(href="/product.html")
+        +picture({class:"footer-card-review__picture", src:"img/card-review/product.jpg", alt: "Білий масивний диван Orange-Line Родео SF "})
+        .footer-card-review__title Кухня Аліна 3,2
+    article.reviews__review.card-review
+      header.card-review__header
+        // Title
+        h2.card-review__title Ольга
+        // Time
+        time.card-review__time(datetime="2022-01-25") 25.01.2022
+        // Avatar
+        .card-review__avatar
+          //- img(src="img/icons/account.svg", alt="")
+        // Stars
+        .card-review__stars.stars
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item.stars__item--active
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+      .card-review__text-group
+        p Купували синові ігрове крісло у подарунок. Якість супер, дуже зручна та відмінно підтримує спину. Загалом подарунком більш ніж задоволений) Окреме спасибі магазину Меблі за допомогу у виборі крісла!
+      a.card-review__footer.footer-card-review(href="/product.html")
+        +picture({class:"footer-card-review__picture", src:"img/card-review/product.jpg", alt: "Білий масивний диван Orange-Line Родео SF "})
+        .footer-card-review__title Крісло для геймерів AEROCOOL EARL Steel Blue
+    article.reviews__review.card-review
+      header.card-review__header
+        // Title
+        h2.card-review__title Надія
+        // Time
+        time.card-review__time(datetime="2022-01-25") 25.01.2022
+        // Avatar
+        .card-review__avatar
+          //- img(src="img/icons/account.svg", alt="")
+        // Stars
+        .card-review__stars.stars
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item.stars__item--active
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+      .card-review__text-group
+        p Відмінна робота менеджера, доставили у вказаний час, зібрали швидко та якісно. Дякую за роботу.
+      a.card-review__footer.footer-card-review(href="/product.html")
+        +picture({class:"footer-card-review__picture", src:"img/card-review/product.jpg", alt: "Білий масивний диван Orange-Line Родео SF "})
+        .footer-card-review__title Ліжко Саванна гірка
+    article.reviews__review.card-review
+      header.card-review__header
+        // Title
+        h2.card-review__title Катерина
+        // Time
+        time.card-review__time(datetime="2022-01-25") 25.01.2022
+        // Avatar
+        .card-review__avatar
+          //- img(src="img/icons/account.svg", alt="")
+        // Stars
+        .card-review__stars.stars
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item.stars__item--active
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+      .card-review__text-group
+        p Добрий день всім. Працюємо у великому пологовому відділенні багатопрофільної лікарні. Дуже довго шукали партнерів для придбання меблів, щоб було не тільки красиво, стильно, зручно, комфортно, але й бюджетно. Ось уже другий рік співпрацюємо із компанією mebelok. Замовляли матраци, ліжка, офісні диванчики. Дуже вдячні фахівцям підприємства за швидкий зворотний зв'язок, кваліфіковані консультації, оперативну доставку товару та звичайно ж за якість продукції, що виробляється. Дуже раді, що в Україні є такі підприємства, які виготовляють якісний, добротний товар. Чекаємо на наступне замовлення (ліжка для молодих матусь) і сподіваємося на подальшу співпрацю.
+      a.card-review__footer.footer-card-review(href="/product.html")
+        +picture({class:"footer-card-review__picture", src:"img/card-review/product.jpg", alt: "Білий масивний диван Orange-Line Родео SF "})
+        .footer-card-review__title Ортопедичний матрац Eko-Lite 90х190
+    article.reviews__review.card-review
+      header.card-review__header
+        // Title
+        h2.card-review__title Назар
+        // Time
+        time.card-review__time(datetime="2022-01-25") 25.01.2022
+        // Avatar
+        .card-review__avatar
+          //- img(src="img/icons/account.svg", alt="")
+        // Stars
+        .card-review__stars.stars
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item.stars__item--active
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+      .card-review__text-group
+        p Дякуємо менеджерам на бажана за те, що допомогли вибрати цей журнальний столик у вітальню! дуже стильний, вписався ідеально, при цьому ціна дуже прийнятна як для такого товару)
+      a.card-review__footer.footer-card-review(href="/product.html")
+        +picture({class:"footer-card-review__picture", src:"img/card-review/product.jpg", alt: "Білий масивний диван Orange-Line Родео SF "})
+        .footer-card-review__title Столик журнальний СЖ-101
+    article.reviews__review.card-review
+      header.card-review__header
+        // Title
+        h2.card-review__title Ольга
+        // Time
+        time.card-review__time(datetime="2022-01-25") 25.01.2022
+        // Avatar
+        .card-review__avatar
+          //- img(src="img/icons/account.svg", alt="")
+        // Stars
+        .card-review__stars.stars
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item.stars__item--active
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+      .card-review__text-group
+        p Купували синові ігрове крісло у подарунок. Якість супер, дуже зручна та відмінно підтримує спину. Загалом подарунком більш ніж задоволений) Окреме спасибі магазину Меблі за допомогу у виборі крісла!
+      a.card-review__footer.footer-card-review(href="/product.html")
+        +picture({class:"footer-card-review__picture", src:"img/card-review/product.jpg", alt: "Білий масивний диван Orange-Line Родео SF "})
+        .footer-card-review__title Крісло для геймерів AEROCOOL EARL Steel Blue
+  //- Navigation
+  include /includes/reviews/_navigation.pug
+//- src\pug\includes\reviews\_navigation.pug

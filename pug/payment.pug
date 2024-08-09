@@ -1,0 +1,19 @@
+extends templates/_layout
+
+block prepend document
+  - const title = "Оплата — Krovato";
+
+block main
+  +breadcrumbs([{name: "Головна", href: "/"}],"Оплата")
+
+  //- Fade block
+  include includes/payment/_fade-block.pug
+
+  //- Group block
+  include includes/payment/_group-block.pug
+
+  //- Stack block
+  include includes/payment/_stack-block.pug
+
+  //- FAQ
+  include includes/payment/_faq.pug

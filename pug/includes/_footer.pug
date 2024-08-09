@@ -1,0 +1,185 @@
+footer.footer
+  // Main
+  .main-footer
+    .main-footer__container
+      // Logo
+      .main-footer__logo
+        img(src="img/footer/logo-footer.svg", alt="Krovato – технології сну")
+      // Accordion
+      .main-footer__accordion.accordion-footer(
+        data-ac,
+        data-ac-mode="single",
+        data-ac-media=`(width < ${bpAccordion})`
+      )
+        // Section
+        section.accordion-footer__panel(data-ac-panel)
+          h2.accordion-footer__title
+            button.accordion-footer__trigger(data-ac-trigger) Інформація
+              svg.accordion-footer__icon.icon
+                use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          .accordion-footer__content(data-ac-content, hidden)
+            div
+              .accordion-footer__body
+                ul.accordion-footer__list
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="/about.html") Про нас
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="/payment.html") Оплата
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="/delivery.html") Доставка та збірка
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="/reviews.html") Відгуки
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="/blog.html") Блог
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="/contacts.html") Контакти
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Мапа сайту
+        // Section
+        section.accordion-footer__panel(data-ac-panel)
+          h2.accordion-footer__title
+            button.accordion-footer__trigger(data-ac-trigger) Категорії
+              svg.accordion-footer__icon.icon
+                use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          .accordion-footer__content(data-ac-content, hidden)
+            div
+              .accordion-footer__body
+                ul.accordion-footer__list
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Ліжка
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Матраци
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") М’які меблі
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Шафи
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Комоди
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Тумби
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Столи
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Стільці
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Меблеві стіни
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Кухні
+        // Section
+        section.accordion-footer__panel(data-ac-panel)
+          h2.accordion-footer__title
+            button.accordion-footer__trigger(data-ac-trigger) Клієнтам
+              svg.accordion-footer__icon.icon
+                use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          .accordion-footer__content(data-ac-content, hidden)
+            div
+              .accordion-footer__body
+                ul.accordion-footer__list
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Акції
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Розпродаж
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Купити в кредит
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Обмін і повернення товару
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Часто задавані питання
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Умови покупки
+                  li.accordion-footer__item
+                    a.accordion-footer__link(href="#") Політика конфіденційності
+      // Address
+      address.main-footer__address.address-footer
+        .address-footer__section
+          .address-footer__decor
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-phone")
+          .address-footer__column
+            ul.address-footer__list
+              li.address-footer__item
+                a.address-footer__link(href="tel:+380679294545") +38 067 929-45-45
+              li.address-footer__item
+                a.address-footer__link(href="tel:+380501334545") +38 050 133-45-45
+              li.address-footer__item
+                a.address-footer__link(href="tel:+380931707545") +38 093 170-75-45
+            button.address-footer__button(type="button") Передзвоніть мені
+        .address-footer__section
+          .address-footer__decor
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-pin")
+          .address-footer__item
+            a.address-footer__link(
+              href="https://maps.app.goo.gl/SNLBRsfQvXdHRR4e6",
+              target="_blank"
+            ) м. Київ, провулок Ізяславський 52, поверх 2
+        .address-footer__section
+          .address-footer__decor
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-calendar")
+          .address-footer__item Працюємо щодня з 9:00 до 18:00
+      // Social
+      .main-footer__social.social-footer
+        .social-footer__section
+          p.social-footer__title Приєднуйтесь:
+          ul.social-footer__list
+            li.social-footer__item
+              a.social-button.social-button--big.social-button--bg--denim(
+                title="Facebook",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-facebook")
+            li.social-footer__item
+              a.social-button.social-button--big.social-button--bg--purple-heart(
+                title="Instagram",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-instagram")
+        .social-footer__section
+          p.social-footer__title Допомога і консультація:
+          ul.social-footer__list
+            li.social-footer__item
+              a.social-button.social-button--big.social-button--bg--sushi(
+                title="WhatsApp",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-whatsapp")
+            li.social-footer__item
+              a.social-button.social-button--big.social-button--bg--picton-blue(
+                title="Telegram",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-telegram")
+            li.social-footer__item
+              a.social-button.social-button--big.social-button--bg--royal-purple(
+                title="Viber",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-viber")
+            li.social-footer__item
+              a.social-button.social-button--big.social-button--bg--punch(
+                title="Twitter-x",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-twitter-x")
+        ul.social-footer__section.partners-social-footer
+          li.partners-social-footer__item
+            img(src="img/footer/visa.svg", alt="Visa")
+          li.partners-social-footer__item
+            img(src="img/footer/mastercard.svg", alt="Mastercard")
+  // Copyrights
+  .copyrights-footer
+    .copyrights-footer__container
+      p.copyrights-footer__paragraph © KROVATO - Технології сну - 2024. Всі права захищені.

@@ -1,0 +1,54 @@
+@use "../../abstracts" as *;
+
+.blog {
+  // .blog__container
+
+  &__container {
+  }
+
+  // .blog__title
+
+  &__title {
+    @include not-last {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .blog__layout
+
+  &__layout {
+    @include grid-auto-fill(3, rem(30px));
+
+    @include media-width-to(em($xx-small)) {
+      margin-inline: -$padding-sm;
+    }
+
+    @include media-width-to(em($x-small)) {
+      gap: rem(20px);
+    }
+
+    @include not-last {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(30px);
+      }
+    }
+  }
+
+  // .blog__navigation
+
+  &__navigation {
+    @include not-last {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(30px);
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+extends templates/_layout
+
+block prepend document
+  - const title = "Доставка та збірка — Krovato";
+
+block main
+  +breadcrumbs([{name: "Головна", href: "/"}],"Доставка та збірка")
+
+  //- Fade block
+  include includes/delivery/_fade-block.pug
+
+  //- Delivery
+  include includes/delivery/_delivery.pug
+
+  //- Delivery
+  include includes/delivery/_delivery--fancy.pug
+
+  //- Promo delivery
+  include includes/delivery/_promo-delivery.pug
+
+  //- Tables
+  include includes/delivery/_tables.pug
+
+  //- FAQ
+  include includes/delivery/_faq.pug

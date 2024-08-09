@@ -1,0 +1,449 @@
+.main-header__catalog.catalog(
+  data-mover=`.main-header__container-mobile; beforeend; ( width < ${bpMenu});`
+)
+  button.catalog__button.switch(type="button")
+    span.switch__icons
+      svg.icon
+        use(xlink:href="img/icons/symbol-defs.svg#icon-x-round-fill")
+      svg.icon
+        use(xlink:href="img/icons/symbol-defs.svg#icon-catalog")
+    |
+    | Каталог
+
+  // Menu
+  .catalog__menu.menu-catalog(data-catalog="single")
+    .menu-catalog__column
+      ul.menu-catalog__list
+        // Beds
+        li.menu-catalog__item(data-catalog-panel)
+          .menu-catalog__control
+            a.menu-catalog__link(href="#")
+              img.menu-catalog__img(src="img/header/catalog/beds.svg", alt="")
+              |
+              | Ліжка
+            button#menu-trigger-one.menu-catalog__button.button-menu-catalog(
+              type="button",
+              data-catalog-trigger,
+              aria-controls="submenu-one"
+            )
+              span.button-menu-catalog__wrapper
+                svg.button-menu-catalog__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          #submenu-one.menu-catalog__submenu-catalog.submenu-catalog(
+            aria-labelledby="menu-trigger-one",
+            role="region"
+          )
+            .submenu-catalog__gasket
+              .submenu-catalog__content
+                ul.submenu-catalog__list
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Ліжка від Krovato
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Ліжка з підіймальним механізмом
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Ліжка Акції
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Ліжка з м'яким узголів'ям
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Дерев'яні ліжка
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Дитячі ліжка
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Двоспальні ліжка
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Односпальні ліжка
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Металеві ліжка
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Ліжка з вбудованим матрацом
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Дивани-ліжка
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Ліжка подіуми
+        // Mattresses
+        li.menu-catalog__item(data-catalog-panel)
+          .menu-catalog__control
+            a.menu-catalog__link(href="#")
+              img.menu-catalog__img(
+                src="img/header/catalog/mattresses.svg",
+                alt=""
+              )
+              |
+              | Матраци
+            button#menu-trigger-two.menu-catalog__button.button-menu-catalog(
+              type="button",
+              data-catalog-trigger,
+              aria-controls="submenu-two"
+            )
+              span.button-menu-catalog__wrapper
+                svg.button-menu-catalog__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          #submenu-two.menu-catalog__submenu-catalog.submenu-catalog(
+            aria-labelledby="menu-trigger-two",
+            role="region"
+          )
+            .submenu-catalog__gasket
+              .submenu-catalog__content
+                ul.submenu-catalog__list
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Односпальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Двоспальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Bonnel
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Pocket Spring
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Безпружинні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци з ефектом Зима-Літо
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Футони
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Дитячі матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци Економ
+        // Upholstered Furniture
+        li.menu-catalog__item(data-catalog-panel)
+          .menu-catalog__control
+            a.menu-catalog__link(href="#")
+              img.menu-catalog__img(
+                src="img/header/catalog/upholstered-furniture.svg",
+                alt=""
+              )
+              |
+              | М'які меблі
+            button#menu-trigger-three.menu-catalog__button.button-menu-catalog(
+              type="button",
+              data-catalog-trigger,
+              aria-controls="submenu-three"
+            )
+              span.button-menu-catalog__wrapper
+                svg.button-menu-catalog__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          #submenu-three.menu-catalog__submenu-catalog.submenu-catalog(
+            aria-labelledby="menu-trigger-three",
+            role="region"
+          )
+            .submenu-catalog__gasket
+              .submenu-catalog__content
+                ul.submenu-catalog__list
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Односпальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Двоспальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Bonnel
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Pocket Spring
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Безпружинні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци з ефектом Зима-Літо
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Футони
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Дитячі матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци Економ
+        // Wardrobes
+        li.menu-catalog__item(data-catalog-panel)
+          .menu-catalog__control
+            a.menu-catalog__link(href="#")
+              img.menu-catalog__img(
+                src="img/header/catalog/wardrobes.svg",
+                alt=""
+              )
+              |
+              | Шафи
+            button#menu-trigger-four.menu-catalog__button.button-menu-catalog(
+              type="button",
+              data-catalog-trigger,
+              aria-controls="submenu-four"
+            )
+              span.button-menu-catalog__wrapper
+                svg.button-menu-catalog__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          #submenu-four.menu-catalog__submenu-catalog.submenu-catalog(
+            aria-labelledby="menu-trigger-four",
+            role="region"
+          )
+            .submenu-catalog__gasket
+              .submenu-catalog__content
+                ul.submenu-catalog__list
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Односпальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Двоспальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Bonnel
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Pocket Spring
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Безпружинні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци з ефектом Зима-Літо
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Футони
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Дитячі матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци Економ
+        // Chests of Drawers
+        li.menu-catalog__item(data-catalog-panel)
+          .menu-catalog__control
+            a.menu-catalog__link(href="#")
+              img.menu-catalog__img(
+                src="img/header/catalog/chests-of-drawers.svg",
+                alt=""
+              )
+              |
+              | Комоди
+            button#menu-trigger-five.menu-catalog__button.button-menu-catalog(
+              type="button",
+              data-catalog-trigger,
+              aria-controls="submenu-five"
+            )
+              span.button-menu-catalog__wrapper
+                svg.button-menu-catalog__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          #submenu-five.menu-catalog__submenu-catalog.submenu-catalog(
+            aria-labelledby="menu-trigger-five",
+            role="region"
+          )
+            .submenu-catalog__gasket
+              .submenu-catalog__content
+                ul.submenu-catalog__list
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Односпальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Двоспальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Bonnel
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Pocket Spring
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Безпружинні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци з ефектом Зима-Літо
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Футони
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Дитячі матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци Економ
+        // Bedside Tables
+        li.menu-catalog__item(data-catalog-panel)
+          .menu-catalog__control
+            a.menu-catalog__link(href="#")
+              img.menu-catalog__img(
+                src="img/header/catalog/bedside-tables.svg",
+                alt=""
+              )
+              |
+              | Тумби
+            button#menu-trigger-six.menu-catalog__button.button-menu-catalog(
+              type="button",
+              data-catalog-trigger,
+              aria-controls="submenu-six"
+            )
+              span.button-menu-catalog__wrapper
+                svg.button-menu-catalog__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          #submenu-six.menu-catalog__submenu-catalog.submenu-catalog(
+            aria-labelledby="menu-trigger-six",
+            role="region"
+          )
+            .submenu-catalog__gasket
+              .submenu-catalog__content
+                ul.submenu-catalog__list
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Односпальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Двоспальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Bonnel
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Pocket Spring
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Безпружинні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци з ефектом Зима-Літо
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Футони
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Дитячі матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци Економ
+        // Tables
+        li.menu-catalog__item(data-catalog-panel)
+          .menu-catalog__control
+            a.menu-catalog__link(href="#")
+              img.menu-catalog__img(
+                src="img/header/catalog/tables.svg",
+                alt=""
+              )
+              |
+              | Столи
+            button#menu-trigger-seven.menu-catalog__button.button-menu-catalog(
+              type="button",
+              data-catalog-trigger,
+              aria-controls="submenu-seven"
+            )
+              span.button-menu-catalog__wrapper
+                svg.button-menu-catalog__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          #submenu-seven.menu-catalog__submenu-catalog.submenu-catalog(
+            aria-labelledby="menu-trigger-seven",
+            role="region"
+          )
+            .submenu-catalog__gasket
+              .submenu-catalog__content
+                ul.submenu-catalog__list
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Односпальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Двоспальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Bonnel
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Pocket Spring
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Безпружинні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци з ефектом Зима-Літо
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Футони
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Дитячі матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци Економ
+        // Chairs
+        li.menu-catalog__item(data-catalog-panel)
+          .menu-catalog__control
+            a.menu-catalog__link(href="#")
+              img.menu-catalog__img(
+                src="img/header/catalog/chairs.svg",
+                alt=""
+              )
+              |
+              | Стільці
+            button#menu-trigger-eight.menu-catalog__button.button-menu-catalog(
+              type="button",
+              data-catalog-trigger,
+              aria-controls="submenu-eight"
+            )
+              span.button-menu-catalog__wrapper
+                svg.button-menu-catalog__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          #submenu-eight.menu-catalog__submenu-catalog.submenu-catalog(
+            aria-labelledby="menu-trigger-eight",
+            role="region"
+          )
+            .submenu-catalog__gasket
+              .submenu-catalog__content
+                ul.submenu-catalog__list
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Односпальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Двоспальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Bonnel
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Pocket Spring
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Безпружинні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци з ефектом Зима-Літо
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Футони
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Дитячі матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци Економ
+        // Furniture Walls
+        li.menu-catalog__item(data-catalog-panel)
+          .menu-catalog__control
+            a.menu-catalog__link(href="#")
+              img.menu-catalog__img(
+                src="img/header/catalog/furniture-walls.svg",
+                alt=""
+              )
+              |
+              | Меблеві стіни
+            button#menu-trigger-nine.menu-catalog__button.button-menu-catalog(
+              type="button",
+              data-catalog-trigger,
+              aria-controls="submenu-nine"
+            )
+              span.button-menu-catalog__wrapper
+                svg.button-menu-catalog__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          #submenu-nine.menu-catalog__submenu-catalog.submenu-catalog(
+            aria-labelledby="menu-trigger-nine",
+            role="region"
+          )
+            .submenu-catalog__gasket
+              .submenu-catalog__content
+                ul.submenu-catalog__list
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Односпальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Двоспальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Bonnel
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Pocket Spring
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Безпружинні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци з ефектом Зима-Літо
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Футони
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Дитячі матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци Економ
+        // Kitchens
+        li.menu-catalog__item(data-catalog-panel)
+          .menu-catalog__control
+            a.menu-catalog__link(href="#")
+              img.menu-catalog__img(
+                src="img/header/catalog/kitchens.svg",
+                alt=""
+              )
+              |
+              | Кухні
+            button#menu-trigger-ten.menu-catalog__button.button-menu-catalog(
+              type="button",
+              data-catalog-trigger,
+              aria-controls="submenu-ten"
+            )
+              span.button-menu-catalog__wrapper
+                svg.button-menu-catalog__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          #submenu-ten.menu-catalog__submenu-catalog.submenu-catalog(
+            aria-labelledby="menu-trigger-ten",
+            role="region"
+          )
+            .submenu-catalog__gasket
+              .submenu-catalog__content
+                ul.submenu-catalog__list
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Односпальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Двоспальні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Bonnel
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Пружинний блок Pocket Spring
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Безпружинні матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци з ефектом Зима-Літо
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Футони
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Дитячі матраци
+                  li.submenu-catalog__item
+                    a.submenu-catalog__link(href="#") Матраци Економ

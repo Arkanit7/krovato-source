@@ -1,0 +1,58 @@
+extends templates/_layout
+
+block prepend document
+  - const title = "Блог — Krovato";
+
+block main
+  +breadcrumbs([{name: "Головна", href: "/"}],"Блог")
+
+  section.main__blog.blog
+    .blog__container
+      h1.blog__title.title Блог
+      .blog__layout
+        +itemBlog({title: "Стільці для вітальні. Як правильно вибрати?", src: "img/blog/01.jpg", alt: "М'які стільці та трапеза на кухні."})
+        +itemBlog({title: "Що краще вибрати для кухні – стільці чи кухонний куточок?", src: "img/blog/02.jpg", alt: "Різнобарвні стільці у світлій кухні."})
+        +itemBlog({title: "Оформлення вітальні. Які м'які меблі краще вибрати?", src: "img/blog/03.jpg", alt: "Затишна сучасна вітальня."})
+        +itemBlog({title: "Стільці для вітальні. Як правильно вибрати?", src: "img/blog/01.jpg", alt: "М'які стільці та трапеза на кухні."})
+        +itemBlog({title: "Що краще вибрати для кухні – стільці чи кухонний куточок?", src: "img/blog/02.jpg", alt: "Різнобарвні стільці у світлій кухні."})
+        +itemBlog({title: "Оформлення вітальні. Які м'які меблі краще вибрати?", src: "img/blog/03.jpg", alt: "Затишна сучасна вітальня."})
+        +itemBlog({title: "Стільці для вітальні. Як правильно вибрати?", src: "img/blog/01.jpg", alt: "М'які стільці та трапеза на кухні."})
+        +itemBlog({title: "Що краще вибрати для кухні – стільці чи кухонний куточок?", src: "img/blog/02.jpg", alt: "Різнобарвні стільці у світлій кухні."})
+        +itemBlog({title: "Оформлення вітальні. Які м'які меблі краще вибрати?", src: "img/blog/03.jpg", alt: "Затишна сучасна вітальня."})
+        +itemBlog({title: "Стільці для вітальні. Як правильно вибрати?", src: "img/blog/01.jpg", alt: "М'які стільці та трапеза на кухні."})
+        +itemBlog({title: "Що краще вибрати для кухні – стільці чи кухонний куточок?", src: "img/blog/02.jpg", alt: "Різнобарвні стільці у світлій кухні."})
+        +itemBlog({title: "Оформлення вітальні. Які м'які меблі краще вибрати?", src: "img/blog/03.jpg", alt: "Затишна сучасна вітальня."})
+      .blog__navigation.navigation
+        .navigation__group
+          button.navigation__button.button-square(type="button")
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          ol.navigation__list
+            li.navigation__item
+              button.navigation__button.button-square.button-square--active(
+                type="button"
+              ) 1
+            li.navigation__item
+              button.navigation__button.button-square(type="button") 2
+            li.navigation__item
+              button.navigation__button.button-square(type="button") 3
+            li.navigation__item
+              button.navigation__button.button-square(type="button") 4
+            li.navigation__item
+              button.navigation__button.button-square(type="button") 5
+            li.navigation__item
+              button.navigation__button.button-square(type="button") 6
+            li.navigation__item
+              button.navigation__button.button-square(type="button") 7
+            li.navigation__item
+              button.navigation__button.button-square(type="button") ...
+            li.navigation__item
+              button.navigation__button.button-square(type="button") 18
+          button.navigation__button.button-square(type="button")
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+        button.navigation__more.button(type="button")
+          svg.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-reload")
+          |
+          | Показати ще статті

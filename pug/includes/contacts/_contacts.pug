@@ -1,0 +1,104 @@
+section.main__contacts.contacts
+  .contacts__container
+    .contacts__heading.heading
+      h1.heading__title.title Контакти
+    .contacts__addresses
+      // Address
+      .contacts__address.address
+        .address__decor
+          svg.address__icon.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-phone")
+        .address__main
+          h2.address__title Телефони:
+          ul.address__list
+            li.address__item
+              a.address__link(href="tel:+380679294545") +38 067 929-45-45
+            li.address__item
+              a.address__link(href="tel:+380501334545") +38 050 133-45-45
+            li.address__item
+              a.address__link(href="tel:+380931707545") +38 093 170-75-45
+      // Address
+      .contacts__address.address
+        .address__decor
+          svg.address__icon.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-mail")
+        .address__main
+          h2.address__title Напишіть нам:
+          .address__list
+            .address__item
+              a.address__link(href="mailto:info.krovato@gmail.com") info.krovato@gmail.com
+          // Socials
+          ul.address__social.social-address
+            li.social-address__item
+              a.social-button.social-button--bg--sushi(
+                title="WhatsApp",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-whatsapp")
+            li.social-address__item
+              a.social-button.social-button--bg--picton-blue(
+                title="Telegram",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-telegram")
+            li.social-address__item
+              a.social-button.social-button--bg--royal-purple(
+                title="Viber",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-viber")
+            li.social-address__item
+              a.social-button.social-button--bg--punch(
+                title="Twitter-x",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-twitter-x")
+            li.social-address__item
+              a.social-button.social-button--bg--denim(
+                title="Facebook",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-facebook")
+            li.social-address__item
+              a.social-button.social-button--bg--purple-heart(
+                title="Instagram",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-instagram")
+      // Address
+      .contacts__address.address
+        .address__decor
+          svg.address__icon.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-pin")
+        .address__main
+          h2.address__title Де ми знаходимось:
+          .address__list
+            .address__item
+              a.address__link(
+                href="https://maps.app.goo.gl/SNLBRsfQvXdHRR4e6",
+                target="_blank"
+              ) м. Київ, провулок Ізяславський 52, пов. 2
+      // Address
+      .contacts__address.address
+        .address__decor
+          svg.address__icon.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-calendar")
+        .address__main
+          h2.address__title Графік роботи:
+          .address__list
+            .address__item Працюємо щодня з 9:00 до 18:00
+    .contacts__location.location
+      +picture({class: "location__picture", src: "img/contacts/address.jpg", alt: "Двоповерхова зелена будівля магазину Krovato."})
+      #map.location__map

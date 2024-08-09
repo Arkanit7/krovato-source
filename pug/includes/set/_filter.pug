@@ -1,0 +1,432 @@
+.main__filter.filter
+  .filter__container
+    aside.filter__aside.aside-filter
+      form.aside-filter__form(data-ac, data-ac-media="(width < 48em)")
+        .aside-filter__panel(data-ac-panel)
+          h2.aside-filter__title
+            button.aside-filter__trigger.trigger-aside-filter(
+              type="button",
+              data-ac-trigger
+            )
+              span.trigger-aside-filter__label
+                svg.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-bars")
+                |
+                | Фільтр пошуку
+              span.trigger-aside-filter__icons
+                svg.trigger-aside-filter__close.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+                svg.trigger-aside-filter__open.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          .aside-filter__content(data-ac-content, hidden)
+            //- Cushion
+            div
+              .aside-filter__body(data-ac)
+                section.aside-filter__section.section-filter(data-ac-panel)
+                  h3.section-filter__title
+                    button.section-filter__trigger.trigger-section-filter(
+                      type="button",
+                      data-ac-trigger
+                    ) Ціна, грн
+                      |
+                      span.trigger-section-filter__icons
+                        svg.trigger-section-filter__close.icon
+                          use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+                        svg.trigger-section-filter__open.icon
+                          use(
+                            xlink:href="img/icons/symbol-defs.svg#icon-arrow"
+                          )
+                  .section-filter__content(data-ac-content)
+                    div
+                      .section-filter__body
+                        .prices-filter
+                          .prices-filter__fields
+                            input.prices-filter__field(
+                              type="number",
+                              name="min-price"
+                            )
+                            input.prices-filter__field(
+                              type="number",
+                              name="max-price"
+                            )
+                            button.prices-filter__button.button(type="button") ОК
+                          .prices-filter__slider.prices-no-ui
+                section.aside-filter__section.section-filter(data-ac-panel)
+                  h3.section-filter__title
+                    button.section-filter__trigger.trigger-section-filter(
+                      type="button",
+                      data-ac-trigger
+                    ) Наявність
+                      |
+                      span.trigger-section-filter__icons
+                        svg.trigger-section-filter__close.icon
+                          use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+                        svg.trigger-section-filter__open.icon
+                          use(
+                            xlink:href="img/icons/symbol-defs.svg#icon-arrow"
+                          )
+                  .section-filter__content(data-ac-content)
+                    div
+                      .section-filter__body
+                        ul.section-filter__list
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label В наявності
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label Під замовлення
+                section.aside-filter__section.section-filter(data-ac-panel)
+                  h3.section-filter__title
+                    button.section-filter__trigger.trigger-section-filter(
+                      type="button",
+                      data-ac-trigger
+                    ) Виробник
+                      |
+                      span.trigger-section-filter__icons
+                        svg.trigger-section-filter__close.icon
+                          use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+                        svg.trigger-section-filter__open.icon
+                          use(
+                            xlink:href="img/icons/symbol-defs.svg#icon-arrow"
+                          )
+                  .section-filter__content(data-ac-content)
+                    div
+                      .section-filter__body
+                        ul.section-filter__list
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="vendor"
+                            )
+                            label.input-group__label Corners
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="vendor"
+                            )
+                            label.input-group__label Estella
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="vendor"
+                            )
+                            label.input-group__label Green Line
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="vendor"
+                            )
+                            label.input-group__label Legko
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="vendor"
+                            )
+                            label.input-group__label MiroMark
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="vendor"
+                            )
+                            label.input-group__label Novelty
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="vendor"
+                            )
+                            label.input-group__label Soft-line
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="vendor"
+                            )
+                            label.input-group__label Venger
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="vendor"
+                            )
+                            label.input-group__label Арбор Древ
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="vendor"
+                            )
+                            label.input-group__label Городок мебель
+                section.aside-filter__section.section-filter(data-ac-panel)
+                  h3.section-filter__title
+                    button.section-filter__trigger.trigger-section-filter(
+                      type="button",
+                      data-ac-trigger
+                    ) Тип ліжка
+                      |
+                      span.trigger-section-filter__icons
+                        svg.trigger-section-filter__close.icon
+                          use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+                        svg.trigger-section-filter__open.icon
+                          use(
+                            xlink:href="img/icons/symbol-defs.svg#icon-arrow"
+                          )
+                  .section-filter__content(data-ac-content)
+                    div
+                      .section-filter__body
+                        ul.section-filter__list
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label З узголів'ям
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label Двоярусні
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label Розкладачки
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label Шафи
+                section.aside-filter__section.section-filter(data-ac-panel)
+                  h3.section-filter__title
+                    button.section-filter__trigger.trigger-section-filter(
+                      type="button",
+                      data-ac-trigger
+                    ) Тип ліжка
+                      |
+                      span.trigger-section-filter__icons
+                        svg.trigger-section-filter__close.icon
+                          use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+                        svg.trigger-section-filter__open.icon
+                          use(
+                            xlink:href="img/icons/symbol-defs.svg#icon-arrow"
+                          )
+                  .section-filter__content(data-ac-content)
+                    div
+                      .section-filter__body
+                        ul.section-filter__list
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label Без узголов'я
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label З узголів'ям
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label Двоярусні
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label Розкладачки
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label Шафи
+                section.aside-filter__section.section-filter(data-ac-panel)
+                  h3.section-filter__title
+                    button.section-filter__trigger.trigger-section-filter(
+                      type="button",
+                      data-ac-trigger
+                    ) Розмір спального місця
+                      |
+                      span.trigger-section-filter__icons
+                        svg.trigger-section-filter__close.icon
+                          use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+                        svg.trigger-section-filter__open.icon
+                          use(
+                            xlink:href="img/icons/symbol-defs.svg#icon-arrow"
+                          )
+                  .section-filter__content(data-ac-content)
+                    div
+                      .section-filter__body
+                        ul.section-filter__list
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label 200x210 см
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label 200x200 см
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label 180x200 см
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label 160x200 см
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label 110x190 см
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label 160x190 см
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label 150x200 см
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label 140x200 см
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label 140x190 см
+                          li.section-filter__item.input-group(data-input-group)
+                            input.input-group__input.checkbox(
+                              type="checkbox",
+                              name="availability"
+                            )
+                            label.input-group__label 120x200 см
+    .filter__content
+      //- Control
+      .filter__control.control-filter
+        h3.control-filter__title Ви вибрали:
+        //- Chosen filter
+        .control-filter__chosen.chosen-filter
+          ul.chosen-filter__list
+            li.chosen-filter__item
+              button.chosen-filter__button.chosen-filter__button--reset(
+                type="button"
+              ) Очистити
+                svg.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+            li.chosen-filter__item
+              button.chosen-filter__button(type="button") Ціна: 1195-9566
+                svg.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+            li.chosen-filter__item
+              button.chosen-filter__button(type="button") В наявності
+                svg.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+            li.chosen-filter__item
+              button.chosen-filter__button(type="button") Виробник: Corners
+                svg.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+            li.chosen-filter__item
+              button.chosen-filter__button(type="button") Без узголов'я
+                svg.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+            li.chosen-filter__item
+              button.chosen-filter__button(type="button") 200x210 см
+                svg.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+        //- Sort filter
+        .control-filter__sort.sort-filter
+          h3.sort-filter__title
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-sort")
+            |
+            | Сортування:
+          select.sort-filter__select(name="sort")
+            option(value="a") За зростанням ціни
+            option(value="b") За спаданням ціни
+            option(value="c") За рейтингом
+            option(value="d") Новинки
+      .filter__layout
+        each product in products 
+          +itemProduct(product)
+      .filter__navigation.navigation
+        button.navigation__more.button(type="button")
+          svg.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-reload")
+          |
+          | Показати ще товари
+        .navigation__group
+          button.navigation__button.navigation__button--rotate--90.button-square(
+            type="button"
+          )
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          ol.navigation__list
+            li.navigation__item
+              button.navigation__button.button-square.button-square--active(
+                type="button"
+              ) 1
+            li.navigation__item
+              button.navigation__button.button-square(type="button") 2
+            li.navigation__item
+              button.navigation__button.button-square(type="button") 3
+            li.navigation__item
+              button.navigation__button.button-square(type="button") 4
+            li.navigation__item
+              button.navigation__button.button-square(type="button") 5
+            li.navigation__item
+              button.navigation__button.button-square(type="button") 6
+            li.navigation__item
+              button.navigation__button.button-square(type="button") 7
+            li.navigation__item
+              button.navigation__button.button-square(type="button") ...
+            li.navigation__item
+              button.navigation__button.button-square(type="button") 18
+          button.navigation__button.navigation__button--rotate--270.button-square(
+            type="button"
+          )
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+    article.filter__information.information
+      h2.information__title.title Як правильно обрати ліжко?
+      .information__expand.expand(data-show)
+        .expand__content
+          p При виборі ліжка в інтернет магазині Вам в першу чергу потрібно вибрати матеріал. Найбільшою популярністю користуються дерев'яні ліжка, виготовлені з вільхи, ясена чи дуба. Такі моделі чудово прикрасять Вашу спальню у квартирі чи приватному будинку. Для орендованих квартир, під здачу, більше підійде ліжко з металу, так як воно просто «не вбивається», а також має дуже демократичну ціну.
+          p Для Вашої зручності ліжко може комплектуватись висувними ящиками або підйомним механізмом. Ящики можуть бути з одного боку ліжка або з двох. Також є моделі, з висувними ящиками спереду. Ліжка з підйомним механізмом, це відмінне рішення, для невеликих кімнат, вони дозволяють заощадити простір і мають велику нішу для зберігання постільної білизни. Всі дерев'яні ліжка комплектуються буковими ламелями. Спальне місце з ламельною основою може витримувати навантаження до 150 кг на одне спальне місце. Відстань між ламелями, у своїй має бути 2,5-3 див.
+          p Кожне ліжко може бути забарвлене у різні кольори: чорні, білі, сірі, венге, у кольорі горіх. Завдяки цьому ліжко можна підібрати під будь-який інтер'єр.
+          p При виборі ліжка в інтернет магазині Вам в першу чергу потрібно вибрати матеріал. Найбільшою популярністю користуються дерев'яні ліжка, виготовлені з вільхи, ясена чи дуба. Такі моделі чудово прикрасять Вашу спальню у квартирі чи приватному будинку. Для орендованих квартир, під здачу, більше підійде ліжко з металу, так як воно просто «не вбивається», а також має дуже демократичну ціну.
+          p Для Вашої зручності ліжко може комплектуватись висувними ящиками або підйомним механізмом. Ящики можуть бути з одного боку ліжка або з двох. Також є моделі, з висувними ящиками спереду. Ліжка з підйомним механізмом, це відмінне рішення, для невеликих кімнат, вони дозволяють заощадити простір і мають велику нішу для зберігання постільної білизни. Всі дерев'яні ліжка комплектуються буковими ламелями. Спальне місце з ламельною основою може витримувати навантаження до 150 кг на одне спальне місце. Відстань між ламелями, у своїй має бути 2,5-3 див.
+          p Кожне ліжко може бути забарвлене у різні кольори: чорні, білі, сірі, венге, у кольорі горіх. Завдяки цьому ліжко можна підібрати під будь-який інтер'єр.
+        button.expand__show(
+          type="button",
+          title="Розгорнути статтю",
+          data-show-button
+        )
+          svg.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-arrow-circle")

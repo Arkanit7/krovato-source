@@ -1,0 +1,156 @@
+@use "../abstracts" as *;
+
+.footer-card-review {
+  display: grid;
+  grid-auto-flow: column;
+  gap: rem(10px);
+  align-items: center;
+
+  @media (any-hover) {
+    &:hover &__title {
+      color: $clr-texas-rose;
+    }
+  }
+
+  // .footer-card-review__picture
+
+  &__picture {
+    inline-size: rem(50px);
+    block-size: rem(50px);
+
+    img {
+      object-fit: cover;
+      overflow: hidden;
+      inline-size: 100%;
+      block-size: 100%;
+      border-radius: 50%;
+    }
+
+    &--contain {
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+
+  // .footer-card-review__title
+
+  &__title {
+    overflow: hidden;
+    font-weight: $fw-semi-bold;
+    font-size: rem(20px);
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color 0.3s;
+  }
+
+  &:focus-visible &__title {
+    color: $clr-texas-rose;
+  }
+}
+
+.card-review {
+  @extend %card;
+
+  display: flex;
+  flex-direction: column;
+  gap: rem(16px);
+  padding-inline: rem(16px);
+  padding-block: rem(20px);
+  border: 1px solid hsl(0deg 2% 89%);
+  container-type: inline-size;
+
+  @media (em($x-small) <= width) {
+    gap: rem(20px);
+    padding-inline: rem(20px);
+  }
+
+  // .card-review__header
+
+  &__header {
+    display: grid;
+    grid-template-areas: "avatar title time" "avatar stars stars";
+    grid-template-columns: auto 1fr;
+    gap: rem(2px 12px);
+
+    @media (#{em($x-small)} <= width) {
+      gap: rem(2px 20px);
+    }
+
+    @container (#{em($small)} <= width) {
+      grid-template-areas: "avatar title stars time";
+      align-items: center;
+    }
+  }
+
+  // .card-review__avatar
+
+  &__avatar {
+    display: grid;
+    flex: none;
+    grid-area: avatar;
+    place-items: center;
+    overflow: hidden;
+    inline-size: rem(50px);
+    block-size: rem(50px);
+    border: 1px solid $clr-texas-rose;
+    border-radius: 50%;
+    background: url("../img/icons/account.svg") center / rem(22px) no-repeat;
+
+    img {
+      object-fit: cover;
+      inline-size: 100%;
+      block-size: 100%;
+      background-color: $clr-white;
+    }
+  }
+
+  // .card-review__title
+
+  &__title {
+    grid-area: title;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: $clr-mine-shaft;
+  }
+
+  // .card-review__stars
+
+  &__stars {
+    grid-area: stars;
+  }
+
+  // .card-review__time
+
+  &__time {
+    grid-area: time;
+  }
+
+  // .card-review__text-group
+
+  &__text-group {
+    flex: auto;
+    font-size: 1rem;
+    line-height: 1.875;
+
+    @include media-width-to(em($small)) {
+      overflow: auto;
+      max-block-size: rem(150px);
+      scrollbar-width: thin;
+    }
+
+    &--scroll {
+      overflow: auto;
+      max-block-size: rem(150px);
+      scrollbar-width: thin;
+    }
+  }
+
+  // .card-review__footer
+
+  &__footer {
+    align-self: start;
+  }
+}

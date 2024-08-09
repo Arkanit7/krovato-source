@@ -1,0 +1,19 @@
+extends templates/_layout
+
+block prepend document
+  - const title = "Каталог товарів — Krovato";
+
+block main
+  +breadcrumbs([{name: "Головна", href: "/"}],"Ліжка")
+
+  //- Types
+  include includes/set/_types.pug
+
+  //- Filter
+  include includes/set/_filter.pug
+
+  //- Recent reviews
+  include includes/_recent-reviews.pug
+
+  //- FAQ
+  include includes/set/_faq.pug

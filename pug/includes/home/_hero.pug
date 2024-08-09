@@ -1,0 +1,89 @@
+.main__hero.hero
+  .hero__container
+    .hero__slider.slider-hero
+      // Swiper
+      .slider-hero__swiper.swiper
+        .slider-hero__wrapper.swiper-wrapper
+          a.slider-hero__slide.swiper-slide(href="/product.html")
+            picture
+              source(
+                srcset="img/home/hero/slide-1-mobile.avif",
+                type="image/avif",
+                media=`(width < ${bpHero})`
+              )
+              source(
+                srcset="img/home/hero/slide-1-mobile.webp",
+                type="image/webp",
+                media=`(width < ${bpHero})`
+              )
+              source(
+                srcset="img/home/hero/slide-1-mobile.jpg",
+                type="image/jpeg",
+                media=`(width < ${bpHero})`
+              )
+              source(srcset="img/home/hero/slide-1.avif", type="image/avif")
+              source(srcset="img/home/hero/slide-1.webp", type="image/webp")
+              img(
+                src="img/home/hero/slide-1.jpg",
+                alt="Ліжко Х'юпер з підйомним механізмом. Ціна - 13500 грн. до 20-го вересня."
+              )
+          a.slider-hero__slide.swiper-slide(href="/product.html")
+            picture
+              source(
+                srcset="img/home/hero/slide-1-mobile.avif",
+                type="image/avif",
+                media=`(width < ${bpHero})`
+              )
+              source(
+                srcset="img/home/hero/slide-1-mobile.webp",
+                type="image/webp",
+                media=`(width < ${bpHero})`
+              )
+              source(
+                srcset="img/home/hero/slide-1-mobile.jpg",
+                type="image/jpeg",
+                media=`(width < ${bpHero})`
+              )
+              source(srcset="img/home/hero/slide-1.avif", type="image/avif")
+              source(srcset="img/home/hero/slide-1.webp", type="image/webp")
+              img(
+                src="img/home/hero/slide-1.jpg",
+                alt="Ліжко Х'юпер з підйомним механізмом. Ціна - 13500 грн. до 20-го вересня."
+              )
+          a.slider-hero__slide.swiper-slide(href="/product.html")
+            picture
+              source(
+                srcset="img/home/hero/slide-1-mobile.avif",
+                type="image/avif",
+                media=`(width < ${bpHero})`
+              )
+              source(
+                srcset="img/home/hero/slide-1-mobile.webp",
+                type="image/webp",
+                media=`(width < ${bpHero})`
+              )
+              source(
+                srcset="img/home/hero/slide-1-mobile.jpg",
+                type="image/jpeg",
+                media=`(width < ${bpHero})`
+              )
+              source(srcset="img/home/hero/slide-1.avif", type="image/avif")
+              source(srcset="img/home/hero/slide-1.webp", type="image/webp")
+              img(
+                src="img/home/hero/slide-1.jpg",
+                alt="Ліжко Х'юпер з підйомним механізмом. Ціна - 13500 грн. до 20-го вересня."
+              )
+      // Navigation
+      .slider-hero__navigation
+        button.slider-hero__button.button-slider.button-slider--prev(
+          type="button"
+        )
+          svg.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+        button.slider-hero__button.button-slider.button-slider--next(
+          type="button"
+        )
+          svg.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+      // Pagination
+      .slider-hero__pagination.swiper-pagination

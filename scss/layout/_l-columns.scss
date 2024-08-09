@@ -1,0 +1,45 @@
+@use "../abstracts" as *;
+
+.l-columns {
+  // .l-columns__container
+
+  &__container {
+    display: flex;
+    gap: rem(30px 16px);
+    align-items: start;
+
+    @include media-width-to(em($l-columns)) {
+      flex-wrap: wrap;
+    }
+
+    @include media-width-from(em($x-large)) {
+      gap: rem(30px);
+    }
+  }
+
+  // .l-columns__col-big
+
+  &__col-big {
+    flex: 1 3 rem(850px);
+    inline-size: 0;
+  }
+
+  // .l-columns__col-small
+
+  &__col-small {
+    flex: rem(410px);
+    inline-size: 0;
+  }
+
+  // .l-columns__description-product
+
+  &__description-product {
+    @include not-last {
+      margin-block-end: rem(40px);
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(50px);
+      }
+    }
+  }
+}

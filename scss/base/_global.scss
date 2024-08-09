@@ -1,0 +1,181 @@
+@use "../abstracts" as *;
+@use "sass:math";
+
+/* Global styles */
+
+html {
+  scroll-padding-block-start: var(--header-height);
+}
+
+body {
+  font-size: rem(17px);
+  font-family: $ff-proxima-nova;
+  line-height: divide(24px, 17px);
+  background-color: $clr-alabaster;
+  color: $clr-emperor;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: clip;
+  min-block-size: 100%;
+
+  &__main {
+    flex: auto;
+  }
+
+  &__advantages {
+  }
+}
+
+/* Utility classes */
+
+[class*="__container"] {
+  max-inline-size: $canvas;
+  margin-inline: auto;
+  padding-inline: $padding-sm;
+
+  @include media-width-from($x-small) {
+    padding-inline: $padding;
+  }
+}
+
+[class*="__container-small"] {
+  max-inline-size: rem(1070px) + 2 * $padding;
+}
+
+.menu-lock {
+  overflow: hidden;
+}
+
+/* Components */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: hsl(0deg 2% 10% / 80%);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+  backdrop-filter: blur(2.5px);
+
+  &:is(&--visible, &--active, &--cart) {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.radio {
+  border: rem(2px) solid $clr-silver-chalice;
+  border-radius: 50%;
+}
+
+.checkbox {
+  border: rem(2px) solid $clr-iron;
+  border-radius: rem(2px);
+}
+
+.radio,
+.checkbox {
+  appearance: none;
+  inline-size: rem(20px);
+  block-size: rem(20px);
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+
+  @media (any-hover) {
+    &:hover {
+      border-color: $clr-california;
+    }
+  }
+
+  &:checked {
+    border-color: transparent;
+    background:
+      url("../img/icons/checkbox.svg") center / 100% no-repeat,
+      $clr-texas-rose;
+  }
+}
+
+.label {
+  color: $clr-mine-shaft;
+  cursor: pointer;
+
+  &--pale {
+    font-size: rem(16px);
+    color: unset;
+
+    /* line-height: 1.875; */
+  }
+}
+
+.field {
+  padding-inline: rem(19px);
+  padding-block: rem(9px);
+  border: rem(1px) solid $clr-iron;
+  border-radius: rem(8px);
+  font-size: rem(16px);
+  line-height: 1.875;
+  background-color: $clr-white;
+  transition: border-color 0.3s;
+
+  @media (any-hover) {
+    &:hover {
+      border-color: $clr-california;
+    }
+  }
+
+  &::placeholder {
+    opacity: 1;
+  }
+
+  &:user-valid {
+    background-color: hsl(120deg 100% 97%);
+  }
+
+  &:user-invalid {
+    background-color: hsl(0deg 100% 97%);
+  }
+}
+
+.input-group {
+  display: flex;
+  gap: rem(14px);
+  align-items: center;
+
+  &__input {
+    flex: none;
+  }
+
+  &__label {
+    font-size: 1rem;
+    line-height: 1.875;
+    color: $clr-mine-shaft;
+  }
+}
+
+.skip-link {
+  position: fixed;
+  inset-inline-start: 50%;
+  inset-block-start: 0;
+  z-index: 200;
+  padding: rem(20px);
+  border-radius: 0 0 rem(8px) rem(8px);
+  font-weight: $fw-semi-bold;
+  font-size: rem(20px);
+  line-height: divide(28px, 20px);
+  background-color: $clr-white;
+  color: $clr-texas-rose;
+  box-shadow: rem(0px 0px 15px) hsl(0deg 0% 0% / 12%);
+  transition: transform 0.5s;
+  transform: translateX(-50%);
+
+  &:not(:focus-visible) {
+    transform: translateY(-100%) translateX(-50%);
+  }
+}

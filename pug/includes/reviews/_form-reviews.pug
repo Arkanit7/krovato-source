@@ -1,0 +1,41 @@
+form#form-reviews.l-aside-reviews__form-reviews.form-reviews(
+  method="POST",
+  action="https://jkorpela.fi/cgi-bin/echo.cgi"
+)
+  h2.form-reviews__title.h2 Залишіть свій відгук про магазин
+  ul.form-reviews__list
+    li.form-reviews__item
+      input.form-reviews__field.field(
+        type="text",
+        name="full-name",
+        required,
+        placeholder="Ваше ім'я прізвище"
+      )
+    li.form-reviews__item
+      input.form-reviews__field.field(
+        type="email",
+        name="email",
+        required,
+        placeholder="Імейл"
+      )
+    li.form-reviews__item
+      textarea.form-reviews__textarea.field(
+        name="message",
+        required,
+        placeholder="Відгук"
+      )
+  //- RATE
+  .form-reviews__rate.rate
+    .rate__label.h5 Ваша оцінка:
+    ol.rate__list
+      li.rate__item
+        input.rate__input(type="radio", name="rate", value="1", required)
+      li.rate__item
+        input.rate__input(type="radio", name="rate", value="2", required)
+      li.rate__item
+        input.rate__input(type="radio", name="rate", value="3", required)
+      li.rate__item
+        input.rate__input(type="radio", name="rate", value="4", required)
+      li.rate__item
+        input.rate__input(type="radio", name="rate", value="5", required)
+  button.form-reviews__button.button Залишити відгук

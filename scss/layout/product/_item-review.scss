@@ -1,0 +1,350 @@
+@use "../../abstracts" as *;
+
+.form-answer {
+  padding-inline: rem(30px);
+  padding-block: rem(30px);
+  border-radius: 0.5rem;
+  background-color: $clr-alabaster;
+
+  @include not-last-children {
+    margin-block-end: rem(30px);
+  }
+
+  // .form-answer__header
+
+  &__header {
+    display: flex;
+    gap: rem(20px);
+    align-items: center;
+  }
+
+  // .form-answer__icon
+
+  &__icon {
+    flex: none;
+    font-size: rem(22px);
+    color: $clr-texas-rose;
+  }
+
+  // .form-answer__title
+
+  &__title {
+    color: $clr-mine-shaft;
+  }
+
+  // .form-answer__fields
+
+  &__fields {
+    display: grid;
+    gap: rem(20px);
+
+    @include media-width-from(em($medium)) {
+      gap: rem(30px);
+    }
+  }
+
+  // .form-answer__field-group
+
+  &__field-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(20px);
+
+    @include media-width-from(em($medium)) {
+      gap: rem(30px);
+    }
+
+    & > * {
+      flex: 1 1 30ch;
+      inline-size: 100%;
+    }
+  }
+
+  // .form-answer__item
+
+  &__item {
+  }
+
+  // .form-answer__input
+
+  &__input {
+  }
+
+  // .form-answer__textarea
+
+  &__textarea {
+    min-block-size: rem(150px);
+    max-block-size: rem(600px);
+  }
+
+  // .form-answer__actions
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(30px);
+  }
+
+  // .form-answer__button
+
+  &__button {
+    min-inline-size: fit-content;
+  }
+}
+
+.answer {
+  color: $clr-mine-shaft;
+
+  @include not-last-children {
+    margin-block-end: rem(20px);
+  }
+
+  // .answer__header
+
+  &__header {
+    display: grid;
+    grid-auto-flow: column;
+    gap: rem(10px);
+    justify-content: start;
+    align-items: center;
+
+    @include container-width-from(em($small)) {
+      gap: rem(20px);
+    }
+  }
+
+  // .answer__avatar
+
+  &__avatar {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    inline-size: rem(50px);
+    block-size: rem(50px);
+    border: 1px solid $clr-texas-rose;
+    border-radius: 50%;
+    background: url("../img/icons/account.svg") center / rem(22px) no-repeat;
+
+    img {
+      object-fit: cover;
+      inline-size: 100%;
+      block-size: 100%;
+      background-color: $clr-white;
+    }
+  }
+
+  // .answer__name
+
+  &__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  // .answer__arrow
+
+  &__arrow {
+    font-size: rem(20px);
+    color: $clr-texas-rose;
+  }
+
+  // .answer__recipient
+
+  &__recipient {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  // .answer__time
+
+  &__time {
+    @include container-width-to(em($small)) {
+      display: none;
+    }
+  }
+
+  // .answer__body
+
+  &__body {
+  }
+}
+
+.button-item-review {
+  @extend %response;
+
+  display: inline-flex;
+  gap: rem(10px);
+  align-items: center;
+
+  // .button-item-review__icon
+
+  &__icon {
+    flex: none;
+    color: $clr-texas-rose;
+  }
+
+  // .button-item-review__counter
+
+  &__counter {
+    display: inline-grid;
+    flex: none;
+    place-content: center;
+    min-inline-size: rem(21px);
+    min-block-size: rem(21px);
+    aspect-ratio: 1;
+    padding: rem(4px);
+    border-radius: 50%;
+    background-color: $clr-texas-rose;
+    color: $clr-white;
+  }
+}
+
+.item-review {
+  container-type: inline-size;
+
+  @include not-last {
+    margin-block-end: rem(30px);
+    padding-block-end: rem(30px);
+    border-block-end: rem(3px) solid $clr-alabaster;
+  }
+
+  @include not-last-children {
+    margin-block-end: rem(30px);
+  }
+
+  // .item-review__comment
+
+  &__comment {
+    @include not-last-children {
+      margin-block-end: rem(20px);
+    }
+  }
+
+  // .item-review__header
+
+  &__header {
+    display: grid;
+    grid-template-areas: "avatar title title" "stars stars time";
+    gap: rem(2px 12px);
+    justify-content: start;
+    align-items: center;
+    color: $clr-mine-shaft;
+
+    @media (#{em($x-small)} <= width) {
+      gap: rem(10px 20px);
+    }
+
+    @container (#{em($small)} <= width) {
+      grid-template-areas: "avatar title stars time";
+      grid-template-columns: auto 1fr;
+    }
+  }
+
+  // .item-review__avatar
+
+  &__avatar {
+    display: grid;
+    flex: none;
+    grid-area: avatar;
+    place-items: center;
+    overflow: hidden;
+    inline-size: rem(50px);
+    block-size: rem(50px);
+    border: 1px solid $clr-texas-rose;
+    border-radius: 50%;
+    background: url("../img/icons/account.svg") center / rem(22px) no-repeat;
+
+    img {
+      object-fit: cover;
+      inline-size: 100%;
+      block-size: 100%;
+      background-color: $clr-white;
+    }
+  }
+
+  // .item-review__title
+
+  &__title {
+    grid-area: title;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  // .item-review__stars
+
+  &__stars {
+    grid-area: stars;
+  }
+
+  // .item-review__time
+
+  &__time {
+    grid-area: time;
+  }
+
+  // .item-review__img
+
+  &__img {
+  }
+
+  // .item-review__body
+
+  &__body {
+    color: $clr-mine-shaft;
+  }
+
+  // .item-review__actions
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(10px 30px);
+    align-items: center;
+
+    @include media-width-to(em($small)) {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  // .item-review__button
+
+  &__button {
+  }
+
+  // .item-review__answers
+
+  &__answers {
+    padding-block-start: rem(30px);
+    border-block-start: rem(2px) solid $clr-texas-rose;
+
+    @include container-width-from(em($x-small)) {
+      margin-inline-start: divide(700%, 79);
+    }
+  }
+
+  // .item-review__answer
+
+  &__answer {
+    @include not-last {
+      margin-block-end: rem(30px);
+    }
+  }
+
+  // .item-review__form
+
+  &__form {
+    @include media-width-to(em($small)) {
+      margin-inline: -$padding;
+      padding-inline: $padding;
+      border-radius: unset;
+    }
+
+    @include media-width-to(em($x-small)) {
+      margin-inline: -$padding-sm;
+      padding-inline: $padding-sm;
+    }
+  }
+}

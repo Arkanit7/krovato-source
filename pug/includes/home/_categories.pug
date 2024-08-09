@@ -1,0 +1,10 @@
+section.main__categories.categories
+  .categories__container
+    .categories__heading.heading
+      h2.heading__title.title Популярні категорії
+      //- a.heading__link.link(href="#") Дивитись всі
+      //-   svg.link__icon.icon
+      //-     use(xlink:href="img/icons/symbol-defs.svg#icon-arrow-side")
+    .categories__layout
+      each category in categories
+        +itemCategories(category)

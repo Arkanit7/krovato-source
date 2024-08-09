@@ -1,0 +1,17 @@
+@use "../../abstracts" as *;
+
+.l-aside-reviews {
+  // .l-aside-reviews__shop
+  &__shop {
+    @include not-last {
+      margin-block-end: rem(30px);
+    }
+  }
+
+  // .l-aside-reviews__form
+  &__form {
+    @include not-last {
+      margin-block-end: rem(30px);
+    }
+  }
+}

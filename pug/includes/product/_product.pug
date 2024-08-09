@@ -1,0 +1,248 @@
+article.main__product.product
+  .product__container
+    //- TITLE
+    h1.product__title.title Ліжко двоспальне МК-1 з підйомним механізмом
+    //- USEFUL
+    .product__useful.useful-product
+      p.useful-product__availability
+        svg.useful-product__status.icon
+          use(xlink:href="img/icons/symbol-defs.svg#icon-available")
+        |
+        | В наявності
+      .useful-product__rating
+        .useful-product__stars.stars
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item.stars__item--active
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+          .stars__item
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+        a.useful-product__reviews(href="/reviews.html")
+          svg.useful-product__chat.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-chat")
+          |
+          | 93 відгуки
+      p.useful-product__model
+        | Модель: 62003836
+    //- DISPLAY
+    .product__display
+      //- SLIDER
+      .product__slider.slider-product
+        .slider-product__swiper.swiper
+          .swiper-slide.product-slide
+            +picture({class: "product-slide__picture", src: "img/product/main.jpg", alt: "Ліжко двоспальне МК-1 з підйомним механізмом"})
+          .swiper-slide.product-slide
+            +picture({class: "product-slide__picture", src: "img/product/1.jpg", alt: ""})
+          .swiper-slide.product-slide
+            +picture({class: "product-slide__picture", src: "img/product/2.jpg", alt: ""})
+          .swiper-slide.product-slide
+            +picture({class: "product-slide__picture", src: "img/product/3.jpg", alt: ""})
+        .slider-product__navigation
+          button.slider-product__button.button-slider.button-slider--prev(
+            type="button"
+          )
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          button.slider-product__button.button-slider.button-slider--next(
+            type="button"
+          )
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+      //- THUMBS
+      .product__thumbs.thumbs-product
+        .thumbs-product__swiper.swiper
+          .swiper-slide.thumbs-slide
+            +picture({class: "thumbs-slide__picture", src: "img/product/main.jpg", alt: "Ліжко двоспальне МК-1 з підйомним механізмом"})
+          .swiper-slide.thumbs-slide
+            +picture({class: "thumbs-slide__picture", src: "img/product/1.jpg", alt: ""})
+          .swiper-slide.thumbs-slide
+            +picture({class: "thumbs-slide__picture", src: "img/product/2.jpg", alt: ""})
+          .swiper-slide.thumbs-slide
+            +picture({class: "thumbs-slide__picture", src: "img/product/3.jpg", alt: ""})
+    //- MIX
+    .product__mix
+      //- DETAILS
+      form.product__details.details-product(
+        method="POST",
+        action="https://jkorpela.fi/cgi-bin/echo.cgi"
+      )
+        //- HEADER
+        .details-product__header
+          .details-product__cost
+            p.details-product__price 15 400 грн.
+            s.details-product__old-price 25 400 грн.
+        //- ADJUST
+        .details-product__adjust.adjust-details
+          .adjust-details__row
+            .adjust-details__form-group
+              label.adjust-details__label(
+                for="size",
+                data-tippy-content="Висота та ширина у сантиметрах."
+              )
+                svg.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-question")
+                |
+                | Розмір
+              select#size.adjust-details__select(name="size", required)
+                option(value="") Виберіть
+                option(value="160x200") 160x200 см
+                option(value="110x190") 110x190 см
+                option(value="160x190") 160x190 см
+                option(value="150x200") 150x200 см
+                option(value="140x200") 140x200 см
+            .adjust-details__form-group
+              label.adjust-details__label(
+                for="block",
+                data-tippy-content="Ламельний блок являє собою ортопедичну основу для матраца."
+              )
+                svg.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-question")
+                |
+                | Ламельний блок
+              select#block.adjust-details__select(name="block", required)
+                option(value="") Виберіть
+                option(value="160x200") 160x200 см
+                option(value="110x190") 110x190 см
+                option(value="160x190") 160x190 см
+                option(value="150x200") 150x200 см
+                option(value="140x200") 140x200 см
+          .adjust-details__form-group
+            .adjust-details__label(
+              data-tippy-content="Колір та текстура тканини виробу."
+            )
+              svg.icon
+                use(xlink:href="img/icons/symbol-defs.svg#icon-question")
+              |
+              | Виберіть тканину:
+            .adjust-details__fabric.fabric-adjust
+              ul.fabric-adjust__list
+                li.fabric-adjust__item(data-input-group)
+                  label.fabric-adjust__label(for="")
+                    +picture({class: "fabric-adjust__picture", src: "img/product/fabric-1.jpg", alt: "Сіра"})
+                    input.fabric-adjust__input(
+                      type="radio",
+                      name="fabric",
+                      value="grey",
+                      checked
+                    )
+                li.fabric-adjust__item(data-input-group)
+                  label.fabric-adjust__label(for="")
+                    +picture({class: "fabric-adjust__picture", src: "img/product/fabric-2.jpg", alt: "Сіра"})
+                    input.fabric-adjust__input(
+                      type="radio",
+                      name="fabric",
+                      value="a"
+                    )
+                li.fabric-adjust__item(data-input-group)
+                  label.fabric-adjust__label(for="")
+                    +picture({class: "fabric-adjust__picture", src: "img/product/fabric-3.jpg", alt: "Сіра"})
+                    input.fabric-adjust__input(
+                      type="radio",
+                      name="fabric",
+                      value="b"
+                    )
+                li.fabric-adjust__item(data-input-group)
+                  label.fabric-adjust__label(for="")
+                    +picture({class: "fabric-adjust__picture", src: "img/product/fabric-4.jpg", alt: "Сіра"})
+                    input.fabric-adjust__input(
+                      type="radio",
+                      name="fabric",
+                      value="c"
+                    )
+                li.fabric-adjust__item(data-input-group)
+                  label.fabric-adjust__label(for="")
+                    +picture({class: "fabric-adjust__picture", src: "img/product/fabric-5.jpg", alt: "Сіра"})
+                    input.fabric-adjust__input(
+                      type="radio",
+                      name="fabric",
+                      value="d"
+                    )
+              button.fabric-adjust__expand(type="button")
+                | Показати всі
+                |
+                svg.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-arrow-double")
+        //- ACTIONS
+        .details-product__actions.actions-details
+          .actions-details__calc.calc
+            button.calc__decrease(type="button") -
+            input.calc__quantity(type="number", value="1", min="1")
+            button.calc__increase(type="button") +
+          button.actions-details__button.button
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-cart")
+            |
+            | Купити
+          button.actions-details__button.button.button--skeleton(type="button")
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-credit")
+            |
+            | Купити в кредит
+        //- Favorite
+        button.details-product__favorite.favorite-details(
+          type="button",
+          data-mover=`.details-product__header; beforeend; (${large} <= width)`
+        )
+          .favorite-details__decor
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-heart")
+          |
+          | В обране
+      //- PHONE
+      form.product__phone.phone-product(
+        method="POST",
+        action="https://jkorpela.fi/cgi-bin/echo.cgi"
+      )
+        input.phone-product__input(
+          data-iti,
+          type="tel",
+          name="phone",
+          placeholder="-- --- ----",
+          required
+        )
+        button.phone-product__button.button.button--skeleton.button--color--emperor Купити в 1 клік
+      //- SOCIAL
+      section.product__social.social-product
+        h2.social-product__title Або напишіть нам:
+        ul.social-product__list
+          li.social-product__item
+            a.social-button.social-button--big.social-button--bg--sushi(
+              title="WhatsApp",
+              href="#",
+              target="_blank"
+            )
+              svg.social-button__icon.icon
+                use(xlink:href="img/icons/symbol-defs.svg#icon-whatsapp")
+          li.social-product__item
+            a.social-button.social-button--big.social-button--bg--picton-blue(
+              title="Telegram",
+              href="#",
+              target="_blank"
+            )
+              svg.social-button__icon.icon
+                use(xlink:href="img/icons/symbol-defs.svg#icon-telegram")
+          li.social-product__item
+            a.social-button.social-button--big.social-button--bg--royal-purple(
+              title="Viber",
+              href="#",
+              target="_blank"
+            )
+              svg.social-button__icon.icon
+                use(xlink:href="img/icons/symbol-defs.svg#icon-viber")
+          li.social-product__item
+            a.social-button.social-button--big.social-button--bg--punch(
+              title="Twitter-x",
+              href="#",
+              target="_blank"
+            )
+              svg.social-button__icon.icon
+                use(xlink:href="img/icons/symbol-defs.svg#icon-twitter-x")

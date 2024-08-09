@@ -1,0 +1,34 @@
+@use "../abstracts" as *;
+
+.rating {
+  // .rating__show
+
+  &__show {
+    display: flex;
+    gap: rem(10px);
+    align-items: center;
+  }
+
+  // .rating__value
+
+  &__value {
+    font-weight: $fw-semi-bold;
+    font-size: rem(19px);
+    line-height: divide(24px, 19px);
+    color: $clr-texas-rose;
+  }
+
+  // .rating__stars
+
+  &__stars {
+    flex: none;
+  }
+
+  // .rating__stats
+
+  &__stats {
+    font-weight: $fw-light;
+    font-size: rem(13px);
+    line-height: divide(22px, 13px);
+  }
+}

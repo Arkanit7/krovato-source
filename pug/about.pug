@@ -1,0 +1,19 @@
+extends templates/_layout
+
+block prepend document
+  - const title = "Про нас — Krovato";
+
+block main
+  +breadcrumbs([{name: "Головна", href: "/"}],"Про нас")
+
+  //- Fade block
+  include includes/about/_fade-block.pug
+
+  //- Group block
+  include includes/about/_group-block.pug
+
+  //- Recent reviews
+  include includes/_recent-reviews.pug
+
+  //- Plain block
+  include includes/_plain-block.pug

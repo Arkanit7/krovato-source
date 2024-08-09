@@ -1,0 +1,218 @@
+header.wrapper__header.header.header--pos--sticky
+  // Navigation
+  .navigation-header
+    .navigation-header__container(
+      data-mover=`#menu; beforeend; (width < ${bpMenu});`
+    )
+      nav.navigation-header__nav
+        // List
+        ul.list-navigation-header
+          li.list-navigation-header__item
+            a.list-navigation-header__link(href="/about.html") Про нас
+          li.list-navigation-header__item
+            a.list-navigation-header__link(href="/payment.html") Оплата
+          li.list-navigation-header__item
+            a.list-navigation-header__link(href="/delivery.html") Доставка та збірка
+          li.list-navigation-header__item
+            a.list-navigation-header__link(href="/reviews.html") Відгуки
+          li.list-navigation-header__item
+            a.list-navigation-header__link(href="/blog.html") Блог
+          li.list-navigation-header__item
+            a.list-navigation-header__link(href="/contacts.html") Контакти
+      .navigation-header__useful
+        // Help   
+        address.navigation-header__help.help-header
+          p.help-header__label Допомога і консультація:
+          ul.help-header__list
+            li.help-header__item
+              a.social-button.social-button--bg--sushi(
+                title="WhatsApp",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-whatsapp")
+            li.help-header__item
+              a.social-button.social-button--bg--picton-blue(
+                title="Telegram",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-telegram")
+            li.help-header__item
+              a.social-button.social-button--bg--royal-purple(
+                title="Viber",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-viber")
+            li.help-header__item
+              a.social-button.social-button--bg--punch(
+                title="Twitter-x",
+                href="#",
+                target="_blank"
+              )
+                svg.social-button__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-twitter-x")
+        // Lang
+        .navigation-header__lang.lang-header
+          button.lang-header__trigger(
+            type="button",
+            title="Language",
+            aria-controls="lang-underlay"
+          )
+            span UA
+            span.lang-header__icons
+              svg.lang-header__icon.icon
+                use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+              svg.lang-header__icon.icon
+                use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+          #lang-underlay.lang-header__underlay
+            ul.lang-header__list
+              li.lang-header__item
+                a.lang-header__link(href="#") EN
+              li.lang-header__item
+                a.lang-header__link(href="#") PL
+              li.lang-header__item
+                a.lang-header__link(href="#") DE
+              li.lang-header__item
+                a.lang-header__link(href="#") FR
+              li.lang-header__item
+                a.lang-header__link(href="#") IT
+  // Main
+  .main-header
+    .main-header__container
+      // Logo
+      if (homePage)
+        .main-header__logo
+          img(src="img/header/logo.svg", alt="Krovato – технології сну")
+      else
+        a.main-header__logo(href="/")
+          img(src="img/header/logo.svg", alt="Krovato – технології сну")
+      // Catalog
+      include ./_catalog
+      // Search
+      .main-header__search.search-header(
+        data-mover=`.main-header__container-mobile; beforeend; (width < ${bpMenu});`
+      )
+        button.search-header__trigger.button-header(
+          type="button",
+          title="Пошук"
+        )
+          svg.button-header__close.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+          svg.button-header__open.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-search") 
+        form.search-header__form(action="#")
+          input#search-header.search-header__input.field(
+            type="search",
+            name="search",
+            required,
+            minlength="3",
+            placeholder="Пошук товарів"
+          )
+          button.search-header__submit(title="Шукати")
+            svg.search-header__icon.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-search")
+      // Phone
+      address.main-header__phone.phone-header
+        //- Main
+        .phone-header__main
+          button.phone-header__button(
+            type="button",
+            title="Розгорнути телефони"
+          )
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+            svg.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-phone")
+          .phone-header__info(
+            data-mover=`.phone-header__underlay; afterbegin; (width < ${620 / 16 + "em"})`
+          )
+            p.phone-header__schedule Щодня з 9:00 до 18:00
+            a.phone-header__link(href="tel:0679294545") 067 929-45-45
+          button.phone-header__trigger(
+            type="button",
+            title="Розгорнути телефони"
+          )
+            svg.phone-header__icon.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+            svg.phone-header__icon.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+        //- Underlay
+        .phone-header__underlay
+          ul.phone-header__list
+            li.phone-header__item
+              a.phone-header__link(href="tel:0501334545") 050 133-45-45
+            li.phone-header__item
+              a.phone-header__link(href="tel:0931707545") 093 170-75-45
+            li.phone-header__item
+              button.phone-header__callback(type="button") Передзвоніть мені
+      // Burger
+      button.main-header__burger.burger(
+        aria-controls="menu",
+        title="Навігаційне меню"
+      )
+        span.burger__icon
+          span.burger__line
+      // Menu
+      #menu.main-header__menu.menu
+      // Actions
+      .main-header__actions(
+        data-mover=`.main-header__container-mobile; beforeend; (width < ${bpMenu});`
+      )
+        button.button-header(type="button", title="Улюблені")
+          svg.button-header__close.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+          svg.button-header__open.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-heart") 
+        button.button-header(type="button", title="Кошик", data-cart-header)
+          svg.button-header__close.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-x")
+          svg.button-header__open.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-cart") 
+        include ./_cart-header
+    .main-header__container-mobile
+  // Assortment
+  .header__assortment.assortment-header
+    .assortment-header__container(
+      data-mover=`#menu; beforeend; (width < ${bpMenu});`
+    )
+      ul.assortment-header__list.list-assortment-header
+        li.list-assortment-header__item
+          a.list-assortment-header__link(href="#")
+            svg.list-assortment-header__icon.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-star")
+            |
+            | Акції
+        li.list-assortment-header__item
+          a.list-assortment-header__link(href="#")
+            svg.list-assortment-header__icon.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-sale")
+            |
+            | Розпродаж
+        li.list-assortment-header__item
+          a.list-assortment-header__link(href="#")
+            svg.list-assortment-header__icon.icon
+              use(xlink:href="img/icons/symbol-defs.svg#icon-credit")
+            |
+            | Купити в кредит
+      ul.assortment-header__list.assortment-header__list--wide.list-assortment-header
+        li.list-assortment-header__item
+          a.list-assortment-header__link(href="#") Дитяча
+        li.list-assortment-header__item
+          a.list-assortment-header__link(href="#") Кухня
+        li.list-assortment-header__item
+          a.list-assortment-header__link(href="#") Ванна
+        li.list-assortment-header__item
+          a.list-assortment-header__link(href="#") Спальня
+        li.list-assortment-header__item
+          a.list-assortment-header__link(href="#") Передпокій
+        li.list-assortment-header__item
+          a.list-assortment-header__link(href="#") Вітальня
+        li.list-assortment-header__item
+          a.list-assortment-header__link(href="#") Офіс
+  // Overlay
+  .header__overlay.overlay(data-catalog-overlay)

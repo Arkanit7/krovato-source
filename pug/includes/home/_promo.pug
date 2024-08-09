@@ -1,0 +1,102 @@
+section.main__promo.promo
+  .promo__container
+    .promo__header
+      .promo__heading.heading
+        h2.heading__title.title Акції
+        a.heading__link.link(href="#") Дивитись всі
+          svg.link__icon.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-arrow-side")
+      .promo__navigation
+        button.promo__button.button-slider.button-slider--prev(type="button")
+          svg.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+        button.promo__button.button-slider.button-slider--next(type="button")
+          svg.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+    .promo__slider.slider-promo
+      // Swiper
+      .slider-promo__swiper.swiper
+        .slider-promo__wrapper.swiper-wrapper
+          a.slider-promo__slide.swiper-slide(href="#")
+            picture
+              source(
+                srcset="img/home/promo/summer-sale.avif",
+                type="image/avif"
+              )
+              source(
+                srcset="img/home/promo/summer-sale.webp",
+                type="image/webp"
+              )
+              img(
+                src="img/home/promo/summer-sale.jpg",
+                alt="Літній розпродаж!"
+              )
+          a.slider-promo__slide.swiper-slide(href="#")
+            picture
+              source(
+                srcset="img/home/promo/coach-sale.avif",
+                type="image/webp"
+              )
+              source(
+                srcset="img/home/promo/coach-sale.webp",
+                type="image/webp"
+              )
+              img(src="img/home/promo/coach-sale.jpg", alt="Диванний цінопад!")
+          a.slider-promo__slide.swiper-slide(href="#")
+            picture
+              source(
+                srcset="img/home/promo/royal-sale.avif",
+                type="image/webp"
+              )
+              source(
+                srcset="img/home/promo/royal-sale.webp",
+                type="image/webp"
+              )
+              img(
+                src="img/home/promo/royal-sale.jpg",
+                alt="Королівські знижки на м'які меблі!"
+              )
+          a.slider-promo__slide.swiper-slide(href="#")
+            picture
+              source(
+                srcset="img/home/promo/final-sale.avif",
+                type="image/webp"
+              )
+              source(
+                srcset="img/home/promo/final-sale.webp",
+                type="image/webp"
+              )
+              img(
+                src="img/home/promo/final-sale.jpg",
+                alt="Остаточний розпродаж!"
+              )
+          a.slider-promo__slide.swiper-slide(href="#")
+            picture
+              source(
+                srcset="img/home/promo/total-sale.avif",
+                type="image/webp"
+              )
+              source(
+                srcset="img/home/promo/total-sale.webp",
+                type="image/webp"
+              )
+              img(
+                src="img/home/promo/total-sale.jpg",
+                alt="Тотальний розпродаж!"
+              )
+          a.slider-promo__slide.swiper-slide(href="#")
+            picture
+              source(
+                srcset="img/home/promo/season-sale.avif",
+                type="image/webp"
+              )
+              source(
+                srcset="img/home/promo/season-sale.webp",
+                type="image/webp"
+              )
+              img(
+                src="img/home/promo/season-sale.jpg",
+                alt="Сезонний розпродаж!"
+              )
+      // Pagination
+      .slider-promo__pagination.swiper-pagination

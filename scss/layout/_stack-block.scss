@@ -1,0 +1,88 @@
+@use "../abstracts" as *;
+
+.stack-block {
+  background-color: $clr-white;
+
+  // .stack-block__container
+
+  &__container {
+    padding-block: rem(20px);
+
+    @include media-width-from(em($x-small)) {
+      padding-block: rem(40px);
+    }
+
+    @include media-width-from(em($medium)) {
+      padding-block: rem(70px);
+    }
+  }
+
+  // .stack-block__list
+
+  &__list {
+  }
+
+  // .stack-block__item
+
+  &__item {
+    display: grid;
+    gap: rem(20px);
+    justify-items: center;
+
+    @include media-width-from(em($medium)) {
+      grid-template-columns: repeat(2, auto);
+    }
+
+    @include not-last {
+      margin-block-end: rem(30px);
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .stack-block__group
+
+  &__group {
+    color: $clr-mine-shaft;
+
+    @include media-width-to(em($medium)) {
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    @include not-last-children {
+      margin-block-end: rem(10px);
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(20px);
+      }
+    }
+  }
+
+  // .stack-block__title
+
+  &__title {
+    font-weight: $fw-semi-bold;
+    font-size: rem(26px);
+    line-height: divide(34px, 26px);
+  }
+
+  // .stack-block__text
+
+  &__text {
+    font-size: 1rem;
+    line-height: divide(30px, 16px);
+
+    @include not-last-children {
+      margin-block-end: rem(10px);
+    }
+  }
+
+  // .stack-block__decor
+
+  &__decor {
+    order: -1;
+  }
+}

@@ -1,0 +1,10 @@
+section.main__four-grid.four-grid
+  .four-grid__container
+    .four-grid__heading.heading
+      h2.heading__title.title Найпопулярніші товари
+      a.heading__link.link(href="/set.html") Дивитись всі
+        svg.link__icon.icon
+          use(xlink:href="img/icons/symbol-defs.svg#icon-arrow-side")
+    .four-grid__layout
+      each product in products 
+        +itemProduct(product)

@@ -1,0 +1,284 @@
+extends templates/_layout
+
+block prepend document
+  - const title = "Оформлення замовлення — Krovato";
+
+block main
+  +breadcrumbs([{name: "Головна", href: "/"}],"Оформлення замовлення")
+
+  section.main__checkout.checkout
+    .checkout__container
+      h1.checkout__title.title Оформлення замовлення
+      form.checkout__form(
+        method="POST",
+        action="https://jkorpela.fi/cgi-bin/echo.cgi"
+      )
+        .checkout__base
+          section.section-checkout
+            .section-checkout__header
+              .section-checkout__decor
+                svg.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-info")
+              h2.section-checkout__title
+                | Інформація про покупця
+            .section-checkout__body.info-checkout
+              ul.info-checkout__list
+                li.info-checkout__item
+                  input.info-checkout__input.field(
+                    type="text",
+                    required,
+                    placeholder="Прізвище",
+                    name="lastname"
+                  )
+                li.info-checkout__item
+                  input.info-checkout__input.field(
+                    type="text",
+                    required,
+                    placeholder="Ім’я",
+                    name="firstname"
+                  )
+                li.info-checkout__item
+                  input.info-checkout__input.field(
+                    type="text",
+                    required,
+                    placeholder="По батькові",
+                    name="middlename"
+                  )
+                li.info-checkout__item
+                  input.info-checkout__input.field(
+                    type="tel",
+                    required,
+                    placeholder="Контактний телефон",
+                    name="phone",
+                    data-iti
+                  )
+                li.info-checkout__item
+                  input.info-checkout__input.field(
+                    type="email",
+                    required,
+                    placeholder="Імейл",
+                    name="email"
+                  )
+              .info-checkout__group.input-group(data-input-group)
+                input.input-group__input.checkbox(
+                  type="checkbox",
+                  name="not-me"
+                )
+                label.input-group__label Отримуватиме замовлення інша людина
+          section.section-checkout
+            .section-checkout__header
+              .section-checkout__decor
+                svg.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-van")
+              h2.section-checkout__title
+                | Вибір способу доставки
+            .section-checkout__body.delivery-checkout
+              ul.delivery-checkout__list
+                li.delivery-checkout__item.choose
+                  input#pickup.choose__input(
+                    type="radio",
+                    checked,
+                    name="delivery",
+                    value="pickup"
+                  )
+                  label.choose__box(for="pickup")
+                    span.choose__icons
+                      img.choose__icon.choose__icon--backface(
+                        src="img/checkout/selected.svg",
+                        alt=""
+                      )
+                      img.choose__icon.choose__icon--face(
+                        src="img/checkout/pickup.svg",
+                        alt=""
+                      )
+                    span.choose__title Самовивіз із магазину
+                    span.choose__price Безплатно
+                li.delivery-checkout__item.choose
+                  input#new-post.choose__input(
+                    type="radio",
+                    name="delivery",
+                    value="new-post"
+                  )
+                  label.choose__box(for="new-post")
+                    span.choose__icons
+                      img.choose__icon.choose__icon--backface(
+                        src="img/checkout/selected.svg",
+                        alt=""
+                      )
+                      img.choose__icon.choose__icon--face(
+                        src="img/checkout/new-post.svg",
+                        alt=""
+                      )
+                    span.choose__title Доставка Нова Пошта
+                    span.choose__price ≈ від 500 грн
+                li.delivery-checkout__item.choose
+                  input#courier.choose__input(
+                    type="radio",
+                    name="delivery",
+                    value="courier"
+                  )
+                  label.choose__box(for="courier")
+                    span.choose__icons
+                      img.choose__icon.choose__icon--backface(
+                        src="img/checkout/selected.svg",
+                        alt=""
+                      )
+                      img.choose__icon.choose__icon--face(
+                        src="img/checkout/courier.svg",
+                        alt=""
+                      )
+                    span.choose__title Доставка кур'єром
+                    span.choose__price ≈ від 200 грн
+              .delivery-checkout__useful.useful-delivery
+                svg.useful-delivery__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-pin")
+                .useful-delivery__group
+                  p.useful-delivery__schedule Графік роботи: щодня з 9:00 до 18:00
+                  p.useful-delivery__location м. Київ, пров. Ізяславський 52, пов. 2
+                a.useful-delivery__button.button(
+                  href="https://maps.app.goo.gl/Vu4Z6jir29WQ2dHi8",
+                  target="blank"
+                )
+                  svg.icon
+                    use(xlink:href="img/icons/symbol-defs.svg#icon-map")
+                  |
+                  | На мапі
+          section.section-checkout
+            .section-checkout__header
+              .section-checkout__decor
+                svg.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-wallet")
+              h2.section-checkout__title
+                | Вибір способу оплати
+            .section-checkout__body.payment-checkout
+              ul.payment-checkout__list
+                li.payment-checkout__item
+                  .payment-checkout__group.input-group(data-input-group)
+                    input.input-group__input.radio(
+                      type="radio",
+                      name="payment",
+                      value="cash"
+                    )
+                    label.input-group__label Готівкою при отриманні (Післясплата)
+                li.payment-checkout__item
+                  .payment-checkout__group.input-group(data-input-group)
+                    input.input-group__input.radio(
+                      type="radio",
+                      name="payment",
+                      value="card",
+                      checked
+                    )
+                    label.input-group__label.label-group Оплата карткою на сайті
+                      img.label-group__img(
+                        src="img/checkout/mastercard.svg",
+                        alt="MasterCard"
+                      )
+                      img.label-group__img(
+                        src="img/checkout/visa.svg",
+                        alt="Visa"
+                      )
+                li.payment-checkout__item
+                  .payment-checkout__group.input-group(data-input-group)
+                    input.input-group__input.radio(
+                      type="radio",
+                      name="payment",
+                      value="privat-pay"
+                    )
+                    label.input-group__label.label-group Privat Pay
+                      img.label-group__img(
+                        src="img/checkout/privat-pay.svg",
+                        alt=""
+                      )
+                li.payment-checkout__item
+                  .payment-checkout__group.input-group(data-input-group)
+                    input.input-group__input.radio(
+                      type="radio",
+                      name="payment",
+                      value="credit"
+                    )
+                    label.input-group__label Кредит від Krovato
+                li.payment-checkout__item
+                  .payment-checkout__group.input-group(data-input-group)
+                    input.input-group__input.radio(
+                      type="radio",
+                      name="payment",
+                      value="privatbank"
+                    )
+                    label.input-group__label.label-group Оплата частинами ПриватБанк
+                      img.label-group__img(
+                        src="img/checkout/privatbank.svg",
+                        alt=""
+                      )
+                li.payment-checkout__item
+                  .payment-checkout__group.input-group(data-input-group)
+                    input.input-group__input.radio(
+                      type="radio",
+                      name="payment",
+                      value="monobank"
+                    )
+                    label.input-group__label.label-group Оплата частинами МоноБанк
+                      img.label-group__img(
+                        src="img/checkout/monobank.svg",
+                        alt=""
+                      )
+          section.section-checkout
+            .section-checkout__header
+              .section-checkout__decor
+                svg.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-comment")
+              h2.section-checkout__title
+                | Коментар до замовлення
+            .section-checkout__body.comment-checkout
+              textarea.comment-checkout__textarea.field(
+                name="comment",
+                placeholder="Ваш коментар"
+              )
+        .checkout__aside
+          section.section-checkout
+            h2.section-checkout__title Ваш кошик #[span 4]
+            .section-checkout__body.cart-checkout
+              ul.cart-checkout__list
+                li.cart-checkout__item
+                  +itemCart({src: "img/products/sparta.jpg", alt:"Ліжко Sparta з дерев'яним скелетом.", class: "item-cart__picture", sizes: 'Розмір: 61 x 184 x 2130 мм', title: 'Ліжко Спарта / Sparta з підйомним механізмом', availability: 'available', oldPrice: '25 400 грн.', price: '15 400 грн.',})
+                li.cart-checkout__item
+                  +itemCart({src: "img/products/sparta.jpg", alt:"Ліжко Sparta з дерев'яним скелетом.", class: "item-cart__picture", sizes: 'Розмір: 61 x 184 x 2130 мм', title: 'Матрац ARGENTUM AMALTEA / Аргентум Амалті', availability: 'available', oldPrice: '25 400 грн.', price: '15 400 грн.',})
+                li.cart-checkout__item
+                  +itemCart({src: "img/products/sparta.jpg", alt:"Ліжко Sparta з дерев'яним скелетом.", class: "item-cart__picture", sizes: 'Розмір: 61 x 184 x 2130 мм', title: 'Матрац ARGENTUM AMALTEA / Аргентум Амалті', availability: 'available', oldPrice: '25 400 грн.', price: '15 400 грн.',})
+          .section-checkout
+            .section-checkout__body.promo-checkout(data-input-group)
+              .promo-checkout__col
+                svg.promo-checkout__icon.icon
+                  use(xlink:href="img/icons/symbol-defs.svg#icon-promo")
+                label.promo-checkout__label Є промокод?
+              .promo-checkout__col.promo-checkout__col--auto
+                input.promo-checkout__input.field(
+                  type="text",
+                  name="promo",
+                  placeholder="Введіть код"
+                )
+                button.promo-checkout__button.button(type="button") ОК
+          section.section-checkout
+            h2.section-checkout__title Разом:
+            .section-checkout__body.summary-checkout
+              dl.summary-checkout__list
+                .summary-checkout__row
+                  dt.summary-checkout__key 4 товари на суму:
+                  dd.summary-checkout__value 540 269 грн.
+                .summary-checkout__row
+                  dt.summary-checkout__key Вартість доставки:
+                  dd.summary-checkout__value За тарифами оператора
+                .summary-checkout__row
+                  dt.summary-checkout__key До оплати:
+                  dd.summary-checkout__value.summary-checkout__value--bolder 540 269 грн.
+              .summary-checkout__group.input-group(data-input-group)
+                input.input-group__input.checkbox(
+                  type="checkbox",
+                  name="callback"
+                )
+                label.input-group__label Не передзвонюйте мені для підтвердження замовлення
+              button.summary-checkout__button.button ОФОРМИТИ ЗАМОВЛЕННЯ
+              .summary-checkout__user-agree
+                p Підтверджуючи замовлення, я приймаю умови
+                  |
+                  |
+                  a(href="#", target="_blank") Угоди користувача

@@ -1,0 +1,52 @@
+@use "../../abstracts" as *;
+
+.l-mix-product {
+  // .l-mix-product__description
+  &__description {
+    @include not-last {
+      margin-block-end: rem(40px);
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(50px);
+      }
+    }
+  }
+
+  // .l-mix-product__specs
+
+  &__specs {
+    @include not-last {
+      margin-block-end: rem(40px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(60px);
+      }
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(70px);
+      }
+    }
+  }
+
+  // .l-mix-product__reviews
+  &__reviews {
+    @include media-width-to(em($small)) {
+      margin-inline: -$padding;
+      padding-inline: $padding;
+      border-radius: unset;
+    }
+
+    @include media-width-to(em($x-small)) {
+      margin-inline: -$padding-sm;
+      padding-inline: $padding-sm;
+    }
+
+    @include not-last {
+      margin-block-end: rem(60px);
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(70px);
+      }
+    }
+  }
+}

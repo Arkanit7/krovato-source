@@ -1,0 +1,68 @@
+@use "../abstracts" as *;
+
+.section-block {
+  display: grid;
+  gap: rem(20px);
+  justify-items: center;
+  text-align: center;
+  color: $clr-mine-shaft;
+
+  // .section-block__img
+
+  &__img {
+    object-fit: contain;
+    inline-size: rem(120px);
+    aspect-ratio: 1;
+    margin-inline: auto;
+
+    @include media-width-from(em($x-small)) {
+      inline-size: rem(170px);
+    }
+  }
+
+  // .section-block__title
+
+  &__title {
+    font-weight: $fw-semi-bold;
+    font-size: rem(26px);
+    line-height: divide(34px, 26px);
+  }
+
+  // .section-block__text-group
+
+  &__text-group {
+    font-size: 1rem;
+    line-height: 1.875;
+  }
+}
+
+.group-block {
+  // .group-block__container
+
+  &__container {
+    @include not-last-children {
+      margin-block-end: rem(40px);
+    }
+  }
+
+  // .group-block__title
+
+  &__title {
+    text-align: center;
+  }
+
+  // .group-block__list
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(30px);
+    justify-content: center;
+  }
+
+  // .group-block__item
+
+  &__item {
+    inline-size: rem(300px);
+  }
+}

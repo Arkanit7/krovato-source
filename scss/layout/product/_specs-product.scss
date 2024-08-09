@@ -1,0 +1,102 @@
+@use "../../abstracts" as *;
+
+.table-specs {
+  overflow: auto;
+
+  // .table-specs__inner
+
+  &__inner {
+    inline-size: 100%;
+    border-collapse: collapse;
+  }
+
+  // .table-specs__group
+
+  &__group {
+  }
+
+  // .table-specs__row
+
+  &__row {
+    position: relative;
+    isolation: isolate;
+
+    @include not-last {
+      border-block-end: rem(5px) solid $clr-alabaster;
+
+      &::before {
+        inset-block-end: rem(5px);
+      }
+    }
+
+    &::before {
+      // background
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: 0.5rem;
+      background-color: $clr-white;
+    }
+
+    &::after {
+      // horizontal dashed line
+      content: "";
+      position: absolute;
+      inset-inline: 0;
+      inset-block: 50%;
+      z-index: -1;
+      border-block-end: rem(1px) dashed;
+      transform: translateY(-50%);
+    }
+  }
+
+  // .table-specs__cell
+
+  &__cell {
+    padding-block: rem(15px);
+
+    &:not(:first-of-type, :last-of-type) {
+      text-align: center;
+    }
+
+    &:last-of-type {
+      text-align: end;
+    }
+
+    span {
+      display: inline-block;
+      padding-inline: rem(10px);
+      white-space: nowrap;
+      background-color: $clr-white;
+    }
+  }
+}
+
+.specs-product {
+  // .specs-product__title
+
+  &__title {
+    color: $clr-mine-shaft;
+
+    @include not-last {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .specs-product__table
+
+  &__table {
+    @include not-last {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+}

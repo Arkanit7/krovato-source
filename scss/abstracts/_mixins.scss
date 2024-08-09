@@ -1,0 +1,127 @@
+@use "sass:math";
+@use "sass:meta";
+@use "sass:list";
+@use "variables" as *;
+@use "functions" as *;
+
+@mixin media-height-from($height) {
+  @media ($height <= height) {
+    @content;
+  }
+}
+
+@mixin media-height-to($height) {
+  @media (height < $height) {
+    @content;
+  }
+}
+
+@mixin media-width-from($width) {
+  @media ($width <= width) {
+    @content;
+  }
+}
+
+@mixin media-width-to($width) {
+  @media (width < $width) {
+    @content;
+  }
+}
+
+@mixin container-width-from($width) {
+  @container (#{$width} <= width) {
+    @content;
+  }
+}
+
+@mixin container-width-to($width) {
+  @container (width < #{$width}) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (any-hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin not-first {
+  * + & {
+    @content;
+  }
+}
+
+@mixin not-first-children {
+  & > * + * {
+    @content;
+  }
+}
+
+@mixin not-last {
+  &:not(:last-child) {
+    @content;
+  }
+}
+
+@mixin not-last-children {
+  & > :not(:last-child) {
+    @content;
+  }
+}
+
+@mixin flex-wrap($gap) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+  align-items: center;
+}
+
+@mixin response($transition: null) {
+  transition: $transition;
+
+  @include hover {
+    @content;
+  }
+
+  &:focus-visible {
+    @content;
+  }
+}
+
+/// Get an auto-fill grid with given amount of columns.
+/// Columns will only collapse at maximum tension.
+/// @param {number} $columns-count -
+/// @param {rem} $gap -
+/// @param {rem} $container-width [] -
+@mixin grid-auto-fill($columns-count, $gap, $container-width: $container) {
+  $column-gap: $gap;
+  $column-width: divide(
+      $container-width - $column-gap * $columns-count,
+      $columns-count + 1
+    ) + 0.0625rem; // add 1 pixel to remove one column
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, $column-width), 1fr)
+  );
+  gap: $gap;
+
+  @if meta.type-of($gap) == "list" {
+    $column-gap: list.nth($gap, 2);
+  }
+}
+
+@mixin grid-container {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax($padding, 1fr) [content-start] minmax(0, $container)
+    [content-end]minmax($padding, 1fr) [full-end];
+
+  & > * {
+    grid-column: content;
+  }
+}

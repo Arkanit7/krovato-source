@@ -1,0 +1,306 @@
+@use "../../abstracts" as *;
+
+.favorite-details {
+  display: flex;
+  gap: rem(10px);
+  justify-content: center;
+  align-items: center;
+  font-weight: $fw-semi-bold;
+  font-size: rem(19px);
+  line-height: divide(24px, 19px);
+
+  @include response(color 0.3s) {
+    color: $clr-texas-rose;
+  }
+
+  // .favorite-details__decor
+
+  &__decor {
+    display: grid;
+    flex: none;
+    place-items: center;
+    inline-size: rem(50px);
+    block-size: rem(50px);
+    border-radius: 50%;
+    font-size: rem(26px);
+    background-color: $clr-alabaster;
+  }
+}
+
+.fabric-adjust {
+  display: grid;
+  gap: rem(20px);
+
+  // .fabric-adjust__list
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(10px);
+
+    @include media-width-from(em($x-small)) {
+      gap: rem(15px);
+    }
+  }
+
+  // .fabric-adjust__item
+
+  &__item {
+    flex: none;
+  }
+
+  // .fabric-adjust__label
+
+  &__label {
+    display: grid;
+    grid-template-areas: "stack";
+    inline-size: rem(50px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    @include media-width-from(em($x-small)) {
+      inline-size: rem(70px);
+    }
+  }
+
+  // .fabric-adjust__picture
+
+  &__picture {
+    grid-area: stack;
+    border-radius: inherit;
+
+    img {
+      object-fit: cover;
+      inline-size: 100%;
+      block-size: 100%;
+      border-radius: inherit;
+    }
+  }
+
+  // .fabric-adjust__input
+
+  &__input {
+    appearance: none;
+    grid-area: stack;
+    border-radius: inherit;
+    cursor: pointer;
+
+    &:checked {
+      border: rem(5px) solid $clr-texas-rose;
+      background: url("../img/icons/check.svg") center/rem(24px) no-repeat;
+    }
+  }
+
+  // .fabric-adjust__expand
+
+  &__expand {
+    display: flex;
+    gap: rem(18px);
+    align-items: center;
+    color: $clr-texas-rose;
+
+    @include media-width-to(em($bp-product)) {
+      justify-self: center;
+    }
+
+    @include response(color 0.3s) {
+      color: $clr-mine-shaft;
+    }
+
+    .icon {
+      flex: none;
+      font-size: rem(11px);
+    }
+  }
+}
+
+.adjust-details {
+  @include not-last-children {
+    margin-block-end: rem(30px);
+  }
+
+  // .adjust-details__row
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(30px);
+
+    & > * {
+      flex: 1 1 20ch;
+    }
+  }
+
+  // .adjust-details__form-group
+
+  &__form-group {
+    display: grid;
+    gap: rem(10px);
+  }
+
+  // .adjust-details__label
+
+  &__label {
+    display: inline-flex;
+    gap: rem(8px);
+    align-items: center;
+    justify-self: start;
+    color: $clr-mine-shaft;
+
+    .icon {
+      font-size: rem(18px);
+      color: $clr-silver-chalice;
+    }
+  }
+
+  // .adjust-details__select
+
+  &__select {
+    appearance: none;
+    position: relative;
+    padding-inline: rem(15px);
+    padding-block: rem(10px);
+    border-radius: 0.5rem;
+    background:
+      url("../img/icons/arrow.svg") right #{"/"} rem(11px) no-repeat content-box,
+      $clr-alabaster;
+  }
+
+  // .adjust-details__fabric
+
+  &__fabric {
+  }
+}
+
+.actions-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(20px);
+
+  @include media-width-from(em($x-large)) {
+    gap: rem(20px 30px);
+  }
+
+  & > * {
+    @include media-width-to(em($small)) {
+      inline-size: 100%;
+    }
+  }
+
+  // .actions-details__calc
+
+  &__calc {
+    flex: auto;
+    inline-size: rem(120px);
+  }
+
+  // .actions-details__button
+
+  &__button {
+    flex: auto;
+    min-inline-size: fit-content;
+  }
+}
+
+.details-product {
+  padding-block: rem(30px);
+
+  @include media-width-from(em($bp-product)) {
+    padding-block: rem(20px);
+  }
+
+  // .details-product__header
+
+  &__header {
+    display: flex;
+    gap: rem(30px);
+    justify-content: center;
+
+    @include media-width-from(em($bp-product)) {
+      justify-content: space-between;
+    }
+
+    @include media-width-to(em($bp-product)) {
+      margin-inline: rem(-16px);
+      padding-inline: rem(16px);
+    }
+
+    @include media-width-to(em($x-small)) {
+      margin-inline: rem(-12px);
+      padding-inline: rem(12px);
+    }
+
+    @include not-last {
+      margin-block-end: rem(30px);
+      padding-block-end: rem(30px);
+      border-block-end: rem(2px) solid hsl(0deg 0% 93%);
+    }
+  }
+
+  // .details-product__cost
+
+  &__cost {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(0px 20px);
+    align-items: center;
+
+    @include media-width-to(em($bp-product)) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  // .details-product__price
+
+  &__price {
+    font-weight: $fw-semi-bold;
+    font-size: rem(30px);
+    line-height: divide(40px, 30px);
+    color: $clr-mine-shaft;
+  }
+
+  // .details-product__old-price
+
+  &__old-price {
+    font-weight: $fw-semi-bold;
+    font-size: rem(20px);
+    line-height: 1.4;
+    color: hsl(0deg 72% 56%);
+    text-decoration-line: line-through;
+  }
+
+  // .details-product__favorite
+
+  &__favorite {
+    @include media-width-to($bp-product) {
+      inline-size: 100%;
+    }
+
+    @include media-width-from($bp-product) {
+      flex: none;
+    }
+
+    @include not-last {
+      @include media-width-to($bp-product) {
+        margin-block-end: rem(30px);
+      }
+    }
+  }
+
+  // .details-product__adjust
+
+  &__adjust {
+    @include not-last {
+      margin-block-end: rem(30px);
+    }
+  }
+
+  // .details-product__actions
+
+  &__actions {
+    @include not-last {
+      margin-block-end: rem(20px);
+    }
+  }
+}

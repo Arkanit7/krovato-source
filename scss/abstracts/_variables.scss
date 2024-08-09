@@ -1,0 +1,72 @@
+@use "functions" as *;
+
+// Default paddings
+$padding-sm: rem(12px);
+$padding: rem(16px);
+
+// Canvas - container with paddings
+$container: rem(1290px);
+$canvas: $container + 2 * $padding;
+
+// $container-small: 879px + 2 * $padding;
+// $canvas: 1440px;
+
+// Material UI BP
+$xs: 0;
+$sm: em(600px);
+$md: em(900px);
+$lg: em(1200px);
+$xl: em(1536px);
+
+// Bootstrap BP
+$xx-small: em(375px);
+$x-small: em(480px);
+$small: em(576px);
+$medium: em(768px);
+$large: em(992px);
+$x-large: em(1200px);
+$xx-large: em(1400px);
+
+// Header
+$bp-catalog: em($medium);
+$bp-search: em(530px);
+
+// $bp-phone: em(1040px);
+// $bp-floor: em(920px);
+$bp-menu: em(992px);
+$bp-gap: em(1265px);
+$bp-hero: em(576px);
+$bp-product: em($large);
+$l-columns: em(900px);
+
+// Font Families
+$ff-proxima-nova: "Proxima Nova", sans-serif;
+
+// Font Sizes
+
+// Font weights
+$fw-light: 300;
+$fw-regular: 400;
+$fw-semi-bold: 600;
+
+// Main colors
+$clr-texas-rose: hsl(36deg 100% 67%);
+$clr-mine-shaft: hsl(0deg 2% 16%);
+$clr-emperor: hsl(0deg 0% 33%);
+$clr-silver-chalice: hsl(0deg 0% 69%);
+$clr-iron: hsl(180deg 5% 83%);
+$clr-alabaster: hsl(0deg 0% 97%);
+$clr-white: hsl(0deg 0% 100%);
+$clr-mercury: hsl(0deg 0% 91%);
+
+// Misc colors
+$clr-sushi: hsl(92deg 51% 47%);
+$clr-picton-blue: hsl(197deg 72% 56%);
+$clr-royal-purple: hsl(267deg 46% 46%);
+$clr-punch: hsl(0deg 72% 56%);
+$clr-denim: hsl(209deg 80% 45%);
+$clr-purple-heart: hsl(288deg 71% 48%);
+$clr-california: hsl(36deg 100% 50%);
+
+// Custom colors
+$clr-dodger-blue: hsl(197deg 100% 50%);

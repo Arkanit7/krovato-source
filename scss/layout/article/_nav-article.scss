@@ -1,0 +1,45 @@
+@use "../../abstracts" as *;
+
+.nav-article {
+  // .nav-article__container-small
+
+  &__container-small {
+    display: flex;
+    flex-direction: column;
+    gap: rem(15px);
+
+    @include media-width-from(em($xx-small)) {
+      align-items: center;
+    }
+
+    @include media-width-from(em($x-small)) {
+      gap: rem(30px);
+    }
+
+    @include media-width-from(em($medium)) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+
+  // .nav-article__button
+
+  &__button {
+    padding-block: rem(13px);
+
+    @include media-width-from(em($xx-small)) {
+      inline-size: rem(300px);
+    }
+
+    svg {
+      font-size: rem(12px);
+    }
+
+    &--rotate {
+      svg,
+      img {
+        transform: rotate(0.5turn);
+      }
+    }
+  }
+}

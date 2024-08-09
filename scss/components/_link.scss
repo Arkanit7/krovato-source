@@ -1,0 +1,35 @@
+@use "../abstracts" as *;
+
+.link {
+  display: inline-flex;
+  gap: em(16px, 19px);
+  align-items: center;
+  font-weight: $fw-semi-bold;
+  font-size: rem(19px);
+  line-height: divide(24px, 19px);
+
+  // typography
+  color: $clr-texas-rose;
+
+  @include response {
+    text-decoration: underline;
+  }
+
+  // .link__icon
+
+  &__icon {
+    flex: none;
+    font-size: em(12px, 19px);
+    transition: transform 0.3s;
+  }
+
+  &:focus-visible &__icon {
+    transform: rotate(-135deg);
+  }
+
+  &:hover &__icon {
+    @media (any-hover) {
+      transform: rotate(-135deg);
+    }
+  }
+}

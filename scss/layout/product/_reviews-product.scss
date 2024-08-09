@@ -1,0 +1,89 @@
+@use "../../abstracts" as *;
+
+.reviews-product {
+  @extend %card;
+
+  padding-inline: rem(30px);
+  padding-block: rem(30px);
+
+  @include not-last-children {
+    margin-block-end: rem(40px);
+  }
+
+  // .reviews-product__header
+
+  &__header {
+  }
+
+  // .reviews-product__title
+
+  &__title {
+    color: $clr-mine-shaft;
+
+    @include not-last {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(10px);
+      }
+    }
+  }
+
+  // .reviews-product__info
+
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(10px 43px);
+    align-items: center;
+  }
+
+  // .reviews-product__counter
+
+  &__counter {
+  }
+
+  // .reviews-product__flex-group
+
+  &__flex-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(10px 12px);
+    align-items: center;
+  }
+
+  // .reviews-product__stars
+
+  &__stars {
+  }
+
+  // .reviews-product__average
+
+  &__average {
+  }
+
+  // .reviews-product__body
+
+  &__body {
+  }
+
+  // .reviews-product__review
+
+  &__review {
+  }
+
+  // .reviews-product__footer
+
+  &__footer {
+    display: grid;
+
+    @include media-width-from(em($medium)) {
+      justify-content: center;
+    }
+  }
+
+  // .reviews-product__more
+
+  &__more {
+  }
+}

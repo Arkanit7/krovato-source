@@ -1,0 +1,23 @@
+section.main__news.news
+  .news__container
+    .news__header
+      .news__heading.heading
+        h2.heading__title.title Свіжі статті та останні новини
+        a.heading__link.link(href="/blog.html") Читати блог
+          svg.link__icon.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-arrow-side")
+      .news__control
+        button.news__button.button-slider.button-slider--prev(type="button")
+          svg.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+        button.news__button.button-slider.button-slider--next(type="button")
+          svg.icon
+            use(xlink:href="img/icons/symbol-defs.svg#icon-arrow")
+    .news__swiper.swiper
+      .news__wrapper.swiper-wrapper
+        +itemBlog({class: "news__slide swiper-slide", title: "Стільці для вітальні. Як правильно вибрати?", src: "img/blog/01.jpg", alt: "М'які стільці та трапеза на кухні."})
+        +itemBlog({class: "news__slide swiper-slide", title: "Що краще вибрати для кухні – стільці чи кухонний куточок?", src: "img/blog/02.jpg", alt: "Різнобарвні стільці у світлій кухні."})
+        +itemBlog({class: "news__slide swiper-slide", title: "Оформлення вітальні. Які м'які меблі краще вибрати?", src: "img/blog/03.jpg", alt: "Затишна сучасна вітальня."})
+        +itemBlog({class: "news__slide swiper-slide", title: "Стільці для вітальні. Як правильно вибрати?", src: "img/blog/01.jpg", alt: "М'які стільці та трапеза на кухні."})
+        +itemBlog({class: "news__slide swiper-slide", title: "Що краще вибрати для кухні – стільці чи кухонний куточок?", src: "img/blog/02.jpg", alt: "Різнобарвні стільці у світлій кухні."})
+        +itemBlog({class: "news__slide swiper-slide", title: "Оформлення вітальні. Які м'які меблі краще вибрати?", src: "img/blog/03.jpg", alt: "Затишна сучасна вітальня."})

@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+.stars {
+  display: inline-flex;
+  gap: rem(4px);
+
+  // .stars__item
+
+  &__item {
+    transition: color 0.3s;
+
+    // @media (any-hover) {
+    //   &:hover,
+    //   &:has(~ &:hover) {
+    //     color: $clr-texas-rose;
+    //   }
+    // }
+
+    // .stars__item--active
+
+    // BEHOLD THE REVERSE SELECTOR 😆
+    &--active,
+    &:has(~ &--active) {
+      color: $clr-texas-rose;
+    }
+  }
+}

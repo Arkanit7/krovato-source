@@ -1,0 +1,53 @@
+@use "../abstracts" as *;
+
+.burger {
+  @extend %response;
+
+  &__icon {
+    display: block;
+    position: relative;
+    block-size: em(24px, 16px);
+    inline-size: em(38px, 16px);
+  }
+
+  &__icon::before,
+  &__line,
+  &__icon::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    block-size: 0.25em;
+    border-radius: 0.125em;
+    background-color: currentcolor;
+    transition:
+      transform 0.3s,
+      inset 0.3s;
+  }
+
+  &__icon::before {
+    inset-block-start: 0;
+  }
+
+  &__line {
+    inset-block-start: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__icon::after {
+    inset-block-end: 0;
+  }
+
+  &[aria-expanded="true"] &__icon::before {
+    inset-block-start: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  &[aria-expanded="true"] &__icon::after {
+    inset-block-end: 50%;
+    transform: translateY(50%) rotate(45deg);
+  }
+
+  &[aria-expanded="true"] &__line {
+    transform: translateY(-50%) scaleX(0);
+  }
+}

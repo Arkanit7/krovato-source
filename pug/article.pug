@@ -1,0 +1,8 @@
+extends templates/_layout
+
+block prepend document
+  - const title = "Оформлення вітальні. Які м'які меблі краще вибрати? — Krovato";
+
+block main
+  +breadcrumbs([{name: "Головна", href: "/"},{name: "Блог", href: "/blog.html"}],"Оформлення вітальні. Які м'які меблі краще вибрати?")
+  include includes/article/_article

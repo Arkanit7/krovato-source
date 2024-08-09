@@ -1,0 +1,48 @@
+@use "../../abstracts" as *;
+
+.information {
+  padding-block: rem(40px);
+
+  @include media-width-from(em($medium)) {
+    padding-block: rem(70px);
+  }
+
+  &--bg--white {
+    background-color: $clr-white;
+  }
+
+  // .information__container-small
+
+  &__container-small {
+  }
+
+  &__title,
+  &__expand {
+    @include not-last {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(30px);
+      }
+
+      @include media-width-from(em($medium)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .information__title
+
+  &__title {
+    text-wrap: balance;
+
+    @include media-width-from(em($medium)) {
+      text-align: center;
+    }
+  }
+
+  // .information__expand
+
+  &__expand {
+  }
+}

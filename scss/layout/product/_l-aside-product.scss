@@ -1,0 +1,21 @@
+@use "../../abstracts" as *;
+
+.l-aside-product {
+  // .l-aside-product__form
+  &__form {
+    // @include media-width-to(em($l-columns)) {
+    //   display: none;
+    // }
+
+    @include media-width-to(em($small)) {
+      margin-inline: -$padding;
+      padding-inline: $padding;
+      border-radius: 0;
+    }
+
+    @include media-width-to(em($x-small)) {
+      margin-inline: -$padding-sm;
+      padding-inline: $padding-sm;
+    }
+  }
+}

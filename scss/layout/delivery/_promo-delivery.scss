@@ -1,0 +1,79 @@
+@use "../../abstracts" as *;
+
+$change: $small;
+
+.item-promo-delivery {
+  display: flex;
+  gap: rem(20px);
+  align-items: start;
+
+  @include media-width-from(em($change)) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  // .item-promo-delivery__decor
+
+  &__frame {
+    flex: none;
+  }
+
+  // .item-promo-delivery__text
+
+  &__text {
+    font-weight: $fw-semi-bold;
+    font-size: rem(20px);
+    line-height: 1.4;
+    color: $clr-mine-shaft;
+
+    @include media-width-from(em($change)) {
+      text-align: center;
+    }
+  }
+}
+
+.promo-delivery {
+  // .promo-delivery__container
+
+  &__container {
+    @include not-last-children {
+      margin-block-end: rem(40px);
+    }
+  }
+
+  // .promo-delivery__title
+
+  &__title {
+    text-align: center;
+  }
+
+  // .promo-delivery__list
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(30px);
+    justify-content: space-around;
+
+    @include media-width-to(em($change)) {
+      flex-direction: column;
+    }
+  }
+
+  // .promo-delivery__item
+
+  &__item {
+    @include media-width-from(em($change)) {
+      inline-size: rem(234px);
+    }
+  }
+
+  // .promo-delivery__subtext
+
+  &__subtext {
+    font-size: 1rem;
+    line-height: divide(30px, 16px);
+    text-align: center;
+    color: $clr-mine-shaft;
+  }
+}

@@ -1,0 +1,89 @@
+@use "../abstracts" as *;
+
+.plain-block {
+  // .plain-block__container
+
+  &__container {
+    display: flex;
+    gap: rem(20px 30px);
+    align-items: center;
+
+    @include media-width-to(em($medium)) {
+      flex-wrap: wrap;
+    }
+  }
+
+  // .plain-block__group
+
+  &__group {
+    display: grid;
+    flex: rem(520px);
+    color: $clr-mine-shaft;
+  }
+
+  // .plain-block__title
+
+  &__title {
+    @include not-last {
+      margin-block-end: rem(30px);
+    }
+  }
+
+  // .plain-block__heavy-group
+
+  &__heavy-group {
+    font-weight: $fw-semi-bold;
+    font-size: rem(26px);
+    line-height: divide(34px, 26px);
+
+    @include not-last {
+      margin-block-end: rem(20px);
+    }
+
+    @include not-last-children {
+      margin-block-end: rem(10px);
+    }
+  }
+
+  // .plain-block__light-group
+
+  &__light-group {
+    font-weight: $fw-semi-bold;
+    font-size: rem(20px);
+    line-height: 1.4;
+
+    @include not-last {
+      margin-block-end: rem(20px);
+    }
+
+    @include not-last-children {
+      margin-block-end: rem(10px);
+    }
+  }
+
+  // .plain-block__button
+
+  &__button {
+    @include media-width-from(em($x-small)) {
+      justify-self: center;
+    }
+
+    @include media-width-from(em($medium)) {
+      justify-self: start;
+      min-inline-size: rem(300px);
+    }
+  }
+
+  // .plain-block__picture
+
+  &__picture {
+    flex: rem(740px);
+    aspect-ratio: 480 / 330;
+
+    img {
+      object-fit: cover;
+      inline-size: 100%;
+      block-size: 100%;
+    }
+  }
+}

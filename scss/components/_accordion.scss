@@ -1,0 +1,85 @@
+@use "../abstracts" as *;
+
+.accordion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(rem(24px) rem(36px));
+
+  &__panel {
+    flex: 100%;
+  }
+
+  &__title {
+  }
+
+  &__trigger {
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+    inline-size: 100%;
+    text-align: start;
+
+    &:disabled {
+      cursor: auto;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    flex: none;
+    align-self: center;
+    inline-size: 0.9em;
+    block-size: 0.9em;
+    user-select: none;
+    transition: transform 0.4s ease-in-out;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      inset-inline-start: 50%;
+      inset-block-start: 50%;
+      inline-size: 100%;
+      block-size: em(rem(3px));
+      border-radius: em(1rem (5px));
+      background-color: currentcolor;
+    }
+
+    &::before {
+      transform: translate(-50%) rotate(90deg);
+    }
+
+    &::after {
+      transform: translate(-50%);
+    }
+
+    [aria-expanded="true"] & {
+      transform: rotate(45deg);
+    }
+
+    :disabled & {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition:
+      grid-template-rows 0.4s ease-in-out,
+      visibility 0.4s ease-in-out;
+
+    &[hidden] {
+      grid-template-rows: 0fr;
+      visibility: hidden;
+    }
+
+    & > * {
+      // Necessary for the accordion to hide
+      overflow: hidden;
+    }
+  }
+
+  &__body {
+  }
+}

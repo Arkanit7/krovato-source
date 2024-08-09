@@ -1,0 +1,125 @@
+@use "../abstracts" as *;
+
+.trigger-faq {
+  display: flex;
+  gap: rem(15px);
+  align-items: center;
+  inline-size: 100%;
+  padding: rem(15px);
+  text-align: unset;
+  text-wrap: balance;
+
+  @include response(color 0.3s) {
+    color: $clr-texas-rose;
+  }
+
+  // .trigger-faq__icon
+
+  &__icon {
+    flex: none;
+    font-size: rem(34px);
+    color: $clr-texas-rose;
+  }
+
+  // .trigger-faq__state
+
+  &__state {
+    flex: none;
+    margin-inline-start: auto;
+    font-size: rem(14px);
+    transition: transform 0.5s;
+  }
+
+  &[aria-expanded="true"] &__state {
+    transform: scaleY(-1);
+  }
+}
+
+.accordion-faq {
+  // .accordion-faq__panel
+
+  &__panel {
+    @extend %card;
+
+    @include not-last {
+      margin-block-end: rem(15px);
+    }
+  }
+
+  // .accordion-faq__title
+
+  &__title {
+    font-weight: $fw-semi-bold;
+    font-size: rem(19px);
+    line-height: divide(24px, 19px);
+    color: $clr-mine-shaft;
+  }
+
+  // .accordion-faq__trigger
+
+  &__trigger {
+    border-radius: 0.5rem; // For better outline look
+  }
+
+  &__panel:has(&__trigger[aria-expanded="true"]) {
+    outline: rem(2px) solid $clr-texas-rose;
+  }
+
+  // .accordion-faq__content
+
+  &__content {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition:
+      grid-template-rows 0.5s,
+      visibility 0.5s;
+
+    &[hidden] {
+      grid-template-rows: 0fr;
+      visibility: hidden;
+    }
+
+    & > * {
+      overflow: hidden;
+    }
+  }
+
+  // .accordion-faq__body
+
+  &__body {
+    padding-inline: rem(15px);
+    padding-block-end: rem(15px);
+    font-size: 1rem;
+    line-height: 1.875;
+    color: $clr-mine-shaft;
+
+    @include not-last-children {
+      margin-block-end: rem(10px);
+    }
+  }
+}
+
+.faq {
+  // .faq__container
+
+  &__container {
+    @include not-last-children {
+      margin-block-end: rem(20px);
+
+      @include media-width-from(em($x-small)) {
+        margin-block-end: rem(40px);
+      }
+    }
+  }
+
+  // .faq__title
+
+  &__title {
+    text-align: center;
+  }
+
+  // .faq__accordion
+
+  &__accordion {
+  }
+}

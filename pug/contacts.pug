@@ -1,0 +1,13 @@
+extends templates/_layout
+
+block prepend document
+  - const title = "Контакти — Krovato";
+
+block main
+  +breadcrumbs([{name: "Головна", href: "/"}],"Контакти")
+  // Контакти
+  include ./includes/contacts/_contacts
+  // Як дістатися
+  include ./includes/contacts/_reach
+  // Напишіть нам!
+  include ./includes/contacts/_write

@@ -1,0 +1,87 @@
+@use "../abstracts" as *;
+
+// Typography
+.h1 {
+  font-weight: $fw-semi-bold;
+  font-size: rem(40px);
+  line-height: divide(48px, 40px);
+}
+
+// .h1\@medium {
+//   @include media-width-from(em($medium)) {
+//     font-weight: $fw-semi-bold;
+//     font-size: rem(40px);
+//     line-height: divide(48px, 40px);
+//   }
+// }
+
+.h2 {
+  font-weight: $fw-semi-bold;
+  font-size: rem(30px);
+  line-height: divide(40px, 30px);
+}
+
+.h3 {
+  font-weight: $fw-semi-bold;
+  font-size: rem(26px);
+  line-height: divide(34px, 26px);
+}
+
+.h4 {
+  font-weight: $fw-semi-bold;
+  font-size: rem(20px);
+  line-height: divide(28px, 20px);
+}
+
+.h5 {
+  font-weight: $fw-semi-bold;
+  font-size: rem(19px);
+  line-height: divide(24px, 19px);
+}
+
+.h6 {
+  font-size: rem(17px);
+  line-height: divide(24px, 17px);
+}
+
+.base-font {
+  font-size: rem(16px);
+  line-height: divide(30px, 16px);
+}
+
+.small-font {
+  font-size: rem(15px);
+  line-height: divide(22px, 15px);
+}
+
+.description-font {
+  font-weight: $fw-light;
+  font-size: rem(13px);
+  line-height: divide(22px, 13px);
+}
+
+.title {
+  font-weight: $fw-semi-bold;
+  font-size: rem(26px);
+  line-height: divide(40px, 30px); /* 133.333% */
+  color: $clr-mine-shaft;
+
+  @include media-width-from(em($x-small)) {
+    font-size: rsv-clamp(rem(30px), rem(40px), em($x-small));
+  }
+
+  @include media-width-from(em($medium)) {
+    line-height: 1.2;
+  }
+}
+
+.subtitle {
+  font-weight: $fw-semi-bold;
+  font-size: rem(30px);
+  line-height: divide(40px, 30px);
+
+  @include media-width-from(em($medium)) {
+    font-size: rem(30px);
+    line-height: divide(40px, 30px);
+  }
+}

@@ -1,0 +1,50 @@
+extends templates/_layout
+
+block prepend document
+  - const title = "Ліжко двоспальне МК-1 з підйомним механізмом — Krovato";
+
+block main
+  +breadcrumbs([{name: "Головна", href: "/"},{name: "Ліжка", href: "/set.html"},{name: "М'які ліжка", href: "#"}],"Ліжко двоспальне МК-1 з підйомним механізмом")
+
+  //- Product
+  include includes/product/_product.pug
+
+  //- Features
+  include includes/product/_features.pug
+
+  //- l-columns
+  //- "l" stands for layout
+  section.main__l-columns.l-columns
+    .l-columns__container
+      .l-columns__col-big
+        .l-mix-product
+          //- Description
+          include includes/product/_description-product.pug
+          //- Specs
+          include includes/product/_specs-product.pug
+          //- Reviews
+          include includes/product/_reviews-product.pug
+      .l-columns__col-small
+        .l-aside-product
+          //- Form reviews
+          include includes/product/_form-reviews.pug
+  //- Four grid
+  section.main__four-grid.four-grid
+    .four-grid__container
+      .four-grid__heading.heading
+        h2.heading__title.title Відмінно доповняють спальню тумба або комод
+      .four-grid__layout
+        - let i = 0;
+        - while (i < 4)
+          - i++;
+          +itemProduct(products[i])
+  //- Four grid
+  section.main__four-grid.four-grid
+    .four-grid__container
+      .four-grid__heading.heading
+        h2.heading__title.title Рекомендовані товари
+      .four-grid__layout
+        - let j = 0;
+        - while (j < 4)
+          - j++;
+          +itemProduct(products[j])

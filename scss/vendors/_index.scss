@@ -1,0 +1,30 @@
+// @forward "../../../node_modules/rfs/scss";
+@forward "../../../node_modules/swiper/swiper";
+
+// @forward "../../../node_modules/swiper/modules/free-mode";
+// @forward "../../../node_modules/photoswipe/dist/photoswipe.css";
+@forward "../../../node_modules/nouislider/dist/nouislider.css";
+@forward "../../../node_modules/intl-tel-input/build/css/intlTelInput.css";
+@forward "../../../node_modules/tippy.js/dist/tippy.css";
+@forward "../../../node_modules/tippy.js/themes/light-border.css";
+
+// light
+// light-border
+// material
+// translucent
+
+.iti {
+  --iti-path-flags-1x: url("../img/iti/flags.webp");
+  --iti-path-flags-2x: url("../img/iti/flags@2x.webp");
+  --iti-path-globe-1x: url("../img/iti/globe.webp");
+  --iti-path-globe-2x: url("../img/iti/globe@2x.webp");
+}
+
+.iti,
+[data-iti] {
+  inline-size: 100%;
+}
+
+[data-tippy-content][data-tippy-content] {
+  cursor: help;
+}

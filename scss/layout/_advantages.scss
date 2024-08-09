@@ -1,0 +1,80 @@
+@use "../abstracts" as *;
+
+.item-advantages {
+  display: flex;
+  align-items: center;
+
+  // justify-content: center;
+  gap: rem(5px 20px);
+
+  @include media-width-to(em($medium)) {
+    flex-direction: column;
+  }
+
+  // .item-advantages__img
+
+  &__img {
+    inline-size: rem(80px);
+    block-size: rem(80px);
+    object-fit: contain;
+  }
+
+  // .item-advantages__label
+
+  &__label {
+    inline-size: rem(200px);
+    color: $clr-mine-shaft;
+    font-size: rem(20px);
+    font-weight: $fw-semi-bold;
+    line-height: 1.4;
+
+    @include media-width-to(em($medium)) {
+      text-align: center;
+      flex: auto;
+      display: grid;
+      align-items: center;
+    }
+  }
+}
+
+.advantages {
+  padding-block: rem(40px);
+
+  @include media-width-from(em($x-small)) {
+    padding-block-start: rem(60px);
+  }
+
+  @include media-width-from(em($medium)) {
+    padding-block-start: rem(70px);
+  }
+
+  &--bg {
+    &--white {
+      background-color: $clr-white;
+    }
+  }
+
+  // .advantages__container
+
+  &__container {
+  }
+
+  // .advantages__list
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: rem(40px 10px);
+
+    @include media-width-from(em($x-small)) {
+      gap: rem(30px);
+    }
+  }
+
+  // .advantages__item
+
+  &__item {
+    // flex: auto;
+  }
+}

@@ -1,0 +1,85 @@
+@use "../abstracts" as *;
+
+.item-blog {
+  display: flex;
+  flex-direction: column;
+  background-color: $clr-white;
+  box-shadow: rem(-3px 4px 15px) hsl(0deg 0% 0% / 6%);
+
+  @include media-width-from(em($xx-small)) {
+    border-radius: rem(8px);
+  }
+
+  @media (any-hover) {
+    &__frame:hover :is(img, svg) {
+      transform: scale(1.05);
+    }
+  }
+
+  // overflow: hidden;
+  // &.swiper-slide-active {
+  //   align-self: stretch;
+  // }
+
+  // .item-blog__main
+
+  &__main {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    gap: rem(30px);
+    padding: $padding-sm;
+
+    @include media-width-from(em($x-small)) {
+      padding-inline: rem(30px);
+      padding-block: rem(30px 20px);
+    }
+  }
+
+  // .item-blog__title
+
+  &__title {
+    flex: auto;
+    font-weight: $fw-semi-bold;
+    font-size: rem(22px);
+    line-height: divide(34px, 26px);
+    color: $clr-mine-shaft;
+
+    @include media-width-from(em($x-small)) {
+      font-size: rem(26px);
+    }
+  }
+
+  // .item-blog__link
+
+  &__link {
+  }
+
+  // .item-blog__frame
+
+  &__frame {
+    order: -1;
+    overflow: hidden;
+    background-color: $clr-mercury;
+
+    @include media-width-from(em($xx-small)) {
+      border-radius: inherit;
+    }
+  }
+
+  // .item-blog__picture
+
+  &__picture {
+    img,
+    svg {
+      object-fit: cover;
+      inline-size: 100%;
+      aspect-ratio: 41 / 27;
+      transition: transform 0.3s;
+    }
+  }
+
+  &__frame:focus-visible :is(img, svg) {
+    transform: scale(1.05);
+  }
+}
